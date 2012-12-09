@@ -1,12 +1,12 @@
 (ns servers
   (:gen-class)
-  (:require [compojure.core         :as compojure]
-            [ring.adapter.jetty     :as jetty]
-            [ring.adapter.simpleweb :as simpleweb]
-            [aleph.http             :as aleph]
-            [aloha.core             :as aloha]
+  (:require [compojure.core          :as compojure]
+            [ring.adapter.jetty      :as jetty]
+            [ring.adapter.simpleweb  :as simpleweb]
+            [aleph.http              :as aleph]
+            [aloha.core              :as aloha]
             [me.shenfeng.http.server :as http-kit]
-            [lamina.core            :as lamina]
+            [lamina.core             :as lamina]
             [taoensso.timbre :as timbre :refer (trace debug info warn error report)]
             [taoensso.timbre.profiling :as profiling :refer (p profile)]))
 
@@ -20,9 +20,9 @@
 (def  aleph-handler-sync  (aleph/wrap-ring-handler handler))
 (http-kit/defasync http-kit-async [request] cb (cb response))
 
-(compojure/defroutes compojure-handler (compojure/GET "*" [] response))
-
 ;;;; Servers
+
+(compojure/defroutes compojure-handler (compojure/GET "*" [] response))
 
 (defn server
   [name & [port create-server-fn]]
@@ -37,7 +37,7 @@
 (defn -main [& args]
   (server :jetty          8081 #(jetty/run-jetty handler {:join? false :port %}))
   (server :simple         8082 #(simpleweb/run-simpleweb handler {:port %}))
-  (server :aleph-sync     8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
+  (server :aleph          8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
   (server :aleph-async    8084 #(aleph/start-http-server aleph-handler-async {:port %}))
   (server :aloha          8085 #(aloha/start-http-server handler {:port %}))
   (server :http-kit       8086 #(http-kit/run-server handler {:port %}))
@@ -49,5 +49,5 @@
 ;; :aloha       ;  ~7,800 reqs/sec
 ;; :jetty       ;  ~6,100 reqs/sec
 ;; :simple      ;  ~4,600 reqs/sec
-;; :aleph-sync  ;  ~2,800 reqs/sec
+;; :aleph       ;  ~2,800 reqs/sec
 ;; :aleph-async ;  ~4,500 reqs/sec

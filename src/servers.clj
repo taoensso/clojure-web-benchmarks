@@ -8,7 +8,7 @@
             [taoensso.timbre :as timbre :refer (trace debug info warn error report)]
             [taoensso.timbre.profiling :as profiling :refer (p profile)]))
 
-;;;; TODO Jetty 8, Netty, java.nio, Webbit, ...?
+;;;; TODO Jetty 8, Netty, java.nio, Webbit, Aloha, Aleph 0.3.0-beta8, ...?
 
 (defonce servers (atom {}))
 (def response {:status 200 :headers {"content-type" "text/html"} :body "echo"})
@@ -23,41 +23,26 @@
 
 ;;;; Servers
 
-(defn start-jetty!
-  [port]
-  (when-not (:jetty @servers)
-    (swap! servers assoc :jetty
-           (jetty/run-jetty handler {:join? false :port  port}))
-    (info (str "Jetty is running on port " port))))
+(defn server
+  [name & [port create-server-fn]]
+  (if-let [server (get @servers name)]
+    server
+    (when (and port create-server-fn)
+      (let [server (create-server-fn port)]
+        (swap! servers assoc name server)
+        (info (str name " is running on port " port))
+        server))))
 
-(defn start-simple!
-  [port]
-  (when-not (:simple @servers)
-    (swap! servers assoc :simple
-           (simpleweb/run-simpleweb handler {:port port}))
-    (info (str "Simple HTTP Engine is running on port " port))))
+(defn -main [& args]
+  (server :jetty       8081 #(jetty/run-jetty handler {:join? false :port %}))
+  (server :simple      8082 #(simpleweb/run-simpleweb handler {:port %}))
+  (server :aleph-sync  8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
+  (server :aleph-async 8084 #(aleph/start-http-server aleph-handler-async {:port %})))
 
-(defn start-aleph-sync!
-  [port]
-  (when-not (:aleph-sync @servers)
-    (swap! servers assoc :aleph-sync
-           (aleph/start-http-server aleph-handler-sync {:port port}))
-    (info (str "Aleph (synchronous) is running on port " port))))
-
-(defn start-aleph-async!
-  [port]
-  (when-not (:aleph-async @servers)
-    (swap! servers assoc :aleph-async
-           (aleph/start-http-server aleph-handler-async {:port port}))
-    (info (str "Aleph (asynchronous) is running on port " port))))
-
-(defn -main
-  "Results captured post-warmup on JDK7 -server, Macbook Air 1.7GHz i5:
-   `ab -n 5000 -c4 http://localhost:[port]/`"
-  [& args]
-  ;; Reference nginx 1.2.5  ; ~10,000 reqs/sec
-  (start-jetty!       8081) ;  ~6,100 reqs/sec
-  (start-simple!      8082) ;  ~4,600 reqs/sec
-  (start-aleph-sync!  8083) ;  ~2,800 reqs/sec
-  (start-aleph-async! 8084) ;  ~4,200 reqs/seq
-  )
+;;;; Results post-warmup OpenJDK7 -server, 1.7GHz i5
+;;;; ab -n 5000 -c4 http://localhost:[port]/
+;; nginx 1.2.5  ; ~10,000 reqs/sec
+;; :jetty       ;  ~6,100 reqs/sec
+;; :simple      ;  ~4,600 reqs/sec
+;; :aleph-sync  ;  ~2,800 reqs/sec
+;; :aleph-async ;  ~4,200 reqs/seq

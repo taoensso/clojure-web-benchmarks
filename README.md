@@ -10,7 +10,15 @@
 
 ![Performance comparison chart](https://github.com/ptaoussanis/clojure-server-benchmarks/raw/master/chart.png)
 
-[Detailed benchmark information](https://docs.google.com/spreadsheet/ccc?key=0AuSXb68FH4uhdE5kTTlocGZKSXppWG9sRzA5Y2pMVkE) is available on Google Docs.
+Responses are echos (static HTML in the case of nginx). [Detailed benchmark information](https://docs.google.com/spreadsheet/ccc?key=0AuSXb68FH4uhdE5kTTlocGZKSXppWG9sRzA5Y2pMVkE) is available on Google Docs.
+
+## Todo
+
+ * Jetty 8.
+ * Container/non-embedded Jetty 7+8.
+ * java.nio.
+ * Webbit.
+ * Other ideas?
 
 ## Contact & Contribution
 

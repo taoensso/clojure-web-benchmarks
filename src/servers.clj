@@ -9,8 +9,6 @@
             [taoensso.timbre :as timbre :refer (trace debug info warn error report)]
             [taoensso.timbre.profiling :as profiling :refer (p profile)]))
 
-;;;; TODO Jetty 8, Netty, java.nio, Webbit, Aloha, ...?
-
 (defonce servers (atom {}))
 (def response {:status 200 :headers {"content-type" "text/html"} :body "echo"})
 

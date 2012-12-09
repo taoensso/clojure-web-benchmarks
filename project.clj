@@ -6,6 +6,7 @@
   [[org.clojure/clojure            "1.5.0-alpha3"]
    [compojure                      "1.1.3"]
    [ring                           "1.1.6"]
+   [me.shenfeng/http-kit           "1.2"]
    ;;[org.eclipse.jetty/jetty-server "7.6.7.v20120910"]
    [ring-simpleweb-adapter         "0.2.0"]
    [aleph                          "0.3.0-beta8"]

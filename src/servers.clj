@@ -5,6 +5,7 @@
             [ring.adapter.simpleweb :as simpleweb]
             [aleph.http             :as aleph]
             [aloha.core             :as aloha]
+            [me.shenfeng.http.server :as http-kit]
             [lamina.core            :as lamina]
             [taoensso.timbre :as timbre :refer (trace debug info warn error report)]
             [taoensso.timbre.profiling :as profiling :refer (p profile)]))
@@ -17,6 +18,7 @@
 (defn handler             [request] response)
 (defn aleph-handler-async [channel request] (lamina/enqueue channel response))
 (def  aleph-handler-sync  (aleph/wrap-ring-handler handler))
+(http-kit/defasync http-kit-async [request] cb (cb response))
 
 (compojure/defroutes compojure-handler (compojure/GET "*" [] response))
 
@@ -33,11 +35,13 @@
         server))))
 
 (defn -main [& args]
-  (server :jetty       8081 #(jetty/run-jetty handler {:join? false :port %}))
-  (server :simple      8082 #(simpleweb/run-simpleweb handler {:port %}))
-  (server :aleph-sync  8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
-  (server :aleph-async 8084 #(aleph/start-http-server aleph-handler-async {:port %}))
-  (server :aloha       8085 #(aloha/start-http-server handler {:port %})))
+  (server :jetty          8081 #(jetty/run-jetty handler {:join? false :port %}))
+  (server :simple         8082 #(simpleweb/run-simpleweb handler {:port %}))
+  (server :aleph-sync     8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
+  (server :aleph-async    8084 #(aleph/start-http-server aleph-handler-async {:port %}))
+  (server :aloha          8085 #(aloha/start-http-server handler {:port %}))
+  (server :http-kit       8086 #(http-kit/run-server handler {:port %}))
+  (server :http-kit-async 8087 #(http-kit/run-server http-kit-async {:port %})))
 
 ;;;; Results post-warmup OpenJDK7 -server, 1.7GHz i5
 ;;;; ab -n 5000 -c4 http://localhost:[port]/

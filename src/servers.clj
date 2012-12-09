@@ -44,7 +44,8 @@
 ;;;; Results post-warmup OpenJDK7 -server, 1.7GHz i5
 ;;;; ab -n 5000 -c4 http://localhost:[port]/
 ;; nginx 1.2.5  ; ~10,000 reqs/sec
+;; :aloha       ;  ~7,800 reqs/sec
 ;; :jetty       ;  ~6,100 reqs/sec
 ;; :simple      ;  ~4,600 reqs/sec
 ;; :aleph-sync  ;  ~2,800 reqs/sec
-;; :aleph-async ;  ~4,200 reqs/seq
+;; :aleph-async ;  ~4,500 reqs/sec

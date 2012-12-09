@@ -1,10 +1,10 @@
 # Some quick & dirty Clojure web server benchmarks
 
 ## Configuration
- * Macbook Air 1.7GHz i5 with 4GB memory.
- * OpenJDK 1.7, -server.
- * Clojure 1.5.0-alpha3.
- * ApacheBench: `ab -n 5000 -c 4`.
+ * Macbook Air 1.7GHz i5 with 4GB memory
+ * OpenJDK 1.7, -server
+ * Clojure 1.5.0-alpha3
+ * ApacheBench: `ab -n 5000 -c 4`
 
 ## Results
 
@@ -14,18 +14,18 @@ Responses are echos (static HTML in the case of nginx). [Detailed benchmark info
 
 ## Clojure Web Servers on GitHub
 
- * [ring-clojure](https://github.com/ring-clojure/ring).
- * [http-kit](https://github.com/shenfeng/http-kit).
- * [aloha](https://github.com/ztellman/aloha).
- * [ring-simpleweb-adapter](https://github.com/netmelody/ring-simpleweb-adapter).
- * [aleph](https://github.com/ztellman/aleph).
+ * [ring-clojure](https://github.com/ring-clojure/ring)
+ * [http-kit](https://github.com/shenfeng/http-kit)
+ * [aloha](https://github.com/ztellman/aloha)
+ * [ring-simpleweb-adapter](https://github.com/netmelody/ring-simpleweb-adapter)
+ * [aleph](https://github.com/ztellman/aleph)
 
 ## TODO
 
- * Jetty 8, 9 (embedded).
- * Jetty 7, 8, 9 (container).
- * java.nio.
- * Webbit.
+ * Jetty 8, 9 (embedded)
+ * Jetty 7, 8, 9 (container)
+ * java.nio
+ * Webbit
  * Other ideas?
 
 ## Contact & Contribution

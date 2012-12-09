@@ -1,0 +1,1062 @@
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8080...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        nginx
+Server Hostname:        127.0.0.1
+Server Port:            8080
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   2.641 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    99009
+Total transferred:      137295045 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    37870.74 [#/sec] (mean)
+Time per request:       0.422 [ms] (mean)
+Time per request:       0.026 [ms] (mean, across all concurrent requests)
+Transfer rate:          50776.03 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    0   0.3      0       5
+Waiting:        0    0   0.3      0       5
+Total:          0    0   0.3      0       5
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%      5 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        nginx
+Server Hostname:        127.0.0.1
+Server Port:            8080
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   2.703 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    99031
+Total transferred:      137295155 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    37000.61 [#/sec] (mean)
+Time per request:       1.730 [ms] (mean)
+Time per request:       0.027 [ms] (mean, across all concurrent requests)
+Transfer rate:          49609.42 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       3
+Processing:     0    2   1.4      1      12
+Waiting:        0    2   1.4      1      12
+Total:          0    2   1.4      1      12
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      2
+  75%      2
+  80%      3
+  90%      4
+  95%      4
+  98%      6
+  99%      6
+ 100%     12 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8081...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Jetty(7.6.1.v20120215)
+Server Hostname:        127.0.0.1
+Server Port:            8081
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   4.280 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      134100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    23364.39 [#/sec] (mean)
+Time per request:       0.685 [ms] (mean)
+Time per request:       0.043 [ms] (mean, across all concurrent requests)
+Transfer rate:          30597.31 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   0.4      1      12
+Waiting:        0    1   0.4      1      12
+Total:          0    1   0.4      1      12
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      2
+  99%      2
+ 100%     12 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Jetty(7.6.1.v20120215)
+Server Hostname:        127.0.0.1
+Server Port:            8081
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   2.549 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      134100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    39237.84 [#/sec] (mean)
+Time per request:       1.631 [ms] (mean)
+Time per request:       0.025 [ms] (mean, across all concurrent requests)
+Transfer rate:          51384.72 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       3
+Processing:     0    2   0.8      2      18
+Waiting:        0    2   0.8      2      18
+Total:          0    2   0.8      2      18
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      3
+  80%      3
+  90%      3
+  95%      3
+  98%      4
+  99%      5
+ 100%     18 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8082...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8082
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   333.741 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    0
+Total transferred:      122600000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    299.63 [#/sec] (mean)
+Time per request:       53.399 [ms] (mean)
+Time per request:       3.337 [ms] (mean, across all concurrent requests)
+Transfer rate:          358.74 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0   33 595.8      0   17577
+Processing:     0   20 525.3      1   17254
+Waiting:        0   15 451.7      1   17254
+Total:          0   52 793.7      2   17578
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      2
+  80%      2
+  90%      2
+  95%      3
+  98%      4
+  99%      5
+ 100%  17578 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8082
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   439.262 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    0
+Total transferred:      122600000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    227.65 [#/sec] (mean)
+Time per request:       281.127 [ms] (mean)
+Time per request:       4.393 [ms] (mean, across all concurrent requests)
+Transfer rate:          272.56 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0  113 1302.9      2   27013
+Processing:     0  165 1596.0      5   18500
+Waiting:        0  123 1379.7      4   18497
+Total:          0  278 2051.8      7   27025
+
+Percentage of the requests served within a certain time (ms)
+  50%      7
+  66%      8
+  75%      9
+  80%      9
+  90%     11
+  95%     14
+  98%     34
+  99%  15365
+ 100%  27025 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8083...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        aleph/0.3.0
+Server Hostname:        127.0.0.1
+Server Port:            8083
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   32.761 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      131100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    3052.38 [#/sec] (mean)
+Time per request:       5.242 [ms] (mean)
+Time per request:       0.328 [ms] (mean, across all concurrent requests)
+Transfer rate:          3907.88 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    5 127.1      0    6687
+Waiting:        0    5 127.1      0    6687
+Total:          0    5 127.1      0    6687
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      1
+  75%      1
+  80%      1
+  90%      2
+  95%      4
+  98%     10
+  99%     15
+ 100%   6687 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        aleph/0.3.0
+Server Hostname:        127.0.0.1
+Server Port:            8083
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   7.711 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      131100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    12968.98 [#/sec] (mean)
+Time per request:       4.935 [ms] (mean)
+Time per request:       0.077 [ms] (mean, across all concurrent requests)
+Transfer rate:          16603.84 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0  12.2      0    1033
+Processing:     0    5   8.0      2     120
+Waiting:        0    5   8.0      2     120
+Total:          0    5  14.7      2    1072
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      3
+  75%      4
+  80%      5
+  90%     11
+  95%     20
+  98%     32
+  99%     43
+ 100%   1072 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8084...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        aleph/0.3.0
+Server Hostname:        127.0.0.1
+Server Port:            8084
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   9.319 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      131100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    10731.15 [#/sec] (mean)
+Time per request:       1.491 [ms] (mean)
+Time per request:       0.093 [ms] (mean, across all concurrent requests)
+Transfer rate:          13738.81 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       3
+Processing:     0    1   3.2      1      98
+Waiting:        0    1   3.2      1      98
+Total:          0    1   3.2      1      98
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      3
+  95%      5
+  98%     10
+  99%     16
+ 100%     98 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        aleph/0.3.0
+Server Hostname:        127.0.0.1
+Server Port:            8084
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   7.295 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      131100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    13708.17 [#/sec] (mean)
+Time per request:       4.669 [ms] (mean)
+Time per request:       0.073 [ms] (mean, across all concurrent requests)
+Transfer rate:          17550.21 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0  11.5      0    1094
+Processing:     0    5   7.3      2     135
+Waiting:        0    5   7.3      2     135
+Total:          0    5  13.7      2    1123
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      3
+  75%      4
+  80%      5
+  90%     11
+  95%     18
+  98%     29
+  99%     38
+ 100%   1123 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8085...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        aloha
+Server Hostname:        127.0.0.1
+Server Port:            8085
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   3.967 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      129100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    25209.69 [#/sec] (mean)
+Time per request:       0.635 [ms] (mean)
+Time per request:       0.040 [ms] (mean, across all concurrent requests)
+Transfer rate:          31782.93 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   0.5      1      18
+Waiting:        0    1   0.5      1      18
+Total:          0    1   0.5      1      18
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      3
+  99%      3
+ 100%     18 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        aloha
+Server Hostname:        127.0.0.1
+Server Port:            8085
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   3.749 seconds
+Complete requests:      100000
+Failed requests:        1
+   (Connect: 1, Receive: 0, Length: 0, Exceptions: 0)
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      129100000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    26676.84 [#/sec] (mean)
+Time per request:       2.399 [ms] (mean)
+Time per request:       0.037 [ms] (mean, across all concurrent requests)
+Transfer rate:          33632.62 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   6.6      0    1042
+Processing:     0    2   1.6      2      32
+Waiting:        0    2   1.6      2      32
+Total:          0    2   6.8      2    1046
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      3
+  75%      3
+  80%      3
+  90%      4
+  95%      5
+  98%      6
+  99%      7
+ 100%   1046 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8086...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        http-kit
+Server Hostname:        127.0.0.1
+Server Port:            8086
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   2.918 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130800000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    34266.31 [#/sec] (mean)
+Time per request:       0.467 [ms] (mean)
+Time per request:       0.029 [ms] (mean, across all concurrent requests)
+Transfer rate:          43769.86 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    0   0.3      0       3
+Waiting:        0    0   0.3      0       3
+Total:          0    0   0.3      0       4
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%      4 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        http-kit
+Server Hostname:        127.0.0.1
+Server Port:            8086
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   2.431 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130800000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    41141.53 [#/sec] (mean)
+Time per request:       1.556 [ms] (mean)
+Time per request:       0.024 [ms] (mean, across all concurrent requests)
+Transfer rate:          52551.88 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       3
+Processing:     0    2   0.6      1       8
+Waiting:        0    2   0.6      1       8
+Total:          0    2   0.6      1       8
+WARNING: The median and mean for the processing time are not within a normal deviation
+        These results are probably not that reliable.
+WARNING: The median and mean for the waiting time are not within a normal deviation
+        These results are probably not that reliable.
+WARNING: The median and mean for the total time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      2
+  80%      2
+  90%      2
+  95%      3
+  98%      4
+  99%      4
+ 100%      8 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+Benching port 8087...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        http-kit
+Server Hostname:        127.0.0.1
+Server Port:            8087
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      16
+Time taken for tests:   2.926 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130800000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    34178.08 [#/sec] (mean)
+Time per request:       0.468 [ms] (mean)
+Time per request:       0.029 [ms] (mean, across all concurrent requests)
+Transfer rate:          43657.16 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    0   0.3      0       4
+Waiting:        0    0   0.3      0       4
+Total:          0    0   0.3      0       4
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%      4 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        http-kit
+Server Hostname:        127.0.0.1
+Server Port:            8087
+
+Document Path:          /
+Document Length:        1163 bytes
+
+Concurrency Level:      64
+Time taken for tests:   2.426 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130800000 bytes
+HTML transferred:       116300000 bytes
+Requests per second:    41216.00 [#/sec] (mean)
+Time per request:       1.553 [ms] (mean)
+Time per request:       0.024 [ms] (mean, across all concurrent requests)
+Transfer rate:          52647.01 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       3
+Processing:     0    2   0.6      1       6
+Waiting:        0    2   0.6      1       6
+Total:          0    2   0.6      1       6
+WARNING: The median and mean for the processing time are not within a normal deviation
+        These results are probably not that reliable.
+WARNING: The median and mean for the waiting time are not within a normal deviation
+        These results are probably not that reliable.
+WARNING: The median and mean for the total time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      2
+  80%      2
+  90%      2
+  95%      3
+  98%      4
+  99%      4
+ 100%      6 (longest request)
+ABORTING: Is the 8088 server running?
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+
+Benching port 8089...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Apache-Coyote/1.1
+Server Hostname:        127.0.0.1
+Server Port:            8089
+
+Document Path:          /
+Document Length:        1164 bytes
+
+Concurrency Level:      16
+Time taken for tests:   4.663 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    99008
+Total transferred:      133695040 bytes
+HTML transferred:       116400000 bytes
+Requests per second:    21445.99 [#/sec] (mean)
+Time per request:       0.746 [ms] (mean)
+Time per request:       0.047 [ms] (mean, across all concurrent requests)
+Transfer rate:          28000.22 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   0.5      1      11
+Waiting:        0    1   0.5      1      11
+Total:          0    1   0.5      1      11
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      2
+  98%      2
+  99%      3
+ 100%     11 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Apache-Coyote/1.1
+Server Hostname:        127.0.0.1
+Server Port:            8089
+
+Document Path:          /
+Document Length:        1164 bytes
+
+Concurrency Level:      64
+Time taken for tests:   5.350 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    99035
+Total transferred:      133695175 bytes
+HTML transferred:       116400000 bytes
+Requests per second:    18690.83 [#/sec] (mean)
+Time per request:       3.424 [ms] (mean)
+Time per request:       0.054 [ms] (mean, across all concurrent requests)
+Transfer rate:          24403.07 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       7
+Processing:     0    3   4.6      2      72
+Waiting:        0    3   4.6      2      72
+Total:          0    3   4.6      2      72
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      3
+  75%      3
+  80%      4
+  90%      9
+  95%     13
+  98%     17
+  99%     22
+ 100%     72 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+
+Benching port 8090...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Jetty(7.6.4.v20120524)
+Server Hostname:        127.0.0.1
+Server Port:            8090
+
+Document Path:          /
+Document Length:        1164 bytes
+
+Concurrency Level:      16
+Time taken for tests:   3.571 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130500000 bytes
+HTML transferred:       116400000 bytes
+Requests per second:    28002.88 [#/sec] (mean)
+Time per request:       0.571 [ms] (mean)
+Time per request:       0.036 [ms] (mean, across all concurrent requests)
+Transfer rate:          35687.27 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   0.3      1       7
+Waiting:        0    1   0.3      1       7
+Total:          0    1   0.3      1       8
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      2
+ 100%      8 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Jetty(7.6.4.v20120524)
+Server Hostname:        127.0.0.1
+Server Port:            8090
+
+Document Path:          /
+Document Length:        1164 bytes
+
+Concurrency Level:      64
+Time taken for tests:   2.867 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130500000 bytes
+HTML transferred:       116400000 bytes
+Requests per second:    34881.81 [#/sec] (mean)
+Time per request:       1.835 [ms] (mean)
+Time per request:       0.029 [ms] (mean, across all concurrent requests)
+Transfer rate:          44453.86 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       3
+Processing:     0    2   0.7      2       8
+Waiting:        0    2   0.7      2       8
+Total:          0    2   0.7      2       9
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      2
+  80%      2
+  90%      3
+  95%      3
+  98%      3
+  99%      4
+ 100%      9 (longest request)
+<!doctype html>
+<title>somewhere i have never travelled, gladly beyond</title>
+<body>
+	<p>somewhere i have never travelled, gladly beyond<br/>any experience,your eyes have their silence:<br/>in your most frail gesture are things which enclose me,<br/>or which i cannot touch because they are too near<br/><br/>your slightest look easily will unclose me<br/>though i have closed myself as fingers,<br/>you open always petal by petal myself as Spring opens<br/>(touching skilfully,mysteriously)her first rose<br/><br/>or if your wish be to close me, i and<br/>my life will shut very beautifully ,suddenly,<br/>as when the heart of this flower imagines<br/>the snow carefully everywhere descending;<br/><br/>nothing which we are to perceive in this world equals<br/>the power of your intense fragility:whose texture<br/>compels me with the color of its countries,<br/>rendering death and forever with each breathing<br/><br/>(i do not know what it is about you that closes<br/>and opens;only something in me understands<br/>the voice of your eyes is deeper than all roses)<br/>nobody,not even the rain,has such small hands</p>
+	<p>&mdash; E. E. Cummings</p>
+</body>
+
+Benching port 8091...
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Jetty(8.1.4.v20120524)
+Server Hostname:        127.0.0.1
+Server Port:            8091
+
+Document Path:          /
+Document Length:        1164 bytes
+
+Concurrency Level:      16
+Time taken for tests:   3.273 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130500000 bytes
+HTML transferred:       116400000 bytes
+Requests per second:    30551.80 [#/sec] (mean)
+Time per request:       0.524 [ms] (mean)
+Time per request:       0.033 [ms] (mean, across all concurrent requests)
+Transfer rate:          38935.64 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   0.2      1       5
+Waiting:        0    1   0.2      1       5
+Total:          0    1   0.2      1       6
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%      6 (longest request)
+This is ApacheBench, Version 2.3 <$Revision: 1373084 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient)
+
+
+Server Software:        Jetty(8.1.4.v20120524)
+Server Hostname:        127.0.0.1
+Server Port:            8091
+
+Document Path:          /
+Document Length:        1164 bytes
+
+Concurrency Level:      64
+Time taken for tests:   2.863 seconds
+Complete requests:      100000
+Failed requests:        0
+Write errors:           0
+Keep-Alive requests:    100000
+Total transferred:      130500000 bytes
+HTML transferred:       116400000 bytes
+Requests per second:    34925.09 [#/sec] (mean)
+Time per request:       1.832 [ms] (mean)
+Time per request:       0.029 [ms] (mean, across all concurrent requests)
+Transfer rate:          44509.03 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       3
+Processing:     0    2   0.7      2       9
+Waiting:        0    2   0.7      2       9
+Total:          0    2   0.7      2       9
+
+Percentage of the requests served within a certain time (ms)
+  50%      2
+  66%      2
+  75%      2
+  80%      2
+  90%      3
+  95%      3
+  98%      4
+  99%      4
+ 100%      9 (longest request)

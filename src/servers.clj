@@ -4,6 +4,7 @@
             [ring.adapter.jetty     :as jetty]
             [ring.adapter.simpleweb :as simpleweb]
             [aleph.http             :as aleph]
+            [aloha.core             :as aloha]
             [lamina.core            :as lamina]
             [taoensso.timbre :as timbre :refer (trace debug info warn error report)]
             [taoensso.timbre.profiling :as profiling :refer (p profile)]))
@@ -37,7 +38,8 @@
   (server :jetty       8081 #(jetty/run-jetty handler {:join? false :port %}))
   (server :simple      8082 #(simpleweb/run-simpleweb handler {:port %}))
   (server :aleph-sync  8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
-  (server :aleph-async 8084 #(aleph/start-http-server aleph-handler-async {:port %})))
+  (server :aleph-async 8084 #(aleph/start-http-server aleph-handler-async {:port %}))
+  (server :aloha       8085 #(aloha/start-http-server handler {:port %})))
 
 ;;;; Results post-warmup OpenJDK7 -server, 1.7GHz i5
 ;;;; ab -n 5000 -c4 http://localhost:[port]/

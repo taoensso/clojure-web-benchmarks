@@ -11,6 +11,7 @@
    [aleph                          "0.3.0-beta8"]
    [aloha                          "1.0.1"]
    [me.shenfeng/http-kit           "1.2"]
+   [me.shenfeng/async-ring-adapter "1.0.2"]
    [com.taoensso/timbre            "1.0.0"]]
 
   :exclusions [org.clojure/clojure]

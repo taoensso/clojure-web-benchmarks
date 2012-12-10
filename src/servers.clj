@@ -3,10 +3,11 @@
   (:require [compojure.core          :as compojure]
             [ring.adapter.jetty      :as jetty]
             [ring.adapter.simpleweb  :as simpleweb]
+            [ring.adapter.netty      :as netty]
+            [lamina.core             :as lamina]
             [aleph.http              :as aleph]
             [aloha.core              :as aloha]
             [me.shenfeng.http.server :as http-kit]
-            [lamina.core             :as lamina]
             [taoensso.timbre :as timbre :refer (trace debug info warn error report)]
             [taoensso.timbre.profiling :as profiling :refer (p profile)]))
 
@@ -35,21 +36,23 @@
         server))))
 
 (defn -main [& args]
-  (server :jetty          8081 #(jetty/run-jetty handler {:join? false :port %}))
-  (server :simple         8082 #(simpleweb/run-simpleweb handler {:port %}))
+  (server :ring-jetty     8081 #(jetty/run-jetty handler {:join? false :port %}))
+  (server :ring-simple    8082 #(simpleweb/run-simpleweb handler {:port %}))
   (server :aleph          8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
   (server :aleph-async    8084 #(aleph/start-http-server aleph-handler-async {:port %}))
   (server :aloha          8085 #(aloha/start-http-server handler {:port %}))
   (server :http-kit       8086 #(http-kit/run-server handler {:port %}))
-  (server :http-kit-async 8087 #(http-kit/run-server http-kit-async {:port %})))
+  (server :http-kit-async 8087 #(http-kit/run-server http-kit-async {:port %}))
+  (server :ring-netty     8088 #(netty/run-netty handler {:port % "reuseAddress" true})))
 
 ;;;; Results post-warmup OpenJDK7 -server, 1.7GHz i5
 ;;;; ab -n 5000 -c4 http://localhost:[port]/
-;; nginx 1.2.5           ; ~10,000 reqs/sec
-;; :aloha                ;  ~7,800 reqs/sec
-;; :jetty                ;  ~6,100 reqs/sec
-;; :simple               ;  ~4,600 reqs/sec
-;; :aleph                ;  ~2,800 reqs/sec
-;; :aleph-async          ;  ~4,500 reqs/sec
-;; :http-kit             ;  ~8,600 reqs/sec
-;; :http-kit-async       ;  ~8,600 reqs/sec
+;; nginx 1.2.5     ; ~10,000 reqs/sec
+;; :http-kit       ;  ~8,600 reqs/sec
+;; :http-kit-async ;  ~8,600 reqs/sec
+;; :aloha          ;  ~7,800 reqs/sec
+;; :ring-netty     ;  ~7,300 reqs/sec
+;; :ring-jetty     ;  ~6,100 reqs/sec
+;; :ring-simple    ;  ~4,600 reqs/sec
+;; :aleph          ;  ~2,800 reqs/sec
+;; :aleph-async    ;  ~4,500 reqs/sec

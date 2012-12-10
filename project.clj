@@ -1,4 +1,4 @@
-(defproject clojure-server-benchmarks "0.1.0"
+(defproject clojure-web-server-benchmarks "0.1.0"
   :description "Clojure web server benchmarks"
   :url         "https://www.taoensso.com"
   :license     {:name "Eclipse Public License"}

@@ -8,7 +8,7 @@
 
 ## Results
 
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-server-benchmarks/raw/master/chart.png)
+![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/chart.png)
 
 Responses are echos (static HTML in the case of nginx). [Detailed benchmark information](https://docs.google.com/spreadsheet/ccc?key=0AuSXb68FH4uhdE5kTTlocGZKSXppWG9sRzA5Y2pMVkE) is available on Google Docs. **Please excuse inaccuracies**: getting consistent results is difficult. Look for general patterns (`A` tends to be faster than `B` under this configuration) rather than specific quantitative differences.
 

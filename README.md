@@ -1,34 +1,39 @@
-# Some quick & dirty Clojure web server benchmarks
-
-## Configuration
- * Macbook Air 1.7GHz i5 with 4GB memory
- * OpenJDK 1.7, -server
- * Clojure 1.5.0-alpha3
- * ApacheBench: `ab -n 5000 -c 4`
+# Clojure web server benchmarks
 
 ## Results
 
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/chart.png)
+![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20121213-04-03-official.png)
 
-Responses are echos (static HTML in the case of nginx). [Detailed benchmark information](http://goo.gl/bgyVI) is available on Google Docs. **Please excuse inaccuracies**: getting consistent results is difficult. Look for general patterns (`A` tends to be faster than `B` under this configuration) rather than specific quantitative differences.
+Responses are echos (static HTML in the case of reference nginx server). [Detailed benchmark information](http://goo.gl/bgyVI) is available on Google Docs.
 
-## Clojure Web Servers on GitHub
+These results are only useful in so far as they're complete and accurate. Please feel free to get in touch if you've spotted any errors, or have any other ideas for how to improve the information here. **Pull requests welcome**!
 
- * [ring-clojure](https://github.com/ring-clojure/ring)
- * [ring-simpleweb-adapter](https://github.com/netmelody/ring-simpleweb-adapter)
- * [ring-netty-adapter](https://github.com/shenfeng/async-ring-adapter)
- * [http-kit](https://github.com/shenfeng/http-kit)
- * [aloha](https://github.com/ztellman/aloha)
- * [aleph](https://github.com/ztellman/aleph)
+### Configuration
+  * Amazon EC2 M1 Large 64-bit instance running Ubuntu Server 12.04.1 LTS.
+  * OpenJDK 1.7, -server, -XX:+UseConcMarkSweepGC.
+  * Clojure 1.5.0-alpha3.
+
+## Running benchmarks yourself
+  1. Ensure [httperf](http://www.hpl.hp.com/research/linux/httperf/) and [Autobench](http://www.xenoclast.org/autobench/) are installed.
+  2. Clone this repo.
+  2. Run `scripts/run-servers.sh` then `scripts/run-benchmarks.sh`.
+
+NOTE: I had serious trouble getting Mac OS X to cooperate reliably with _any_ benching tools (incl. httperf, ab, and siege), even after tuning for ephemeral ports and open file limits.
+
+## Clojure web servers on GitHub
+  * [ring-clojure](https://github.com/ring-clojure/ring)
+  * [ring-simpleweb-adapter](https://github.com/netmelody/ring-simpleweb-adapter)
+  * [ring-netty-adapter](https://github.com/shenfeng/async-ring-adapter)
+  * [http-kit](https://github.com/shenfeng/http-kit)
+  * [aloha](https://github.com/ztellman/aloha)
+  * [aleph](https://github.com/ztellman/aleph)
 
 ## TODO
+  * Merge kumarshantanu servlets PR (Jetty 7, Jetty 8, Tomcat 7)
+  * Bench containers (Jetty, Tomcat, GlassFish, etc.)
+  * Webbit
+  * Other ideas?
 
- * Jetty 8, 9 (embedded)
- * Containers (Jetty, Tomcat, GlassFish, etc.)
- * java.nio
- * Webbit
- * Other ideas?
-
-## Contact & Contribution
+## Contact & contribution
 
 Reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com) for questions/comments/suggestions/whatever. I'm very open to ideas if you have any! I'm also on Twitter: [@ptaoussanis](https://twitter.com/#!/ptaoussanis).

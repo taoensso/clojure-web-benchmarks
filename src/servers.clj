@@ -54,15 +54,8 @@
   (server :aloha          8085 #(aloha/start-http-server handler {:port %}))
   (server :http-kit       8086 #(http-kit/run-server handler {:port %}))
   (server :http-kit-async 8087 #(http-kit/run-server http-kit-async {:port %}))
-  (server :ring-netty     8088 #(netty/run-netty handler {:port % "reuseAddress" true})))
+  (server :ring-netty     8088 #(netty/run-netty handler {:port % "reuseAddress" true}))
 
-;;;; Results @ http://goo.gl/bgyVI (Macbook Air 1.7Ghz i5)
-;; nginx 1.2.5     ; ~10,000 reqs/sec
-;; :http-kit       ;  ~8,600 reqs/sec
-;; :http-kit-async ;  ~8,600 reqs/sec
-;; :aloha          ;  ~7,800 reqs/sec
-;; :ring-netty     ;  ~7,300 reqs/sec
-;; :ring-jetty     ;  ~6,100 reqs/sec
-;; :ring-simple    ;  ~4,600 reqs/sec
-;; :aleph          ;  ~2,800 reqs/sec
-;; :aleph-async    ;  ~4,500 reqs/sec
+  (info "Please run reference server (e.g. nginx) on port 8080 manually"))
+
+;;;; Results @ http://goo.gl/bgyVI

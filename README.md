@@ -2,25 +2,7 @@
 
 ## Results
 
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20121213-04-03-official.png)
-
-Responses are echos (static HTML in the case of reference nginx server). [Detailed benchmark information](http://goo.gl/bgyVI) is available on Google Docs.
-
-These results are only useful in so far as they're complete and accurate. Please feel free to get in touch if you've spotted any errors, or have any other ideas for how to improve the information here. **Pull requests welcome**!
-
-### Configuration
-  * Amazon EC2 M1 Large 64-bit instance running Ubuntu Server 12.04.1 LTS.
-  * nginx: standard config with 4 worker_processes and 4096 worker_connections.
-  * OpenJDK 1.7, -server, -XX:+UseConcMarkSweepGC.
-  * Clojure 1.5.0-alpha3.
-  * Autobench --low_rate 30 --high_rate 300 --num_call 48.
-
-### Quick comments
-  * All the servers performed well, and do even better on dedicated hardware.
-  * For most workloads, none of these servers is likely to ever be your bottleneck in practice.
-  * Some of these servers prefer particular kinds of workloads. Nothing beats testing your own workloads, on your own hardware.
-  * Whatever server you're using, you should probably be running behind something like nginx in production anyway.
-  * Server capabilities vary widely and in most cases developer convenience should probably trump higher performance.
+Forthcoming...
 
 ## Running the benchmarks yourself
   1. Ensure [httperf](http://www.hpl.hp.com/research/linux/httperf/) and [Autobench](http://www.xenoclast.org/autobench/) are installed.

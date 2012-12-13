@@ -1,4 +1,4 @@
-# Clojure web server benchmarks
+# Quick and dirty Clojure web server benchmarks
 
 ## Results
 
@@ -10,10 +10,19 @@ These results are only useful in so far as they're complete and accurate. Please
 
 ### Configuration
   * Amazon EC2 M1 Large 64-bit instance running Ubuntu Server 12.04.1 LTS.
+  * nginx: standard config with 4 worker_processes and 4096 worker_connections.
   * OpenJDK 1.7, -server, -XX:+UseConcMarkSweepGC.
   * Clojure 1.5.0-alpha3.
+  * Autobench --low_rate 30 --high_rate 300 --num_call 48.
 
-## Running benchmarks yourself
+### Quick comments
+  * All the servers performed well, and do even better on dedicated hardware.
+  * For most workloads, none of these servers is likely to ever be your bottleneck in practice.
+  * Some of these servers prefer particular kinds of workloads. Nothing beats testing your own workloads, on your own hardware.
+  * Whatever server you're using, you should probably be running behind something like nginx in production anyway.
+  * Server capabilities vary widely and in most cases developer convenience should probably trump higher performance.
+
+## Running the benchmarks yourself
   1. Ensure [httperf](http://www.hpl.hp.com/research/linux/httperf/) and [Autobench](http://www.xenoclast.org/autobench/) are installed.
   2. Clone this repo.
   2. Run `scripts/run-servers.sh` then `scripts/run-benchmarks.sh`.
@@ -29,9 +38,10 @@ NOTE: I had serious trouble getting Mac OS X to cooperate reliably with _any_ be
   * [aleph](https://github.com/ztellman/aleph)
 
 ## TODO
-  * Merge kumarshantanu servlets PR (Jetty 7, Jetty 8, Tomcat 7)
-  * Bench containers (Jetty, Tomcat, GlassFish, etc.)
-  * Webbit
+  * Merge kumarshantanu servlets PR (Jetty 7, Jetty 8, Tomcat 7).
+  * Bench containers (Jetty, Tomcat, GlassFish, etc.).
+  * Webbit.
+  * Capabilities table (e.g. async & WebSockets).
   * Other ideas?
 
 ## Contact & contribution

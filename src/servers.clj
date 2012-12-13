@@ -27,11 +27,11 @@
 (compojure/defroutes compojure-handler (compojure/GET "*" [] response))
 
 (defn server
-  [name & [port create-server-fn]]
+  [name & [port create-server!-fn]]
   (if-let [server (get @servers name)]
     server
-    (when (and port create-server-fn)
-      (let [server (create-server-fn port)]
+    (when (and port create-server!-fn)
+      (let [server (create-server!-fn port)]
         (swap! servers assoc name server)
         (info name "is running on port" port)
         server))))

@@ -37,6 +37,7 @@ else
     # ulimit -n 32768
     # ulimit -S -n 32768
     # launchctl limit maxfiles 32768
+    # sudo sysctl -w net.ipv4.tcp_tw_reuse=1
 
     ulimit -n 32768
 

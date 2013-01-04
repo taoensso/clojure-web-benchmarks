@@ -14,9 +14,9 @@ bench_port() {
         echo "Is the $1 server running?" | tee -a $OUT
     else
         echo
-        echo "Port $1: Benching for $2x10=$(($2 * 10)) seconds..." | tee -a $OUT
+        echo "Port $1: Benching for $2x20=$(($2 * 20)) seconds..." | tee -a $OUT
         autobench --single_host --host1 localhost --uri1 / --port1 $1 --quiet \
-            --low_rate 30 --high_rate 300 --rate_step 30 --num_call 48 \
+            --low_rate 30 --high_rate 900 --rate_step 45 --num_call 48 \
             --timeout 5 --const_test_time $2 | tee -a $OUT
     fi
 }
@@ -39,6 +39,7 @@ else
     # launchctl limit maxfiles 32768
     # sudo sysctl -w net.ipv4.tcp_tw_reuse=1
 
+    sudo sysctl -w net.ipv4.tcp_tw_reuse=1
     ulimit -n 32768
 
     echo

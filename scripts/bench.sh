@@ -19,9 +19,9 @@ bench_port() {
         echo "Is the $1 server running?" | tee -a $OUT
     else
         echo
-        echo "Port $1: Benching for $2x20=$(($2 * 20)) seconds..." | tee -a $OUT
+        echo "Port $1: Benching for $2x15=$(($2 * 15)) seconds..." | tee -a $OUT
         autobench --single_host --host1 localhost --uri1 / --port1 $1 --quiet \
-            --low_rate 30 --high_rate 900 --rate_step 45 --num_call 48 \
+            --low_rate 60 --high_rate 900 --rate_step 60 --num_call 48 \
             --timeout 5 --const_test_time $2 | tee -a $OUT
     fi
 }
@@ -44,8 +44,12 @@ else
     # launchctl limit maxfiles 32768
     # sudo sysctl -w net.ipv4.tcp_tw_reuse=1
 
-    sudo sysctl -w net.ipv4.tcp_tw_reuse=1
+    # sudo sysctl -w net.ipv4.tcp_tw_reuse=1 \
+    #     net.ipv4.tcp_tw_recycle=1 \
+    #     net.ipv4.tcp_keepalive_time=1800
+
     ulimit -n 32768
+    sudo sysctl -w net.inet.tcp.msl=7500
 
     echo
     echo "$(ulimit -a)"
@@ -65,7 +69,7 @@ else
         bench_port 8080 $1
 
         # Bench Clojure servers
-        for PORT in {8081..8095}
+        for PORT in {8081..8091}
         do
             echo "Sleeping for 60s..."
             sleep 60

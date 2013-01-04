@@ -19,7 +19,7 @@ start_server  "embedded"
 start_servlet "tomcat7"
 start_servlet "jetty7"
 start_servlet "jetty8"
-echo "Please start reference (nginx) server manually"
+echo "Please start reference (nginx) server manually: sudo /etc/init.d/nginx start"
 
 tail -fn 0 logs/run-servers
 

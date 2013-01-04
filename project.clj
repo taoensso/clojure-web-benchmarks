@@ -10,11 +10,14 @@
    ;; [org.eclipse.jetty/jetty-server "7.6.7.v20120910"]
    [ring-simpleweb-adapter            "0.2.0"]
    [aleph                             "0.3.0-beta8"]
+   ;; [com.taoensso.forks/aleph       "0.3.0-beta9"]
+   ;; [aleph                          "0.3.0-SNAPSHOT"]
    [aloha                             "1.0.1"]
-   [me.shenfeng/http-kit              "1.2"]
+   ;; [me.shenfeng/http-kit           "1.2"]
+   [com.taoensso.forks/http-kit       "1.3.0-alpha1"]
    [me.shenfeng/async-ring-adapter    "1.0.2"]
-   [com.taoensso/timbre               "1.0.0"]]
-  :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.0-alpha3"]]}}
+   [com.taoensso/timbre               "1.2.0"]]
+  :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.0-RC1"]]}}
   :exclusions [org.clojure/clojure]
   :jvm-opts   ["-server" "-XX:+UseConcMarkSweepGC"]
   :main               servers

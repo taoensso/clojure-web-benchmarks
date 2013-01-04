@@ -60,7 +60,7 @@ else
         bench_port 8080 $1
 
         # Bench Clojure servers
-        for PORT in {8081..8088}
+        for PORT in {8081..8095}
         do
             echo "Sleeping for 60s..."
             sleep 60

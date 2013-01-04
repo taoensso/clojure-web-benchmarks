@@ -10,6 +10,11 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
 fi
 
 bench_port() {
+    echo "curl output"
+    echo "---"
+    curl "http://localhost:$1/"
+    echo "---"
+    echo
     if [ -z "$(sudo lsof -i :$1)" ]; then
         echo "Is the $1 server running?" | tee -a $OUT
     else

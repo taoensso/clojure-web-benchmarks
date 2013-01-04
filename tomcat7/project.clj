@@ -11,6 +11,6 @@
             ;; :deps    [[lein-servlet/adapter-jetty7  "0.2.0"]]
             ;; :deps    [[lein-servlet/adapter-jetty8  "0.2.0"]]
             :deps    [[lein-servlet/adapter-tomcat7 "0.2.0"]]
-            :config  {:port 8307}
+            :config  {:port 8089}
             :webapps {"/" {:servlets {"/*" 'tomcat7.servlet}
                            :public "."}}})

@@ -7,10 +7,12 @@
   :plugins [[lein-servlet "0.2.0"]]
   :dependencies [[org.clojure/clojure "1.4.0"]]
   :aot [jetty8.servlet]
+  :jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]
+  :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.0-RC1"]]}}
   :servlet {;; uncomment only either of the :deps entries below
             ;; :deps    [[lein-servlet/adapter-jetty7  "0.2.0"]]
             :deps    [[lein-servlet/adapter-jetty8  "0.2.0"]]
             ;; :deps    [[lein-servlet/adapter-tomcat7 "0.2.0"]]
-            :config  {:port 8208}
+            :config  {:port 8091}
             :webapps {"/" {:servlets {"/*" 'jetty8.servlet}
                            :public "."}}})

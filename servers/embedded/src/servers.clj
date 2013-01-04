@@ -47,15 +47,18 @@
          :java    (system "java.version")
          :vm      (system "java.vm.name" "java.vm.version")})
 
-  (server :ring-jetty     8081 #(jetty/run-jetty handler {:join? false :port %}))
-  (server :ring-simple    8082 #(simpleweb/run-simpleweb handler {:port %}))
-  (server :aleph          8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
-  (server :aleph-async    8084 #(aleph/start-http-server aleph-handler-async {:port %}))
-  (server :aloha          8085 #(aloha/start-http-server handler {:port %}))
-  (server :http-kit       8086 #(http-kit/run-server handler {:port %}))
-  (server :http-kit-async 8087 #(http-kit/run-server http-kit-async {:port %}))
-  (server :ring-netty     8088 #(netty/run-netty handler {:port % "reuseAddress" true}))
-
-  (info "Please run reference server (e.g. nginx) on port 8080 manually"))
+  ;;      :nginx           8080
+  (server :ring-jetty      8081 #(jetty/run-jetty handler {:join? false :port %}))
+  (server :ring-simple     8082 #(simpleweb/run-simpleweb handler {:port %}))
+  (server :aleph           8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
+  (server :aleph-async     8084 #(aleph/start-http-server aleph-handler-async {:port %}))
+  (server :aloha           8085 #(aloha/start-http-server handler {:port %}))
+  (server :http-kit        8086 #(http-kit/run-server handler {:port %}))
+  (server :http-kit-async  8087 #(http-kit/run-server http-kit-async {:port %}))
+  (server :ring-netty      8088 #(netty/run-netty handler {:port % "reuseAddress" true}))
+  ;;      :tomcat7-servlet 8089
+  ;;      :jetty-7-servlet 8090
+  ;;      :jetty-8-servlet 8091
+  )
 
 ;;;; Results @ http://goo.gl/bgyVI

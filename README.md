@@ -18,9 +18,9 @@ NOTE: I had serious trouble getting Mac OS X to cooperate reliably with _any_ be
   * [http-kit](https://github.com/shenfeng/http-kit)
   * [aloha](https://github.com/ztellman/aloha)
   * [aleph](https://github.com/ztellman/aleph)
+  * [lein-servlet](https://github.com/kumarshantanu/lein-servlet)
 
 ## TODO
-  * Merge kumarshantanu servlets PR (Jetty 7, Jetty 8, Tomcat 7).
   * Bench containers (Jetty, Tomcat, GlassFish, etc.).
   * Webbit.
   * Capabilities table (e.g. async & WebSockets).

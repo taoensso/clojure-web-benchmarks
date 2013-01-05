@@ -25,10 +25,10 @@ tune_os() {
     ulimit -S -n 32768
     launchctl limit maxfiles 32768
 
-    echo
-    echo "$(ulimit -a)"
-    echo "$(launchctl limit)"
-    echo
+    echo | tee -a $OUT
+    echo "$(ulimit -a)" | tee -a $OUT
+    echo "$(launchctl limit)" | tee -a $OUT
+    echo | tee -a $OUT
 }
 
 bench_port() {

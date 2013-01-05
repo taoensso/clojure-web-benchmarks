@@ -2,6 +2,8 @@
 
 ## Results
 
+TODO: Update results since last config change.
+
 **Detailed benchmark results** available in `/results/`. Chart available on [Google Docs](http://goo.gl/QRTCH).
 
 ![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130105-17-26.png)
@@ -9,13 +11,14 @@
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
   * [SimpleWeb Ring adapter](https://github.com/netmelody/ring-simpleweb-adapter) - Pure-Java HTTP server without using Servlets.
-  * [Netty Ring adapter](https://github.com/shenfeng/async-ring-adapter) - **TODO**.
+  * [Netty Ring adapter](https://github.com/shenfeng/async-ring-adapter) - Netty adapter for use with Ring.
   * [http-kit](https://github.com/shenfeng/http-kit) - HTTP client/server with async & WebSockets support.
   * [Aleph](https://github.com/ztellman/aleph) - Clojure framework for asynchronous communication, built on top of Netty and Lamina.
   * [Aloha](https://github.com/ztellman/aloha) - Reference implementation of a Clojure/Netty webserver, or basically Aleph without any extraneous fluff.
   * Jetty 7, Jetty 8, Tomcat 7 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
   * [nginx 1.2.6](http://nginx.org).
   * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
+  * **TODO**: SimpleWeb and Netty Ring adapters DNF.
 
 ## Configuration
   * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.

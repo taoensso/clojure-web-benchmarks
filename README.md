@@ -2,9 +2,9 @@
 
 ## Results
 
-**Detailed benchmark results** available in `/results/`. Chart available on [Google Docs](http://goo.gl/QRTCH).
-
 ![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130105-17-26.png)
+
+**Clojure Google Group discussion**: http://goo.gl/xe46R. **Detailed benchmark results** available in `/results/`. Chart available on [Google Docs](http://goo.gl/QRTCH).
 
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.

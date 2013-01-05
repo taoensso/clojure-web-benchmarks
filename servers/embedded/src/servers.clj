@@ -52,7 +52,7 @@
   (server :ring-jetty      8081 #(jetty/run-jetty handler {:join? false :port %}))
 
   ;; TODO Disabled since it seems to be dying after initial warmup
-  ;; (server :ring-simple     8082 #(simpleweb/run-simpleweb handler {:port %}))
+  ;; (server :ring-simple  8082 #(simpleweb/run-simpleweb handler {:port %}))
 
   (server :aleph           8083 #(aleph/start-http-server aleph-handler-sync  {:port %}))
   (server :aleph-async     8084 #(aleph/start-http-server aleph-handler-async {:port %}))

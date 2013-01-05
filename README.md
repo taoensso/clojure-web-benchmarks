@@ -4,7 +4,21 @@
 
 ![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130105-17-26.png)
 
-**Clojure Google Group discussion**: http://goo.gl/xe46R. **Detailed benchmark results** available in `/results/`. Chart available on [Google Docs](http://goo.gl/QRTCH).
+  * **Clojure Google Group discussion**: http://goo.gl/xe46R.
+  * **Detailed benchmark results** available in `/results/`.
+  * Chart available on [Google Docs](http://goo.gl/QRTCH).
+
+## Configuration
+  * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.
+  * Clojure 1.5.0-RC1 on Oracle JDK7 build 1.7.0_04-b21.
+  * Response length: 1163 bytes (`servers/index.html`).
+  * ApacheBench Version 2.3 Revision: 1373084. (NB requires [upgrade](https://gist.github.com/1724673) on OS X).
+  * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
+  * See `scripts/bench.sh` for full details, including OS and TCP tuning.
+  * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
+  * **Low concurrency**: `ab -n 160000 -c 16 -k`.
+  * **Medium concurrency**: `ab -n 160000 -c 64 -k`.
+  * **High concurrency**: `ab -n 160000 -c 128 -k`.
 
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
@@ -17,17 +31,6 @@
   * [nginx 1.2.6](http://nginx.org).
   * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
   * **TODO**: SimpleWeb and Netty Ring adapters DNF.
-
-## Configuration
-  * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.
-  * Clojure 1.5.0-RC1 on Oracle JDK7 build 1.7.0_04-b21.
-  * Response length: 1163 bytes (`servers/index.html`).
-  * ApacheBench Version 2.3 Revision: 1373084. (NB requires [upgrade](https://gist.github.com/1724673) on OS X).
-  * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
-  * See `scripts/bench.sh` for full details, including OS and TCP tuning.
-  * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
-  * **Low concurrency**: `ab -n 100000 -c 16 -k`.
-  * **Medium concurrency**: `ab -n 100000 -c 64 -k`.
 
 ## Contact & contribution
 

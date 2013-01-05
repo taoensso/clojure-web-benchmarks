@@ -2,8 +2,6 @@
 
 ## Results
 
-TODO: Update results since last config change.
-
 **Detailed benchmark results** available in `/results/`. Chart available on [Google Docs](http://goo.gl/QRTCH).
 
 ![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130105-17-26.png)

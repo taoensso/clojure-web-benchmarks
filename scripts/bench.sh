@@ -32,7 +32,7 @@ tune_os() {
 }
 
 bench_port() {
-    curl "http://127.0.0.1:$1/" | tee -a $OUT
+    # curl "http://127.0.0.1:$1/"
     if [ -z "$(sudo lsof -i :$1)" ]; then
         echo "ABORTING: Is the $1 server running?" | tee -a $OUT
     else

@@ -27,7 +27,7 @@
   * See `scripts/bench.sh` for full details, including OS and TCP tuning.
   * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
   * **Low concurrency**: `ab -n 100000 -c 16 -k`.
-  * **High concurrency**: `ab -n 100000 -c 64 -k`.
+  * **Medium concurrency**: `ab -n 100000 -c 64 -k`.
 
 ## Contact & contribution
 

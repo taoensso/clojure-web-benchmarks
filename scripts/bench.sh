@@ -63,7 +63,7 @@ echo
 if [ -n "$1" ]; then
     bench_port $1 # Bench only a single, given port
 else
-    for PORT in {8080..8091}
+    for PORT in {8081..8092}
     do
         bench_port $PORT
     done

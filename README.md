@@ -16,9 +16,9 @@
   * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
   * See `scripts/bench.sh` for full details, including OS and TCP tuning.
   * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
-  * **Low concurrency**: `ab -n 160000 -c 16 -k`.
-  * **Medium concurrency**: `ab -n 160000 -c 64 -k`.
-  * **High concurrency**: `ab -n 160000 -c 92 -k`.
+  * **Low concurrency**: `ab -n 120000 -c 16 -k`.
+  * **Medium concurrency**: `ab -n 120000 -c 64 -k`.
+  * **High concurrency**: `ab -n 120000 -c 92 -k`.
 
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.

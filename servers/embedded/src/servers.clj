@@ -59,10 +59,7 @@
   (server :aloha           8085 #(aloha/start-http-server handler {:port %}))
   (server :http-kit        8086 #(http-kit/run-server handler {:port % :queue-size 20000}))
   (server :http-kit-async  8087 #(http-kit/run-server http-kit-async {:port % :queue-size 20000}))
-
-  ;; TODO Disabled for ApacheBench keep-alive trouble
-  ;; (server :ring-netty   8088 #(netty/run-netty handler {:port % "reuseAddress" true}))
-
+  (server :ring-netty      8088 #(netty/run-netty handler {:port % "reuseAddress" true}))
   ;;      :tomcat7-servlet 8089
   ;;      :jetty-7-servlet 8090
   ;;      :jetty-8-servlet 8091

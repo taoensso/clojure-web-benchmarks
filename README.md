@@ -2,7 +2,7 @@
 
 ## Results
 
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130105-17-26.png)
+![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130107-13-52.png)
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
@@ -18,7 +18,7 @@
   * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
   * **Low concurrency**: `ab -n 160000 -c 16 -k`.
   * **Medium concurrency**: `ab -n 160000 -c 64 -k`.
-  * **High concurrency**: `ab -n 160000 -c 128 -k`.
+  * **High concurrency**: `ab -n 160000 -c 92 -k`.
 
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
@@ -30,7 +30,7 @@
   * Jetty 7, Jetty 8, Tomcat 7 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
   * [nginx 1.2.6](http://nginx.org).
   * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
-  * **TODO**: SimpleWeb and Netty Ring adapters DNF.
+  * **TODO**: SimpleWeb and Aleph synchronous high-concurrency DNF.
 
 ## Contact & contribution
 

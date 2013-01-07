@@ -16,9 +16,7 @@ ulimit -n 50000
 ulimit -S -n 50000
 launchctl limit maxfiles 50000
 
-echo | tee -a $OUT
-echo "$(ulimit -a)" | tee -a $OUT
-echo "$(launchctl limit)" | tee -a $OUT
-echo | tee -a $OUT
+echo "$(ulimit -a)"
+echo "$(launchctl limit)"
 
 ab -n 50000 -c 2000 -kr 127.0.0.1:8081/

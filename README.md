@@ -37,6 +37,6 @@
 ### Welcoming pull-requests for:
   * More servers.
   * Updated servers.
-  * Server config tuning!
+  * Server / bench config tuning!
 
 Reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com) for questions/comments/suggestions/whatever. I'm very open to ideas if you have any! I'm also on Twitter: [@ptaoussanis](https://twitter.com/#!/ptaoussanis).

@@ -59,7 +59,8 @@
   (server :aloha           8086 #(aloha/start-http-server handler {:port %}))
   (server :http-kit        8087 #(http-kit/run-server handler {:port % :queue-size 20000}))
   (server :http-kit-async  8088 #(http-kit/run-server http-kit-async {:port % :queue-size 20000}))
-  (server :ring-netty      8089 #(netty/run-netty handler {:port % "reuseAddress" true}))
+  (server :ring-netty      8089 #(netty/run-netty handler {:port % :worker 4
+                                                           :netty {"reuseAddress" true}}))
   ;;      :tomcat7-servlet 8090
   ;;      :jetty-7-servlet 8091
   ;;      :jetty-8-servlet 8092

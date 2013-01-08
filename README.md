@@ -8,6 +8,9 @@
   * **Detailed benchmark results** available in `/results/`.
   * Chart available on [Google Docs](http://goo.gl/QRTCH).
 
+### Pending changes
+  * Fixed Netty Ring adapter config.
+
 ## Configuration
   * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.
   * Clojure 1.5.0-RC1 on Oracle JDK7 build 1.7.0_04-b21.

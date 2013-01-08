@@ -16,12 +16,10 @@
   * Clojure 1.5.0-RC1 on Oracle JDK7 build 1.7.0_04-b21.
   * Response length: 1163 bytes (`servers/index.html`).
   * ApacheBench Version 2.3 Revision: 1373084. (NB requires [upgrade](https://gist.github.com/1724673) on OS X).
+  * ApacheBench `ab -n 120000 -c <16,64,92> -rk`.
   * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
   * See `scripts/bench.sh` for full details, including OS and TCP tuning.
   * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
-  * **Low concurrency**: `ab -n 120000 -c 16 -k`.
-  * **Medium concurrency**: `ab -n 120000 -c 64 -k`.
-  * **High concurrency**: `ab -n 120000 -c 92 -k`.
 
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.

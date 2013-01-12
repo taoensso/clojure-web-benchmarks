@@ -9,7 +9,9 @@
   * Chart available on [Google Docs](http://goo.gl/QRTCH).
 
 ### Pending changes
-  * Fixed Netty Ring adapter config.
+  * Netty Ring adapter config.
+  * Jetty Ring adapter config.
+  * SimpleWeb Ring adapter enabled.
 
 ## Configuration
   * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.

@@ -49,7 +49,8 @@
          :vm      (system "java.vm.name" "java.vm.version")})
 
   ;;      :nginx           8081
-  (server :ring-jetty      8082 #(jetty/run-jetty handler {:join? false :port %}))
+  (server :ring-jetty      8082 #(jetty/run-jetty handler {:join? false :port %
+                                                           :max-threads 100}))
 
   ;; TODO Disabled since it seems to be dying after initial warmup
   ;; (server :ring-simple  8083 #(simpleweb/run-simpleweb handler {:port %}))

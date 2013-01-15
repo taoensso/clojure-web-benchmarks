@@ -10,6 +10,6 @@
   :jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]
   :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.0-RC1"]]}}
   :servlet {:deps    [[lein-servlet/adapter-jetty7  "0.2.0"]]
-            :config  {:port 8090}
+            :config  {:port 8091}
             :webapps {"/" {:servlets {"/*" 'jetty7.servlet}
                            :public "."}}})

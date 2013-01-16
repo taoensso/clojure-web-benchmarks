@@ -2,16 +2,14 @@
 
 ## Results
 
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130107-13-52.png)
+![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130116-01-25.png)
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
   * Chart available on [Google Docs](http://goo.gl/QRTCH).
 
 ### Pending changes
-  * Netty Ring adapter config.
-  * Jetty Ring adapter config.
-  * SimpleWeb Ring adapter enabled.
+  * None.
 
 ## Configuration
   * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.
@@ -22,6 +20,7 @@
   * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
   * See `scripts/bench.sh` for full details, including OS and TCP tuning.
   * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
+  * **TODO**: Higher concurrency testing: c=200, c=500, c=1000.
 
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
@@ -33,7 +32,6 @@
   * Jetty 7, Jetty 8, Tomcat 7 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
   * [nginx 1.2.6](http://nginx.org).
   * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
-  * **TODO**: SimpleWeb and Aleph synchronous high-concurrency DNF.
 
 ## Contact & contribution
 

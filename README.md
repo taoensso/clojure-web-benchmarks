@@ -7,6 +7,7 @@
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
   * Chart available on [Google Docs](http://goo.gl/QRTCH).
+  * **Margin of error**: +/- ~10%.
 
 ### Pending changes
   * None.

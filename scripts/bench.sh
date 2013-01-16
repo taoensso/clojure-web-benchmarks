@@ -48,8 +48,9 @@ bench_port() {
         ab -n 120000 -c 64 -rk "127.0.0.1:$1/" | tee -a $OUT
         sleep_for 10
         ab -n 120000 -c 96 -rk "127.0.0.1:$1/" | tee -a $OUT
-        echo
-        echo
+        echo "===============================================" | tee -a $OUT
+        echo | tee -a $OUT
+        echo | tee -a $OUT
     fi
 }
 

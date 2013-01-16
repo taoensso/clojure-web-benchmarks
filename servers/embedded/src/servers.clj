@@ -51,10 +51,7 @@
   ;;      :nginx           8081
   (server :ring-jetty      8082 #(jetty/run-jetty handler {:join? false :port %
                                                            :max-threads 100}))
-
-  ;; TODO Disabled since it seems to be dying after initial warmup
-  ;; (server :ring-simple  8083 #(simpleweb/run-simpleweb handler {:port %}))
-
+  (server :ring-simple     8083 #(simpleweb/run-simpleweb handler {:port %}))
   (server :aleph           8084 #(aleph/start-http-server aleph-handler-sync  {:port %}))
   (server :aleph-async     8085 #(aleph/start-http-server aleph-handler-async {:port %}))
   (server :aloha           8086 #(aloha/start-http-server handler {:port %}))

@@ -41,6 +41,8 @@
   (let [properties (into {} (System/getProperties))]
     (fn [& keys] (str/join " " (map properties keys)))))
 
+(lamina.trace/defexecutor aleph-executor {:min-thread-count 128})
+
 (defn -main [& args]
   (info "Starting up servers..."
         {:clojure (clojure-version)
@@ -48,18 +50,24 @@
          :java    (system "java.version")
          :vm      (system "java.vm.name" "java.vm.version")})
 
-  ;;      :nginx           8081
-  (server :ring-jetty      8082 #(jetty/run-jetty handler {:join? false :port %
-                                                           :max-threads 100}))
-  (server :ring-simple     8083 #(simpleweb/run-simpleweb handler {:port %}))
-  (server :aleph           8084 #(aleph/start-http-server aleph-handler-sync  {:port %}))
-  (server :aleph-async     8085 #(aleph/start-http-server aleph-handler-async {:port %}))
-  (server :aloha           8086 #(aloha/start-http-server handler {:port %}))
-  (server :http-kit        8087 #(http-kit/run-server handler {:port % :queue-size 20000}))
-  (server :http-kit-async  8088 #(http-kit/run-server http-kit-async {:port % :queue-size 20000}))
-  (server :ring-netty      8089 #(netty/run-netty handler {:port % :worker 4
-                                                           :netty {"reuseAddress" true}}))
-  ;;      :tomcat7-servlet 8090
-  ;;      :jetty-7-servlet 8091
-  ;;      :jetty-8-servlet 8092
-  )
+  (let [;; TODO Double check Aleph config opts
+        cfg-aleph    (fn [port] {:port  port
+                                :netty {:options {"client.soLinger" 0}}
+                                :executor aleph-executor})
+        cfg-http-kit (fn [port] {:port port :queue-size 20000})]
+
+    ;;      :nginx           8081
+    (server :ring-jetty      8082 #(jetty/run-jetty handler {:join? false :port %
+                                                             :max-threads 100}))
+    (server :ring-simple     8083 #(simpleweb/run-simpleweb handler {:port %}))
+    (server :aleph           8084 #(aleph/start-http-server aleph-handler-sync  (cfg-aleph %)))
+    (server :aleph-async     8085 #(aleph/start-http-server aleph-handler-async (cfg-aleph %)))
+    (server :aloha           8086 #(aloha/start-http-server handler {:port %}))
+    (server :http-kit        8087 #(http-kit/run-server handler        (cfg-http-kit %)))
+    (server :http-kit-async  8088 #(http-kit/run-server http-kit-async (cfg-http-kit %)))
+    (server :ring-netty      8089 #(netty/run-netty handler {:port % :worker 4
+                                                             :netty {"reuseAddress" true}}))
+    ;;      :tomcat7-servlet 8090
+    ;;      :jetty-7-servlet 8091
+    ;;      :jetty-8-servlet 8092
+  ))

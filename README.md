@@ -10,7 +10,7 @@
   * **Margin of error**: +/- ~10%.
 
 ### Pending changes
-  * None.
+  * Aleph 0.3.0-beta13, Aloha 1.0.2 for performance improvements.
 
 ## Configuration
   * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.

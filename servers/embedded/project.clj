@@ -20,7 +20,7 @@
    [com.taoensso/timbre                   "1.2.0"]]
   :profiles   {:1.5 {:dependencies [[org.clojure/clojure "1.5.0-RC1"]]}}
   :exclusions [org.clojure/clojure]
-  :jvm-opts   ["-server" "-XX:+UseConcMarkSweepGC"]
+  :jvm-opts   ["-server" "XX:MaxGCPauseMillis=25" "-XX:+UseG1GC"]
   :main               servers
   :min-lein-version   "2.0.0"
   :warn-on-reflection true)

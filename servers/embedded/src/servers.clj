@@ -41,7 +41,7 @@
   (let [properties (into {} (System/getProperties))]
     (fn [& keys] (str/join " " (map properties keys)))))
 
-(lamina.trace/defexecutor aleph-executor {:min-thread-count 128})
+;;(lamina.trace/defexecutor aleph-executor {:min-thread-count 128})
 
 (defn -main [& args]
   (info "Starting up servers..."
@@ -53,7 +53,8 @@
   (let [;; TODO Double check Aleph config opts
         cfg-aleph    (fn [port] {:port  port
                                 :netty {:options {"client.soLinger" 0}}
-                                :executor aleph-executor})
+                                ;;:executor aleph-executor
+                                })
         cfg-http-kit (fn [port] {:port port :queue-size 20000})]
 
     ;;      :nginx           8081

@@ -2,7 +2,7 @@
 
 ## Results
 
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130116-01-25.png)
+![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130305-01-35.png)
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
@@ -10,7 +10,7 @@
   * **Margin of error**: +/- ~10%.
 
 ### Pending changes
-  * Aleph 0.3.0-beta13, Aloha 1.0.2 for performance improvements.
+  * None
 
 ## Configuration
   * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.

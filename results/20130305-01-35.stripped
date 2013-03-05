@@ -1,0 +1,82 @@
+Server Port:            8081
+Requests per second:    36630.93 [#/sec] (mean)
+Server Port:            8081
+Requests per second:    37206.12 [#/sec] (mean)
+Server Port:            8081
+Requests per second:    36072.43 [#/sec] (mean)
+===============================================
+Server Port:            8082
+Requests per second:    25065.25 [#/sec] (mean)
+Server Port:            8082
+Requests per second:    27693.98 [#/sec] (mean)
+Server Port:            8082
+Requests per second:    28362.59 [#/sec] (mean)
+===============================================
+Server Port:            8083
+Requests per second:    2519.42 [#/sec] (mean)
+Server Port:            8083
+Requests per second:    2494.56 [#/sec] (mean)
+Server Port:            8083
+Requests per second:    2433.75 [#/sec] (mean)
+===============================================
+Server Port:            8084
+Requests per second:    21062.46 [#/sec] (mean)
+Server Port:            8084
+Requests per second:    22989.18 [#/sec] (mean)
+Server Port:            8084
+Requests per second:    22407.03 [#/sec] (mean)
+===============================================
+Server Port:            8085
+Requests per second:    22358.04 [#/sec] (mean)
+Server Port:            8085
+Requests per second:    23248.93 [#/sec] (mean)
+Server Port:            8085
+Requests per second:    23360.27 [#/sec] (mean)
+===============================================
+Server Port:            8086
+Requests per second:    22971.86 [#/sec] (mean)
+Server Port:            8086
+Requests per second:    24993.85 [#/sec] (mean)
+Server Port:            8086
+Requests per second:    24850.07 [#/sec] (mean)
+===============================================
+Server Port:            8087
+Requests per second:    32980.79 [#/sec] (mean)
+Server Port:            8087
+Requests per second:    40091.45 [#/sec] (mean)
+Server Port:            8087
+Requests per second:    41405.44 [#/sec] (mean)
+===============================================
+Server Port:            8088
+Requests per second:    33241.32 [#/sec] (mean)
+Server Port:            8088
+Requests per second:    40133.55 [#/sec] (mean)
+Server Port:            8088
+Requests per second:    41181.23 [#/sec] (mean)
+===============================================
+Server Port:            8089
+Requests per second:    28226.93 [#/sec] (mean)
+Server Port:            8089
+Requests per second:    29397.53 [#/sec] (mean)
+===============================================
+Server Port:            8090
+Requests per second:    21577.16 [#/sec] (mean)
+Server Port:            8090
+Requests per second:    18941.19 [#/sec] (mean)
+Server Port:            8090
+Requests per second:    18741.55 [#/sec] (mean)
+===============================================
+Server Port:            8091
+Requests per second:    29396.63 [#/sec] (mean)
+Server Port:            8091
+Requests per second:    35468.16 [#/sec] (mean)
+Server Port:            8091
+Requests per second:    35699.18 [#/sec] (mean)
+===============================================
+Server Port:            8092
+Requests per second:    30110.49 [#/sec] (mean)
+Server Port:            8092
+Requests per second:    35284.82 [#/sec] (mean)
+Server Port:            8092
+Requests per second:    35367.76 [#/sec] (mean)
+===============================================

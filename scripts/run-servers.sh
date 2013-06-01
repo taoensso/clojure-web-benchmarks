@@ -19,6 +19,7 @@ start_server  "embedded"
 start_servlet "tomcat7"
 start_servlet "jetty7"
 start_servlet "jetty8"
+start_servlet "jetty9"
 echo "Please start reference (nginx) server manually."
 
 tail -fn 0 logs/run-servers

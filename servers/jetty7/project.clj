@@ -4,12 +4,12 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :warn-on-reflection true
-  :plugins [[lein-servlet "0.2.0"]]
-  :dependencies [[org.clojure/clojure "1.4.0"]]
+  :plugins [[lein-servlet "0.3.0"]]
+  :dependencies [[org.clojure/clojure "1.5.1"]]
   :aot [jetty7.servlet]
   :jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]
-  :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.0-RC1"]]}}
-  :servlet {:deps    [[lein-servlet/adapter-jetty7  "0.2.0"]]
+  :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}}
+  :servlet {:deps    [[lein-servlet/adapter-jetty7  "0.3.0"]]
             :config  {:port 8091}
             :webapps {"/" {:servlets {"/*" 'jetty7.servlet}
                            :public "."}}})

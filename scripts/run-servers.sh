@@ -15,14 +15,26 @@ start_servlet() {
     cd ../../
 }
 
+start_nginx_xxx() {
+    cd servers/$1
+    echo "Starting $1 in $(pwd)..."
+    ./nginx
+    cd ../..
+}
+
 start_server  "embedded"
 start_servlet "tomcat7"
 start_servlet "jetty7"
 start_servlet "jetty8"
 start_servlet "jetty9"
-echo "Please start reference (nginx) server manually."
+
+start_nginx_xxx "nginx-php"
+start_nginx_xxx "nginx-clojure"
+
+echo "If you cannot start nginx-clojure please check  jvm configuration in the file ../servers/nginx/conf/nginx-clojure.conf"
 
 tail -fn 0 logs/run-servers
 
 # killall java
+# killall nginx
 # ps aux | grep java

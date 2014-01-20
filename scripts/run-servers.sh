@@ -17,6 +17,7 @@ start_servlet() {
 
 start_nginx_xxx() {
     cd servers/$1
+    mkdir -p temp
     echo "Starting $1 in $(pwd)..."
     ./nginx
     cd ../..

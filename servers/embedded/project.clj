@@ -17,6 +17,7 @@
    [http-kit "2.1.16"]
    ;; [me.shenfeng/async-ring-adapter     "1.0.2"]
    [netty-ring-adapter                    "0.4.6"]
+   [ring-undertow-adapter                 "0.1.2"]
 ;   [ring-netty-adapter "0.0.3"]
    ;[com.taoensso.forks/async-ring-adapter "1.1.0-alpha1"]
    [com.taoensso/timbre                   "1.2.0"]]

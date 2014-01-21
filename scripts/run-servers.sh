@@ -17,7 +17,7 @@ start_servlet() {
 
 start_nginx_xxx() {
     cd servers/$1
-    mkdir  temp
+    mkdir -p temp logs
     echo "Starting $1 in $(pwd)..."
     ./nginx
     cd ../..
@@ -44,7 +44,7 @@ start_servlet "jetty9"
 
 start_nginx_xxx "nginx-php"
 start_nginx_xxx "nginx-clojure"
-echo "If you cannot start nginx-clojure please check  jvm configuration in the file ../servers/nginx/conf/nginx-clojure.conf"
+echo "If you cannot start nginx-clojure, please check jvm configuration in the file ../servers/nginx-clojure/conf/nginx.conf"
 
 start_immutant
 

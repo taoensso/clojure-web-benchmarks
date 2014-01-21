@@ -29,6 +29,8 @@ start_immutant() {
     echo "Checking for Immutant install..."
     lein immutant install
     lein with-profile benchmark immutant deploy
+    # To measure servlet perf, comment the previous line, uncomment the next
+    # lein with-profile benchmark,servlet immutant deploy
     echo "Starting Immutant in $(pwd)..."
     (nohup lein immutant run -Dhttp.port=8095 1>>../../logs/run-servers 2>&1 &)
     cd ../..

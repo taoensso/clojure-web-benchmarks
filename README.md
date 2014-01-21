@@ -1,17 +1,15 @@
 # Clojure web server shoot-out
 
-## Results
+This is a **collaborative repo**. Please see [here](#contact--contribution) for info on contributors & contributing.
 
+## Latest Results / 2014-01-20
 
 ![Performance comparison chart](results/20140120-22-49.png)
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
   * Chart available on [Google Drive](http://goo.gl/2FtAFy).
-  * **Margin of error**: +/- ~10%.
-
-### Pending changes
-  * None
+  * **Margin of error**: +/- ~10%. (This may be outdated?).
 
 ### Update History
 
@@ -33,8 +31,7 @@
   * add nginx-clojure 0.1.0 testing
   * add 128 clients testing
 
-
-## Configuration
+## Configuration (as of latest results)
   * 2.4GHz Intel Core i7 with 16GB 1333MHz DDR3, running Ubuntu 13.10.
   * Clojure 1.5.1 on Oracle JDK7 build build 1.7.0_45.
   * Response length: 1163 bytes (`servers/index.html`).
@@ -44,7 +41,6 @@
   * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
   * See `scripts/bench.sh` for full details.
   * See `servers/nginx-php/conf/nginx.conf` for nginx php config. **TODO**: Improve. Suggestions?
-  * **TODO**: Higher concurrency testing: c=256, c=500, c=1000.
 
 ## Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
@@ -56,13 +52,18 @@
   * Jetty 7, Jetty 8, Tomcat 7 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
   * [nginx 1.4.4](http://nginx.org) + [php5-fpm 5.5.3+dfsg-1ubuntu2.1](http://php-fpm.org/)
   * [nginx-clojure 0.1.0](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
-  * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
 
 ## Contact & contribution
 
-### Welcoming pull-requests for:
-  * More servers.
-  * Updated servers (no snapshot releases please!).
-  * Server / bench config tuning!
+This is a **collaborative repo** maintained by [a number of contributors](https://github.com/ptaoussanis/clojure-web-server-benchmarks/graphs/contributors). Thanks to everyone for making this possible!
 
-Reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com) for questions/comments/suggestions/whatever. I'm very open to ideas if you have any! I'm also on Twitter: [@ptaoussanis](https://twitter.com/#!/ptaoussanis).
+### Welcoming pull requests for:
+  * Additional web servers.
+  * Updated servers (no snapshot releases please).
+  * Server / bench config tuning!
+  * Migrating tests from AB to [wrk](https://github.com/wg/wrk), [weighttp](https://github.com/lighttpd/weighttp), or similar.
+  * Higher concurrency tests (c=256, c=500, c=1000, etc.).
+
+In all cases, **please try to include updated results & graphs** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
+
+You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com), or the other contributors through the [issues page](https://github.com/ptaoussanis/clojure-web-server-benchmarks/issues?state=open).

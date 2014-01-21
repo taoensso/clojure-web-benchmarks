@@ -27,7 +27,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 
 ### 1.2 On Fedora 19 + i7-3520M
 
-  * Intel Core i5 3520M
+  * 2.9GHz Intel Core i7-3520M with 16GB 1600MHz DDR3
   * Clojure 1.5.1 on OpenJDK 1.7.0-51
   * Chart available on [Google Drive](http://goo.gl/2FtAFy).
 

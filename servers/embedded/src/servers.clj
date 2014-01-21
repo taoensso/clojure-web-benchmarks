@@ -5,8 +5,10 @@
             [ring.adapter.jetty      :as jetty]
             [ring.adapter.simpleweb  :as simpleweb]
             [ring.adapter.undertow   :as undertow]
+            [vertx.http              :as http]
+            [vertx.embed             :as embed]
 ;            [ring.adapter.netty      :as netty]
-            [netty.ring.adapter       :as netty]
+            [netty.ring.adapter      :as netty]
             [lamina.core             :as lamina]
             [aleph.http              :as aleph]
             [aloha.core              :as aloha]
@@ -82,4 +84,9 @@
     ;;      :nginx-clojure   8094
     ;;      :immutant        8095
     (server :ring-undertow   8096 #(undertow/run-undertow handler {:port %}))
-    ))
+    (server :vertx           8097 (fn [port]
+                                    (embed/set-vertx! (embed/vertx))
+                                    (-> (http/server)
+                                      (http/on-request #(-> (http/server-response %)
+                                                          (http/end (:body response))))
+                                      (http/listen port))))))

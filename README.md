@@ -3,25 +3,12 @@
 ## Results
 
 
-###From xfeep
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20140114-14-11.png)
-
-  * **Clojure Google Group discussion**: http://goo.gl/xe46R.
-  * **Detailed benchmark results** available in `/results/`.
-  * Chart available on [Google Drive](http://goo.gl/cIEmev).
-  * **Margin of error**: +/- ~10%.
-
-
-###From jcrossley3
-
-
-![Performance comparison chart](results/20140120-01-44.png)
+![Performance comparison chart](results/20140120-22-49.png)
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
   * Chart available on [Google Drive](http://goo.gl/2FtAFy).
   * **Margin of error**: +/- ~10%.
-  * something about nginx-clojure maybe was misconfigured.
 
 ### Pending changes
   * None
@@ -31,6 +18,7 @@
 #### 2014-01-20
 
   * add immutant testing (latest official release 1.0.2)
+  * add undertow testing
 
 #### 2014-01-14
 

@@ -1,6 +1,12 @@
 # Clojure web server shoot-out
 
+This is a **collaborative repo**. Please see [here](#contact--contribution) for info on contributors & contributing.
+
 ## 1. Results
+
+
+## Latest Results / 2014-01-21
+
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
@@ -31,7 +37,9 @@
 
 
 ## 2. Pending changes
-  * None
+
+  * **Margin of error**: +/- ~10%. (This may be outdated?).
+
 
 ## 3. Update History
 
@@ -54,7 +62,8 @@
   * add 128 clients testing
 
 
-## 4. Configuration
+
+## 4. Configuration (as of latest results)
   * Response length: 1163 bytes (`servers/index.html`).
   * ApacheBench Version 2.3 Revision: 1430300.
   * ApacheBench `ab -n 300000 -c <16,64,92,128> -rk`.
@@ -62,7 +71,6 @@
   * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
   * See `scripts/bench.sh` for full details.
   * See `servers/nginx-php/conf/nginx.conf` for nginx php config. **TODO**: Improve. Suggestions?
-  * **TODO**: Higher concurrency testing: c=256, c=500, c=1000.
 
 ## 5.Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
@@ -76,13 +84,18 @@
   * [nginx-clojure 0.1.0](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
   * [immutant 1.0.2](http://immutant.org/)
   * [undertow Ring adapter 0.1.2](https://github.com/piranha/ring-undertow-adapter)
-  * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
 
 ## 6. Contact & contribution
 
-### Welcoming pull-requests for:
-  * More servers.
-  * Updated servers (no snapshot releases please!).
-  * Server / bench config tuning!
+This is a **collaborative repo** maintained by [a number of contributors](https://github.com/ptaoussanis/clojure-web-server-benchmarks/graphs/contributors). Thanks to everyone for making this possible!
 
-Reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com) for questions/comments/suggestions/whatever. I'm very open to ideas if you have any! I'm also on Twitter: [@ptaoussanis](https://twitter.com/#!/ptaoussanis).
+### Welcoming pull requests for:
+  * Additional web servers.
+  * Updated servers (no snapshot releases please).
+  * Server / bench config tuning!
+  * Migrating tests from AB to [wrk](https://github.com/wg/wrk), [weighttp](https://github.com/lighttpd/weighttp), or similar.
+  * Higher concurrency tests (c=256, c=500, c=1000, etc.).
+
+In all cases, **please try to include updated results & graphs** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
+
+You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com), or the other contributors through the [issues page](https://github.com/ptaoussanis/clojure-web-server-benchmarks/issues?state=open).

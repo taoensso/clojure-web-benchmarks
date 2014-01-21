@@ -1,26 +1,46 @@
 # Clojure web server shoot-out
 
-## Results
-
-
-![Performance comparison chart](results/20140120-22-49.png)
+## 1. Results
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
-  * Chart available on [Google Drive](http://goo.gl/2FtAFy).
   * **Margin of error**: +/- ~10%.
+  
+### 1.1 On Ubuntu 13.04 + i7-4700MQ
 
-### Pending changes
+  * 2.4GHz Intel Core i7 with 16GB 1333MHz DDR3
+  * Clojure 1.5.1 on Oracle JDK7 build build 1.7.0_45
+  * Chart available on [Google Drive](http://goo.gl/IQNYOs)
+  
+  
+  ![Performance comparison chart](results/20140121-14-30.png)
+
+
+  
+
+
+### 1.2 On Fedora 19 + i7-3520M
+
+  * 2.4GHz Intel Core i7 with 16GB 1333MHz DDR3
+  * Clojure 1.5.1 on OpenJDK 1.7.0-51
+  * Chart available on [Google Drive](http://goo.gl/2FtAFy).
+
+![Performance comparison chart](results/20140120-22-49.png)
+
+  
+
+
+## 2. Pending changes
   * None
 
-### Update History
+## 3. Update History
 
-#### 2014-01-20
+### 2014-01-20
 
   * add immutant testing (latest official release 1.0.2)
   * add undertow testing
 
-#### 2014-01-14
+### 2014-01-14
 
   * org.clojure/clojure 1.4.0 --> 1.5.1
   * compojure    1.1.4        --> 1.1.6
@@ -34,9 +54,7 @@
   * add 128 clients testing
 
 
-## Configuration
-  * 2.4GHz Intel Core i7 with 16GB 1333MHz DDR3, running Ubuntu 13.10.
-  * Clojure 1.5.1 on Oracle JDK7 build build 1.7.0_45.
+## 4. Configuration
   * Response length: 1163 bytes (`servers/index.html`).
   * ApacheBench Version 2.3 Revision: 1430300.
   * ApacheBench `ab -n 300000 -c <16,64,92,128> -rk`.
@@ -46,7 +64,7 @@
   * See `servers/nginx-php/conf/nginx.conf` for nginx php config. **TODO**: Improve. Suggestions?
   * **TODO**: Higher concurrency testing: c=256, c=500, c=1000.
 
-## Servers
+## 5.Servers
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
   * [SimpleWeb Ring adapter](https://github.com/netmelody/ring-simpleweb-adapter) - Pure-Java HTTP server without using Servlets.
   * [Netty Ring adapter](https://github.com/shenfeng/async-ring-adapter) - Netty adapter for use with Ring.
@@ -56,9 +74,11 @@
   * Jetty 7, Jetty 8, Tomcat 7 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
   * [nginx 1.4.4](http://nginx.org) + [php5-fpm 5.5.3+dfsg-1ubuntu2.1](http://php-fpm.org/)
   * [nginx-clojure 0.1.0](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
+  * [immutant 1.0.2](http://immutant.org/)
+  * [undertow Ring adapter 0.1.2](https://github.com/piranha/ring-undertow-adapter)
   * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
 
-## Contact & contribution
+## 6. Contact & contribution
 
 ### Welcoming pull-requests for:
   * More servers.

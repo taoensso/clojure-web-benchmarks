@@ -4,6 +4,7 @@
             [compojure.core          :as compojure]
             [ring.adapter.jetty      :as jetty]
             [ring.adapter.simpleweb  :as simpleweb]
+            [ring.adapter.undertow   :as undertow]
 ;            [ring.adapter.netty      :as netty]
             [netty.ring.adapter       :as netty]
             [lamina.core             :as lamina]
@@ -79,4 +80,6 @@
     ;;      :jetty-8-servlet 8092
     ;;      :jetty-9-servlet 8093
     ;;      :nginx-clojure   8094
-  ))
+    ;;      :immutant        8095
+    (server :ring-undertow   8096 #(undertow/run-undertow handler {:port %}))
+    ))

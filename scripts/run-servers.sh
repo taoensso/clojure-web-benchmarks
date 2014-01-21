@@ -23,6 +23,17 @@ start_nginx_xxx() {
     cd ../..
 }
 
+start_immutant() {
+    cd servers/immutant
+    export LEIN_IMMUTANT_BASE_DIR=.install
+    echo "Checking for Immutant install..."
+    lein immutant install
+    lein with-profile benchmark immutant deploy
+    echo "Starting Immutant in $(pwd)..."
+    (nohup lein immutant run -Dhttp.port=8095 1>>../../logs/run-servers 2>&1 &)
+    cd ../..
+}
+
 start_server  "embedded"
 start_servlet "tomcat7"
 start_servlet "jetty7"
@@ -31,8 +42,9 @@ start_servlet "jetty9"
 
 start_nginx_xxx "nginx-php"
 start_nginx_xxx "nginx-clojure"
-
 echo "If you cannot start nginx-clojure please check  jvm configuration in the file ../servers/nginx/conf/nginx-clojure.conf"
+
+start_immutant
 
 tail -fn 0 logs/run-servers
 

@@ -14,9 +14,9 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
   
 ### 1.1 On Ubuntu 13.04 + i7-4700MQ
 
-  * 2.4GHz Intel Core i7 with 16GB 1333MHz DDR3
-  * Clojure 1.5.1 on Oracle JDK7 build build 1.7.0_45
-  * Chart available on [Google Drive](http://goo.gl/IQNYOs)
+  * 2.4GHz Intel Core i7-4700MQ with 16GB 1333MHz DDR3
+  * Clojure 1.5.1 on Oracle JDK7 build  1.7.0_45
+  * Chart available on [Google Drive](http://goo.gl/XrHk7C)
   
   
   ![Performance comparison chart](results/20140121-14-30.png)

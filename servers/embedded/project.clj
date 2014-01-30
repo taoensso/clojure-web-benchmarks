@@ -18,7 +18,7 @@
    ;; [me.shenfeng/async-ring-adapter     "1.0.2"]
    [netty-ring-adapter                    "0.4.6"]
    [ring-undertow-adapter                 "0.1.2"]
-   [io.vertx/clojure-api                  "1.0.0.Beta1"]
+   [io.vertx/clojure-api                  "1.0.0.Beta2"]
 ;   [ring-netty-adapter "0.0.3"]
    ;[com.taoensso.forks/async-ring-adapter "1.1.0-alpha1"]
    [com.taoensso/timbre                   "1.2.0"]]

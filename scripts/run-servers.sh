@@ -26,13 +26,12 @@ start_nginx_xxx() {
 start_immutant() {
     cd servers/immutant
     export LEIN_IMMUTANT_BASE_DIR=.install
-    echo "Checking for Immutant install..."
-    lein immutant install
-    lein with-profile benchmark immutant deploy
-    # To measure servlet perf, comment the previous line, uncomment the next
-    # lein with-profile benchmark,servlet immutant deploy
     echo "Starting Immutant in $(pwd)..."
-    (nohup lein immutant run -Dhttp.port=8095 1>>../../logs/run-servers 2>&1 &)
+    if [[ "$IMMUTANT" == "servlet" ]]; then
+        (nohup lein with-profiles benchmark,servlet do compile, immutant server 8095 1>>../../logs/run-servers 2>&1 &)
+    else
+        (nohup lein with-profile benchmark immutant server 8095 1>>../../logs/run-servers 2>&1 &)
+    fi
     cd ../..
 }
 

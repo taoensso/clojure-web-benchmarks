@@ -10,6 +10,6 @@
   :jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]
   :profiles {:1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}}
   :servlet {:deps    [[lein-servlet/adapter-tomcat8 "0.4.0"]]
-            :config  {:port 8094}
+            :config  {:port 8098}
             :webapps {"/" {:servlets {"/*" 'tomcat8.servlet}
                            :public "."}}})

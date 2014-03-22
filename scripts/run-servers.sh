@@ -37,6 +37,7 @@ start_immutant() {
 
 start_server  "embedded"
 start_servlet "tomcat7"
+start_servlet "tomcat8"
 start_servlet "jetty7"
 start_servlet "jetty8"
 start_servlet "jetty9"

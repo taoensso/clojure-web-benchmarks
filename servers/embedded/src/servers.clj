@@ -89,4 +89,6 @@
                                     (-> (http/server)
                                       (http/on-request #(-> (http/server-response %)
                                                           (http/end (:body response))))
-                                      (http/listen port))))))
+                                      (http/listen port))))
+    ;;      :tomcat8-servlet 8098
+    ))

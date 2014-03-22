@@ -10,7 +10,7 @@
   ([this ^ServletConfig config]
    (println "Servlet initialized with servlet config" config)))
 
-(def template (slurp "resources/index.html"))
+(def template (slurp "../index.html"))
 
 (defn handle
   [^HttpServletRequest request ^HttpServletResponse response]

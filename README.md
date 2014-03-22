@@ -1,29 +1,40 @@
 # Clojure web server shoot-out
 
-## Results
+This is a **collaborative repo**. Please see [here](#contact--contribution) for info on contributors & contributing.
 
-![Performance comparison chart](https://github.com/ptaoussanis/clojure-web-server-benchmarks/raw/master/results/20130305-01-35.png)
+## Latest Results / 2014-01-21
+
+### Ubuntu 13.04 + i7-4700MQ
+
+  * 2.4GHz Intel Core i7-4700MQ with 16GB 1333MHz DDR3
+  * Clojure 1.5.1 on Oracle JDK7 build  1.7.0_45
+
+  ![Performance comparison chart](results/20140121-14-30.png)
+  Chart available on [Google Drive](http://goo.gl/XrHk7C)
+
+### Fedora 19 + i7-3520M
+
+  * 2.9GHz Intel Core i7-3520M with 16GB 1600MHz DDR3
+  * Clojure 1.5.1 on OpenJDK 1.7.0-51
+
+  ![Performance comparison chart](results/20140120-22-49.png)
+  Chart available on [Google Drive](http://goo.gl/2FtAFy)
+
+### Configuration
 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
-  * Chart available on [Google Docs](http://goo.gl/QRTCH).
-  * **Margin of error**: +/- ~10%.
-
-### Pending changes
-  * None
-
-## Configuration
-  * Macbook Air 1.7GHz Intel Core i5 with 4GB 1333MHz DDR3, running Mac OS X 10.7.5.
-  * Clojure 1.5.0-RC1 on Oracle JDK7 build 1.7.0_04-b21.
   * Response length: 1163 bytes (`servers/index.html`).
-  * ApacheBench Version 2.3 Revision: 1373084. (NB requires [upgrade](https://gist.github.com/1724673) on OS X).
-  * ApacheBench `ab -n 120000 -c <16,64,92> -rk`.
+  * ApacheBench Version 2.3 Revision: 1430300.
+  * ApacheBench `ab -n 300000 -c <16,64,92,128> -rk`.
   * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
-  * See `scripts/bench.sh` for full details, including OS and TCP tuning.
-  * See `servers/nginx.conf` for nginx config. **TODO**: Improve. Suggestions?
-  * **TODO**: Higher concurrency testing: c=200, c=500, c=1000.
+  * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
+  * See `scripts/bench.sh` for full details.
+  * See `servers/nginx-php/conf/nginx.conf` for nginx php config.
+
 
 ## Servers
+
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
   * [SimpleWeb Ring adapter](https://github.com/netmelody/ring-simpleweb-adapter) - Pure-Java HTTP server without using Servlets.
   * [Netty Ring adapter](https://github.com/shenfeng/async-ring-adapter) - Netty adapter for use with Ring.
@@ -31,14 +42,44 @@
   * [Aleph](https://github.com/ztellman/aleph) - Clojure framework for asynchronous communication, built on top of Netty and Lamina.
   * [Aloha](https://github.com/ztellman/aloha) - Reference implementation of a Clojure/Netty webserver, or basically Aleph without any extraneous fluff.
   * Jetty 7, Jetty 8, Tomcat 7 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
-  * [nginx 1.2.6](http://nginx.org).
-  * **TODO**: Containers (Jetty, Tomcat, GlassFish), Webbit. More ideas welcome!
+  * [nginx 1.4.4](http://nginx.org) + [php5-fpm 5.5.3+dfsg-1ubuntu2.1](http://php-fpm.org/)
+  * [nginx-clojure 0.1.0](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
+  * [immutant 1.0.2](http://immutant.org/)
+  * [undertow Ring adapter 0.1.2](https://github.com/piranha/ring-undertow-adapter)
+
 
 ## Contact & contribution
 
-### Welcoming pull-requests for:
-  * More servers.
-  * Updated servers (no snapshot releases please!).
-  * Server / bench config tuning!
+This is a **collaborative repo** maintained by [a number of contributors](https://github.com/ptaoussanis/clojure-web-server-benchmarks/graphs/contributors). Thanks to everyone for making this possible!
 
-Reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com) for questions/comments/suggestions/whatever. I'm very open to ideas if you have any! I'm also on Twitter: [@ptaoussanis](https://twitter.com/#!/ptaoussanis).
+### Welcoming pull requests for:
+  * Additional web servers.
+  * Updated servers (no snapshot releases please).
+  * Server / bench config tuning!
+  * Migrating tests from AB to [wrk](https://github.com/wg/wrk), [weighttp](https://github.com/lighttpd/weighttp), or similar.
+  * Higher concurrency tests (c=256, c=500, c=1000, etc.).
+
+In all cases, **please try to include updated results & graphs** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
+
+You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com), or the other contributors through the [issues page](https://github.com/ptaoussanis/clojure-web-server-benchmarks/issues?state=open).
+
+
+## Update History
+
+### 2014-01-20
+
+  * add immutant testing (latest official release 1.0.2)
+  * add undertow testing
+
+### 2014-01-14
+
+  * org.clojure/clojure 1.4.0 --> 1.5.1
+  * compojure    1.1.4        --> 1.1.6
+  * ring         1.1.6        --> 1.2.1
+  * aleph        0.3.0-beta13 --> 0.3.0
+  * http-kit     1.3.0-alpha2 --> 2.1.16
+  * ring-netty-adapter 0.0.3 -->  netty-ring-adapter 0.4.6
+  * remove testing about pure nginx which generally dosen't service dymanic contents without other modules.
+  * add nginx with php5-fpm 5.5 testing
+  * add nginx-clojure 0.1.0 testing
+  * add 128 clients testing

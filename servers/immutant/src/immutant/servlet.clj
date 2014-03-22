@@ -1,4 +1,4 @@
-(ns jetty9.servlet
+(ns immutant.servlet
   (:import (java.io            PrintWriter)
            (javax.servlet      ServletConfig)
            (javax.servlet.http HttpServletRequest HttpServletResponse))

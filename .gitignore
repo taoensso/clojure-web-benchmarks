@@ -6,3 +6,5 @@ pom.xml
 /target/
 /logs/
 .lein-deps-sum
+/.project
+/.README.md.html

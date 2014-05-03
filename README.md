@@ -2,7 +2,15 @@
 
 This is a **collaborative repo**. Please see [here](#contact--contribution) for info on contributors & contributing.
 
-## Latest Results / 2014-01-21
+## Latest Results / 2014-05-03
+
+### Fedora 19 + i7-3520M
+
+  * 2.9GHz Intel Core i7-3520M with 16GB 1600MHz DDR3
+  * Clojure 1.5.1 on OpenJDK 1.7.0-51
+
+  ![Performance comparison chart](results/20140503-01-04.png)
+  Chart available on [Google Drive](http://goo.gl/2FtAFy)
 
 ### Ubuntu 13.04 + i7-4700MQ
 
@@ -11,14 +19,6 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 
   ![Performance comparison chart](results/20140121-14-30.png)
   Chart available on [Google Drive](http://goo.gl/XrHk7C)
-
-### Fedora 19 + i7-3520M
-
-  * 2.9GHz Intel Core i7-3520M with 16GB 1600MHz DDR3
-  * Clojure 1.5.1 on OpenJDK 1.7.0-51
-
-  ![Performance comparison chart](results/20140120-22-49.png)
-  Chart available on [Google Drive](http://goo.gl/2FtAFy)
 
 ### Configuration
 
@@ -65,6 +65,11 @@ You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com),
 
 
 ## Update History
+
+### 2014-05-03
+
+  * added Immutant 2 "thedeuce" (incremental 88)
+  * included Tomcat 8 in latest chart
 
 ### 2014-01-20
 

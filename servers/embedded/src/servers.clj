@@ -5,6 +5,7 @@
             [ring.adapter.jetty      :as jetty]
             [ring.adapter.simpleweb  :as simpleweb]
             [ring.adapter.undertow   :as undertow]
+            [immutant.web            :as immutant]
             [vertx.http              :as http]
             [vertx.embed             :as embed]
 ;            [ring.adapter.netty      :as netty]
@@ -91,4 +92,5 @@
                                                           (http/end (:body response))))
                                       (http/listen port))))
     ;;      :tomcat8-servlet 8098
+    (server :immutant2       8099 #(immutant/run {:port %} handler))
     ))

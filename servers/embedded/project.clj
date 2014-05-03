@@ -17,11 +17,14 @@
    [http-kit "2.1.16"]
    ;; [me.shenfeng/async-ring-adapter     "1.0.2"]
    [netty-ring-adapter                    "0.4.6"]
-   [ring-undertow-adapter                 "0.1.2"]
+   [org.immutant/web                      "2.x.incremental.88"]
+   [ring-undertow-adapter                 "0.1.2" :exclusions [io.undertow/undertow-core]]
    [io.vertx/clojure-api                  "1.0.0.Beta2"]
 ;   [ring-netty-adapter "0.0.3"]
    ;[com.taoensso.forks/async-ring-adapter "1.1.0-alpha1"]
    [com.taoensso/timbre                   "1.2.0"]]
+  :repositories [["Immutant 2.x incremental builds"
+                  "http://downloads.immutant.org/incremental/"]]
   :profiles   {:1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}}
   :exclusions [org.clojure/clojure]
   :jvm-opts   ["-server" "-XX:MaxGCPauseMillis=25" "-XX:+UseG1GC"]

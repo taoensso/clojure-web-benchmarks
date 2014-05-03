@@ -41,11 +41,12 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
   * [http-kit](https://github.com/shenfeng/http-kit) - HTTP client/server with async & WebSockets support.
   * [Aleph](https://github.com/ztellman/aleph) - Clojure framework for asynchronous communication, built on top of Netty and Lamina.
   * [Aloha](https://github.com/ztellman/aloha) - Reference implementation of a Clojure/Netty webserver, or basically Aleph without any extraneous fluff.
-  * Jetty 7, Jetty 8, Tomcat 7 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
+  * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
   * [nginx 1.4.4](http://nginx.org) + [php5-fpm 5.5.3+dfsg-1ubuntu2.1](http://php-fpm.org/)
   * [nginx-clojure 0.1.0](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
-  * [immutant 1.0.2](http://immutant.org/)
-  * [undertow Ring adapter 0.1.2](https://github.com/piranha/ring-undertow-adapter)
+  * [Immutant 1.1.1](http://immutant.org/)
+  * [Immutant 2 "thedeuce"](https://github.com/immutant/immutant)
+  * [Undertow Ring adapter 0.1.2](https://github.com/piranha/ring-undertow-adapter)
 
 
 ## Contact & contribution

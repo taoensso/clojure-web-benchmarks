@@ -17,7 +17,7 @@
    [http-kit "2.1.16"]
    ;; [me.shenfeng/async-ring-adapter     "1.0.2"]
    [netty-ring-adapter                    "0.4.6"]
-   [org.immutant/web                      "2.x.incremental.88"]
+   [org.immutant/web                      "2.x.incremental.157"]
    [ring-undertow-adapter                 "0.1.2" :exclusions [io.undertow/undertow-core]]
    [io.vertx/clojure-api                  "1.0.0.Beta2"]
 ;   [ring-netty-adapter "0.0.3"]

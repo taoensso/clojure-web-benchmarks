@@ -92,5 +92,5 @@
                                                           (http/end (:body response))))
                                       (http/listen port))))
     ;;      :tomcat8-servlet 8098
-    (server :immutant2       8099 #(immutant/run {:port %} handler))
+    (server :immutant2       8099 #(immutant/run handler {:port %}))
     ))

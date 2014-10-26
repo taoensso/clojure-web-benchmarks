@@ -1,14 +1,17 @@
 (ns jetty8.servlet
+  (:require [clojure.java.browse])
   (:import (java.io            PrintWriter)
            (javax.servlet      ServletConfig)
            (javax.servlet.http HttpServletRequest HttpServletResponse))
   (:gen-class :extends javax.servlet.http.HttpServlet))
 
+(alter-var-root #'clojure.java.browse/browse-url (constantly (fn [_])))
+
 (defn -init
   ([this]
-   (println "Servlet initialized with no params"))
+     (println "Servlet initialized with no params"))
   ([this ^ServletConfig config]
-   (println "Servlet initialized with servlet config" config)))
+     (println "Servlet initialized with servlet config" config)))
 
 (def template (slurp "../index.html"))
 

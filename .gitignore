@@ -8,3 +8,4 @@ pom.xml
 .lein-deps-sum
 /.project
 /.README.md.html
+.DS_Store

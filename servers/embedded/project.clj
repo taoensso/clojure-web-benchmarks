@@ -4,12 +4,12 @@
   :license     {:name "Eclipse Public License"
                 :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies
-  [[org.clojure/clojure                   "1.5.1"]
+  [[org.clojure/clojure                   "1.7.0-alpha2"]
    [compojure                             "1.1.6"]
    [ring                                  "1.2.1"]
    ;; [org.eclipse.jetty/jetty-server     "7.6.7.v20120910"]
    [ring-simpleweb-adapter                "0.2.0"]
-   [aleph                                 "0.4.0-alpha6"]
+   [aleph                                 "0.4.0-alpha7"]
    ;; [com.taoensso.forks/aleph           "0.3.0-beta9"]
    ;; [me.shenfeng/http-kit               "1.2"]
    [http-kit "2.1.16"]
@@ -25,7 +25,7 @@
                   "http://downloads.immutant.org/incremental/"]]
   :profiles   {:1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}}
   :exclusions [org.clojure/clojure]
-  :jvm-opts   ["-server" "-XX:MaxGCPauseMillis=25" "-XX:+UseG1GC"]
+  :jvm-opts   ["-server" "-XX:MaxGCPauseMillis=25" "-XX:+UseG1GC" "-Xmx2g"]
   :main               servers
   :min-lein-version   "2.0.0"
   :warn-on-reflection true)

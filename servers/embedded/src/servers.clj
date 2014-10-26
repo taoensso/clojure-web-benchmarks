@@ -52,8 +52,10 @@
          :vm      (system "java.vm.name" "java.vm.version")})
 
   (let [;; TODO Double check Aleph config opts
-        cfg-aleph    (fn [port] {:port  port
-                                 :executor :none})
+        cfg-aleph    (fn [port]
+                       (aleph.netty/leak-detector-level! :disabled)
+                       {:port  port
+                        :executor :none})
         cfg-http-kit (fn [port] {:port port :queue-size 20000})]
 
     ;;      :nginx-php           8081

@@ -18,21 +18,26 @@ bench_port() {
         echo "ABORTING: Is the $1 server running?" | tee -a $OUT
     else
         echo "Benching port $1..." | tee -a $OUT
-        ab -n 300000  -c 16 -rk "127.0.0.1:$1/" # Warmup
+
+        # 32 connections
+        wrk -t16 -c32 -d30s "http://127.0.0.1:$1/" # warmup
         sleep_for 10
-        ab -n 300000 -c 16 -rk "127.0.0.1:$1/" | tee -a $OUT
+        wrk -t16 -c32 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
+
+        # 64 connections
+        wrk -t16 -c64 -d30s "http://127.0.0.1:$1/" # warmup
         sleep_for 10
-        ab -n 300000  -c 64 -rk "127.0.0.1:$1/" # Warmup
+        wrk -t16 -c64 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
+
+        # 128 connections
+        wrk -t16 -c128 -d30s "http://127.0.0.1:$1/" # warmup
         sleep_for 10
-        ab -n 300000 -c 64 -rk "127.0.0.1:$1/" | tee -a $OUT
+        wrk -t16 -c128 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
+
+        # 256 connections
+        wrk -t16 -c256 -d30s "http://127.0.0.1:$1/" # warmup
         sleep_for 10
-        ab -n 300000  -c 96 -rk "127.0.0.1:$1/" # Warmup
-        sleep_for 10
-        ab -n 300000 -c 96 -rk "127.0.0.1:$1/" | tee -a $OUT
-        sleep_for 10
-        ab -n 300000  -c 128 -rk "127.0.0.1:$1/" # Warmup
-        sleep_for 10
-        ab -n 300000 -c 128 -rk "127.0.0.1:$1/" | tee -a $OUT
+        wrk -t16 -c256 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
         echo "===============================================" | tee -a $OUT
         echo | tee -a $OUT
         echo | tee -a $OUT

@@ -1,0 +1,519 @@
+2x Xeon X5650
+144gb memory
+Ubuntu 14.04
+
+ring-jetty
+Benching port 8082...
+
+  16 threads and 32 connections
+  Latency Distribution
+     50%  208.00us
+     75%  319.00us
+     90%  535.00us
+     99%    4.48ms
+  Requests/sec:  91715.68
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  382.00us
+     75%  593.00us
+     90%    1.02ms
+     99%    3.44ms
+  Requests/sec: 116224.23
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  834.00us
+     75%    1.19ms
+     90%    1.83ms
+     99%    4.09ms
+  Requests/sec: 125467.61
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.83ms
+     75%    2.33ms
+     90%    3.08ms
+     99%    5.37ms
+  Requests/sec: 127096.57
+
+ring-simple
+Benching port 8083...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  314.00us
+     75%  457.00us
+     90%  765.00us
+     99%    3.74ms
+  Requests/sec:  76514.66
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  569.00us
+     75%  806.00us
+     90%    1.24ms
+     99%   13.72ms
+  Requests/sec:  90876.28
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%    1.08ms
+     75%    1.46ms
+     90%    2.13ms
+     99%   14.91ms
+  Requests/sec: 100709.66
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    2.17ms
+     75%    2.78ms
+     90%    3.96ms
+     99%   25.75ms
+  Requests/sec: 105081.27
+
+aleph
+Benching port 8084...
+  16 threads and 32 connections
+  Latency Distribution
+     50%   86.00us
+     75%  120.00us
+     90%  152.00us
+     99%    1.09ms
+  Requests/sec: 282234.83
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  144.00us
+     75%  209.00us
+     90%  268.00us
+     99%    1.84ms
+  Requests/sec: 333707.92
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  252.00us
+     75%  427.00us
+     90%  727.00us
+     99%    3.13ms
+  Requests/sec: 366876.61
+
+  Running 1m test @ http://127.0.0.1:8084/
+  Latency Distribution
+     50%  404.00us
+     75%    0.88ms
+     90%    1.70ms
+     99%    4.90ms
+  Requests/sec: 390734.67
+
+http-kit
+Benching port 8087...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  191.00us
+     75%  204.00us
+     90%  219.00us
+     99%   39.48ms
+  Requests/sec: 153807.58
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  388.00us
+     75%  405.00us
+     90%  430.00us
+     99%   49.43ms
+  Requests/sec: 155022.52
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  792.00us
+     75%  828.00us
+     90%    0.88ms
+     99%   42.80ms
+  Requests/sec: 153887.31
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.59ms
+     75%    1.66ms
+     90%    1.78ms
+     99%   46.78ms
+  Requests/sec: 153523.33
+
+ring-netty
+Benching port 8089...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  406.00us
+     75%  629.00us
+     90%    1.05ms
+     99%    6.83ms
+  Requests/sec:  57455.67
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  636.00us
+     75%    1.09ms
+     90%    1.99ms
+     99%   12.43ms
+  Requests/sec:  76959.10
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%    1.43ms
+     75%    2.53ms
+     90%    4.10ms
+     99%   16.15ms
+  Requests/sec:  79512.22
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.92ms
+     75%    4.43ms
+     90%   16.19ms
+     99%    1.11s 
+  Requests/sec:  76026.12
+
+tomcat7
+Benching port 8090...
+  16 threads and 32 connections
+  Latency Distribution
+     50%   74.00us
+     75%  556.00us
+     90%    0.92ms
+     99%    1.67ms
+  Requests/sec:  90659.66
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%    1.08ms
+     75%    1.39ms
+     90%    2.47ms
+     99%    3.96ms
+  Requests/sec:  66336.58
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%    2.93ms
+     75%    3.51ms
+     90%    6.08ms
+     99%    8.69ms
+  Requests/sec:  49121.66
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    3.47ms
+     75%    4.18ms
+     90%    7.25ms
+     99%  157.31ms
+  Requests/sec:  48548.81
+
+jetty7
+Benching port 8091...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  138.00us
+     75%  207.00us
+     90%  364.00us
+     99%    8.31ms
+  Requests/sec:  94460.49
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  228.00us
+     75%  354.00us
+     90%  615.00us
+     99%    9.09ms
+  Requests/sec: 136138.44
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  608.00us
+     75%    0.87ms
+     90%    1.36ms
+     99%    3.18ms
+  Requests/sec: 163944.75
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.34ms
+     75%    1.71ms
+     90%    2.30ms
+     99%    4.16ms
+  Requests/sec: 169635.91
+
+jetty8
+Benching port 8092...
+Running 1m test @ http://127.0.0.1:8092/
+  Latency Distribution
+     50%  145.00us
+     75%  225.00us
+     90%  399.00us
+     99%    6.89ms
+  Requests/sec:  99132.92
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  249.00us
+     75%  392.00us
+     90%  683.00us
+     99%    7.64ms
+  Requests/sec: 133957.38
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  662.00us
+     75%    0.94ms
+     90%    1.43ms
+     99%    3.21ms
+  Requests/sec: 154539.11
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.44ms
+     75%    1.83ms
+     90%    2.42ms
+     99%    4.28ms
+  Requests/sec: 159202.62
+
+jetty9
+Benching port 8093...
+Running 1m test @ http://127.0.0.1:8093/
+  16 threads and 32 connections
+  Latency Distribution
+     50%  158.00us
+     75%  260.00us
+     90%  491.00us
+     99%   50.45ms
+  Requests/sec: 103588.08
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  322.00us
+     75%  556.00us
+     90%    1.04ms
+     99%    3.82ms
+  Requests/sec: 123856.65
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  704.00us
+     75%    1.15ms
+     90%    1.96ms
+     99%    4.55ms
+  Requests/sec: 134943.58
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.46ms
+     75%    2.10ms
+     90%    3.10ms
+     99%    5.66ms
+  Requests/sec: 147812.04
+
+nginx-clojure
+Benching port 8094...
+Running 1m test @ http://127.0.0.1:8094/
+  16 threads and 32 connections
+  Latency Distribution
+     50%  124.00us
+     75%  188.00us
+     90%  260.00us
+     99%  471.00us
+  Requests/sec: 222628.43
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  209.00us
+     75%  312.00us
+     90%  432.00us
+     99%  746.00us
+  15786804 requests in 1.00m, 19.48GB read
+  Requests/sec: 263131.00
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  440.00us
+     75%  643.00us
+     90%    0.87ms
+     99%    1.54ms
+  Requests/sec: 262207.64
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    0.89ms
+     75%    1.30ms
+     90%    1.73ms
+     99%    3.27ms
+  Requests/sec: 263675.00
+
+immutant
+Benching port 8095...
+Running 1m test @ http://127.0.0.1:8095/
+  16 threads and 32 connections
+  Latency Distribution
+     50%  139.00us
+     75%  201.00us
+     90%  286.00us
+     99%    1.78ms
+  Requests/sec: 181553.37
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  242.00us
+     75%  378.00us
+     90%  525.00us
+     99%    2.87ms
+  Requests/sec: 197884.37
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  499.00us
+     75%  726.00us
+     90%    0.99ms
+     99%    6.79ms
+  Requests/sec: 201270.74
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%  795.00us
+     75%    1.24ms
+     90%    1.60ms
+     99%   69.17ms
+  Requests/sec: 202859.75
+
+ring-undertow
+Benching port 8096...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  127.00us
+     75%  137.00us
+     90%  162.00us
+     99%   12.02ms
+Requests/sec: 203540.64
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  173.00us
+     75%  273.00us
+     90%  702.00us
+     99%   33.70ms
+  Requests/sec: 217958.61
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  285.00us
+     75%  544.00us
+     90%    3.93ms
+     99%   45.30ms
+  Requests/sec: 227380.70
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%  534.00us
+     75%    1.19ms
+     90%    4.26ms
+     99%  212.71ms
+  Requests/sec: 226244.53
+
+vertx
+Benching port 8097...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  834.00us
+     75%    0.87ms
+     90%    0.97ms
+     99%    1.78ms
+  Requests/sec:  35479.95
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%    1.73ms
+     75%    1.77ms
+     90%    1.81ms
+     99%    3.53ms
+  Requests/sec:  36127.09
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%    3.67ms
+     75%    3.76ms
+     90%    3.80ms
+     99%    3.98ms
+  Requests/sec:  34938.83
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    7.33ms
+     75%    7.48ms
+     90%    7.55ms
+     99%    7.74ms
+  Requests/sec:  35043.89
+
+tomcat8
+Benching port 8098...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  223.00us
+     75%  360.00us
+     90%  615.00us
+     99%    2.53ms
+  Requests/sec:  97158.52
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  428.00us
+     75%  710.00us
+     90%    1.23ms
+     99%    3.66ms
+  Requests/sec: 105908.14
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%    0.91ms
+     75%    1.38ms
+     90%    2.16ms
+     99%    4.41ms
+  Requests/sec: 112732.96
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.98ms
+     75%    2.66ms
+     90%    3.61ms
+     99%    5.95ms
+  Requests/sec: 115764.07
+
+immutant2
+Benching port 8099...
+  16 threads and 32 connections
+  Latency Distribution
+     50%  147.00us
+     75%  256.00us
+     90%  483.00us
+     99%   39.16ms
+  Requests/sec: 102586.63
+
+  16 threads and 64 connections
+  Latency Distribution
+     50%  362.00us
+     75%  617.00us
+     90%    1.04ms
+     99%    2.97ms
+  Requests/sec: 123437.08
+
+  16 threads and 128 connections
+  Latency Distribution
+     50%  770.00us
+     75%    1.19ms
+     90%    1.88ms
+     99%    4.06ms
+  Requests/sec: 128734.69
+
+  16 threads and 256 connections
+  Latency Distribution
+     50%    1.69ms
+     75%    2.37ms
+     90%    3.34ms
+     99%    6.53ms
+  Requests/sec: 130090.71
+

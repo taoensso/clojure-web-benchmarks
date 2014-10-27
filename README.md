@@ -2,7 +2,16 @@
 
 This is a **collaborative repo**. Please see [here](#contact--contribution) for info on contributors & contributing.
 
-## Latest Results / 2014-05-03
+## Latest Results / 2014-10-25
+
+### Ubuntu 14.04 + 2x Xeon X5650
+
+* Dual Xeon X5650
+* Clojure 1.7.0-alpha2 on Oracle JDK7
+
+![](results/20141025-20-40.png)
+
+Raw data available [here](results/20141025-20-40.stripped).
 
 ### Fedora 19 + i7-3520M
 
@@ -25,8 +34,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
   * Response length: 1163 bytes (`servers/index.html`).
-  * ApacheBench Version 2.3 Revision: 1430300.
-  * ApacheBench `ab -n 300000 -c <16,64,92,128> -rk`.
+  * `wrk -t 16 -c <32,64,128,256> -d60s`
   * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
   * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
   * See `scripts/bench.sh` for full details.
@@ -56,7 +64,6 @@ This is a **collaborative repo** maintained by [a number of contributors](https:
   * Additional web servers.
   * Updated servers (no snapshot releases please).
   * Server / bench config tuning!
-  * Migrating tests from AB to [wrk](https://github.com/wg/wrk), [weighttp](https://github.com/lighttpd/weighttp), or similar.
   * Higher concurrency tests (c=256, c=500, c=1000, etc.).
 
 In all cases, **please try to include updated results & graphs** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
@@ -65,6 +72,12 @@ You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com),
 
 
 ## Update History
+
+### 2014-10-25
+
+  * use `wrk` instead of `ab` for benchmarking
+  * update Aleph to 0.4.0
+  * start benchmarking at 32 clients, to make better use of 24-core test environment
 
 ### 2014-05-03
 

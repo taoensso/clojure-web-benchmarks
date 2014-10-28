@@ -38,7 +38,7 @@
   (or (get @servers server-id)
     (let [server (constructor-fn port)]
       (swap! servers assoc server-id server)
-      (infof "%s is running on port %s" name port)
+      (infof "%s is running on port %s" server-id port)
       server)))
 
 (defn -main [& args]
@@ -52,7 +52,7 @@
 
   (start-server! :ring-jetty 8082
     (fn [port]
-      (jetty/run-jetty handler {:port port :join? false :max-threads 100})))
+      (jetty/run-jetty handler {:port port :join? false :max-threads 200})))
 
   (start-server! :ring-simple 8083
     (fn [port]
@@ -65,7 +65,7 @@
 
   (start-server! :http-kit 8087
     (fn [port]
-      (http-kit/run-server handler {:port port :queue-size 20000})))
+      (http-kit/run-server handler {:port port :queue-size 204800 :thread 8})))
 
   (start-server! :ring-netty 8089
     (fn [port]

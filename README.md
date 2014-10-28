@@ -52,14 +52,15 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 
 This is a **collaborative repo** maintained by [a number of contributors](https://github.com/ptaoussanis/clojure-web-server-benchmarks/graphs/contributors). Thanks to everyone for making this possible!
 
-### Welcoming pull requests for:
+### Welcoming *pull requests* for:
   * Additional web servers.
   * Updated servers (no snapshot releases please).
   * Server / bench config tuning!
-  * Migrating tests from AB to [wrk](https://github.com/wg/wrk), [weighttp](https://github.com/lighttpd/weighttp), or similar.
-  * Higher concurrency tests (c=256, c=500, c=1000, etc.).
 
-In all cases, **please try to include updated results & graphs** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
+### If you are submitting a pull request to update results
+
+  1. Please try to **include graph/s** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
+  2. Please try ensure that **all** servers being benchmarked have a **reasonable configuration for your hardware environment**. This is especially important if your hardware environment is unusual (e.g. far more cores than usual). If you're unclear on how to adjust some server's configuration for your environment, feel free to open an issue to check that the config you're proposing seems solid to interested maintainers.
 
 You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com), or the other contributors through the [issues page](https://github.com/ptaoussanis/clojure-web-server-benchmarks/issues?state=open).
 

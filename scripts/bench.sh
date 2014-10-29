@@ -10,8 +10,6 @@ sleep_for() {
     sleep $1
 }
 
-
-
 bench_port() {
     curl "http://127.0.0.1:$1/"
     if [ -z "$(lsof -i :$1)" ]; then
@@ -43,7 +41,6 @@ bench_port() {
         echo | tee -a $OUT
     fi
 }
-
 
 mkdir -p results
 OUT="results/$(date +%Y%m%d"-"%H-%M)"

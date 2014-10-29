@@ -3,17 +3,16 @@
   (:require
    [clojure.string         :as str]
    [compojure.core         :as compojure]
+   [taoensso.timbre        :as timbre]
+   ;;
    [ring.adapter.jetty     :as jetty]
-   [ring.adapter.simpleweb :as simpleweb]
+   [ring.adapter.simpleweb :as simpleweb] ; TODO Remove?
    [ring.adapter.undertow  :as undertow]
    [immutant.web           :as immutant]
-   [vertx.http             :as http]
-   [vertx.embed            :as embed]
-   ;; [ring.adapter.netty  :as netty]
-   [netty.ring.adapter     :as netty]
+   [vertx.http             :as vhttp]
+   [vertx.embed            :as vembed]
    [aleph.http             :as aleph]
-   [org.httpkit.server     :as http-kit]
-   [taoensso.timbre        :as timbre]))
+   [org.httpkit.server     :as http-kit]))
 
 (timbre/refer-timbre)
 
@@ -52,31 +51,30 @@
 
   (start-server! :ring-jetty 8082
     (fn [port]
-      (jetty/run-jetty handler {:port port :join? false :max-threads 200})))
+      ;; No special config necessary for many-core systems?
+      (jetty/run-jetty handler {:port port :join? false :max-threads 100})))
 
+  ;; TODO Remove? (awaiting confirmation from author, Ref. http://goo.gl/Q9tfJL)
   (start-server! :ring-simple 8083
     (fn [port]
       (simpleweb/run-simpleweb handler {:port port})))
 
   (start-server! :aleph 8084
     (fn [port]
+      ;; No special config necessary for many-core systems
       (aleph.netty/leak-detector-level! :disabled)
       (aleph/start-server handler {:port port :executor :none})))
 
+  ;; :aloha 8085 (server removed, no longer maintained)
+
   (start-server! :http-kit 8087
     (fn [port]
-      (http-kit/run-server handler {:port port :queue-size 204800 :thread 8})))
+      ;; :queue-size - default 20k; may want higher for very high concurrency
+      ;; :thread     - default 4; used for application logic, network IO is
+      ;;               always single-threaded
+      (http-kit/run-server handler {:port port :queue-size 204800 :thread 4})))
 
-  (start-server! :ring-netty 8089
-    (fn [port]
-      (netty/start-server handler
-        {:port port :zero-copy true
-         :channel-options { "child.tcpNoDelay" true}
-         :max-http-chunk-length 1048576
-         :number-of-handler-threads 16
-         :max-channel-memory-size 1048576
-         :max-total-memory-size 1048576})))
-
+  ;; :ring-netty      8089 (server removed, no longer maintained)
   ;; :tomcat7-servlet 8090
   ;; :jetty-7-servlet 8091
   ;; :jetty-8-servlet 8092
@@ -86,17 +84,20 @@
 
   (start-server! :ring-undertow 8096
     (fn [port]
+      ;; TODO Any special config necessary for manycore systems?
       (undertow/run-undertow handler {:port port})))
 
   (start-server! :vertx 8097
     (fn [port]
-      (embed/set-vertx! (embed/vertx))
-      (-> (http/server)
-          (http/on-request #(http/end (http/server-response %) (:body response)))
-          (http/listen port))))
+      ;; TODO Any special config necessary for many-core systems?
+      (vembed/set-vertx! (vembed/vertx))
+      (-> (vhttp/server)
+          (vhttp/on-request #(vhttp/end (vhttp/server-response %) (:body response)))
+          (vhttp/listen port))))
 
   ;; :tomcat8-servlet 8098
 
   (start-server! :immutant2 8099
     (fn [port]
+      ;; TODO Any special config necessary for many-core systems?
       (immutant/run handler {:port port}))))

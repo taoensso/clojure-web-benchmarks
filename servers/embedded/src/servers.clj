@@ -6,7 +6,6 @@
    [taoensso.timbre        :as timbre]
    ;;
    [ring.adapter.jetty     :as jetty]
-   [ring.adapter.simpleweb :as simpleweb] ; TODO Remove?
    [ring.adapter.undertow  :as undertow]
    [immutant.web           :as immutant]
    [vertx.http             :as vhttp]
@@ -54,10 +53,7 @@
       ;; No special config necessary for many-core systems?
       (jetty/run-jetty handler {:port port :join? false :max-threads 100})))
 
-  ;; TODO Remove? (awaiting confirmation from author, Ref. http://goo.gl/Q9tfJL)
-  (start-server! :ring-simple 8083
-    (fn [port]
-      (simpleweb/run-simpleweb handler {:port port})))
+  ;; :ring-simple 8083 (server removed, no longer maintained)
 
   (start-server! :aleph 8084
     (fn [port]

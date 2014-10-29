@@ -36,7 +36,6 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 ## Servers
 
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
-  * [SimpleWeb Ring adapter](https://github.com/netmelody/ring-simpleweb-adapter) - Pure-Java HTTP server without using Servlets.
   * [http-kit](https://github.com/shenfeng/http-kit) - HTTP client/server with async & WebSockets support.
   * [Aleph](https://github.com/ztellman/aleph) - Clojure framework for asynchronous communication, built on top of Netty and Manifold.
   * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).

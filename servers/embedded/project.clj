@@ -14,7 +14,6 @@
    [compojure              "1.2.1"]
    [ring                   "1.3.1"]
    [com.taoensso/timbre    "3.3.1"]
-   [ring-simpleweb-adapter "0.2.0"] ; TODO Remove?
    [aleph                  "0.4.0-alpha7"]
    [http-kit               "2.1.19"]
    [org.immutant/web       "2.x.incremental.157"] ; 2.0.0-alpha2?

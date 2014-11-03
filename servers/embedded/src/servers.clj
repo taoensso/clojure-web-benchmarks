@@ -58,6 +58,12 @@
     (server :ring-jetty      8082 #(jetty/run-jetty handler {:join? false :port % :max-threads 100}))
     (server :aleph           8084 #(aleph/start-server handler (cfg-aleph %)))
     (server :http-kit        8087 #(http-kit/run-server handler (cfg-http-kit %)))
+    ;;      :tomcat7-servlet 8090
+    ;;      :jetty-7-servlet 8091
+    ;;      :jetty-8-servlet 8092
+    ;;      :jetty-9-servlet 8093
+    ;;      :nginx-clojure   8094
+    ;;      :immutant        8095
     (server :ring-undertow   8096 #(undertow/run-undertow handler {:port %}))
     (server :vertx           8097 (fn [port]
                                     (embed/set-vertx! (embed/vertx))
@@ -65,5 +71,6 @@
                                       (http/on-request #(-> (http/server-response %)
                                                           (http/end (:body response))))
                                       (http/listen port))))
+    ;;      :tomcat8-servlet 8098
     (server :immutant2       8099 #(immutant/run handler {:port %}))
     ))

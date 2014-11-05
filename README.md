@@ -11,8 +11,6 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 
 ![](results/20141103-09-48.png)
 
-Raw data available [here](results/20141025-20-40.stripped).
-
 ### Fedora 19 + i7-3520M
 
   * 2.9GHz Intel Core i7-3520M with 16GB 1600MHz DDR3
@@ -34,7 +32,8 @@ Raw data available [here](results/20141025-20-40.stripped).
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
   * Response length: 1163 bytes (`servers/index.html`).
-  * `wrk -t 16 -c <32,64,128,256> -d60s`
+  * ApacheBench Version 2.3 Revision: 1430300.
+  * ApacheBench `ab -n 300000 -c <16,64,92,128> -rk`.
   * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
   * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
   * See `scripts/bench.sh` for full details.
@@ -44,8 +43,6 @@ Raw data available [here](results/20141025-20-40.stripped).
 ## Servers
 
   * [Jetty Ring adapter](https://github.com/ring-clojure/ring) - Standard Ring adapter.
-  * [SimpleWeb Ring adapter](https://github.com/netmelody/ring-simpleweb-adapter) - Pure-Java HTTP server without using Servlets.
-  * [Netty Ring adapter](https://github.com/shenfeng/async-ring-adapter) - Netty adapter for use with Ring.
   * [http-kit](https://github.com/shenfeng/http-kit) - HTTP client/server with async & WebSockets support.
   * [Aleph](https://github.com/ztellman/aleph) - Clojure framework for asynchronous communication, built on top of Netty and Manifold.
   * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
@@ -60,24 +57,20 @@ Raw data available [here](results/20141025-20-40.stripped).
 
 This is a **collaborative repo** maintained by [a number of contributors](https://github.com/ptaoussanis/clojure-web-server-benchmarks/graphs/contributors). Thanks to everyone for making this possible!
 
-### Welcoming pull requests for:
+### Welcoming *pull requests* for:
   * Additional web servers.
   * Updated servers (no snapshot releases please).
   * Server / bench config tuning!
-  * Higher concurrency tests (c=256, c=500, c=1000, etc.).
 
-In all cases, **please try to include updated results & graphs** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
+### If you are submitting a pull request to update results
+
+  1. Please try to **include graph/s** when possible. We're looking primarily at relative numbers here so it's not a big deal if the hardware changes between PRs, so long as it's documented and mentioned in any graphs.
+  2. Please try ensure that **all** servers being benchmarked have a **reasonable configuration for your hardware environment**. This is especially important if your hardware environment is unusual (e.g. fewer/more cores than usual). If you're unclear on how to adjust some server's configuration for your environment, feel free to open an issue to check that the config you're proposing seems solid to interested maintainers.
 
 You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com), or the other contributors through the [issues page](https://github.com/ptaoussanis/clojure-web-server-benchmarks/issues?state=open).
 
 
 ## Update History
-
-### 2014-10-25
-
-  * use `wrk` instead of `ab` for benchmarking
-  * update Aleph to 0.4.0
-  * start benchmarking at 32 clients, to make better use of 24-core test environment
 
 ### 2014-05-03
 

@@ -75,6 +75,6 @@
     ;;      :tomcat8-servlet 8098
     (server :immutant2       8099 #(immutant/run handler (immutant-undertow/options
                                                            :port %
-                                                           :io-threads 4
-                                                           :worker-threads 4)))
+                                                           :io-threads 8
+                                                           :worker-threads 8)))
     ))

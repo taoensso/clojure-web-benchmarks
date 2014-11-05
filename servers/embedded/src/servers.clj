@@ -6,6 +6,7 @@
     [ring.adapter.jetty      :as jetty]
     [ring.adapter.undertow   :as undertow]
     [immutant.web            :as immutant]
+    [immutant.web.undertow   :as immutant-undertow]
     [vertx.http              :as http]
     [vertx.embed             :as embed]
     [aleph.http              :as aleph]
@@ -72,5 +73,8 @@
                                                           (http/end (:body response))))
                                       (http/listen port))))
     ;;      :tomcat8-servlet 8098
-    (server :immutant2       8099 #(immutant/run handler {:port %}))
+    (server :immutant2       8099 #(immutant/run handler (immutant-undertow/options
+                                                           :port %
+                                                           :io-threads 4
+                                                           :worker-threads 4)))
     ))

@@ -47,7 +47,7 @@
      :java    (system "java.version")
      :vm      (system "java.vm.name" "java.vm.version")})
 
-  ;; :nginx-php 8081
+  ;; :nginx-php 8081 (removed, not necessary to benchmark)
 
   (start-server! :ring-jetty 8082
     (fn [port]

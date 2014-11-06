@@ -16,7 +16,7 @@
    [com.taoensso/timbre    "3.3.1"]
    [aleph                  "0.4.0-alpha9"]
    [http-kit               "2.1.19"]
-   [org.immutant.web       "2.x.incremental.377"]
+   [org.immutant/web       "2.x.incremental.377"]
    [ring-undertow-adapter  "0.2.1"
     :exclusions [io.undertow/undertow-core]]
    [io.vertx/clojure-api   "1.0.4"]]

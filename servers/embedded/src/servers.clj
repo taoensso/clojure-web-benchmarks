@@ -82,7 +82,9 @@
   (start-server! :ring-undertow 8096
     (fn [port]
       ;; TODO Any special config necessary for manycore systems?
-      (undertow/run-undertow handler {:port port})))
+      (undertow/run-undertow handler
+        {:port port
+         :dispatch? false})))
 
   (start-server! :vertx 8097
     (fn [port]
@@ -96,8 +98,14 @@
 
   (start-server! :immutant2 8099
     (fn [port]
-      ;; threads should be roughly 1/3 the number of available cores
-      (immutant/run handler (immutant-undertow/options
-                               :port port
-                               :io-threads 8
-                               :worker-threads 8)))))
+      (let [num-threads (-> (Runtime/getRuntime)
+                          .availableProcessors
+                          (/ 3)
+                          double
+                          Math/ceil)]
+       (immutant/run handler
+         (immutant-undertow/options
+           :dispatch? false
+           :port port
+           :io-threads num-threads
+           :worker-threads num-threads))))))

@@ -14,19 +14,18 @@
    [compojure              "1.2.1"]
    [ring                   "1.3.1"]
    [com.taoensso/timbre    "3.3.1"]
-   [aleph                  "0.4.0-alpha7"]
+   [aleph                  "0.4.0-alpha9"]
    [http-kit               "2.1.19"]
-   [org.immutant/web       "2.x.incremental.157"] ; 2.0.0-alpha2?
-   [ring-undertow-adapter  "0.1.7"
+   [org.immutant/web       "2.x.incremental.377"]
+   [ring-undertow-adapter  "0.2.1"
     :exclusions [io.undertow/undertow-core]]
    [io.vertx/clojure-api   "1.0.4"]]
   :exclusions [org.clojure/clojure]
-  :profiles   {:1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}
-               :dev {:dependencies [[cider/cider-nrepl   "0.7.0"]]
+  :profiles   {:dev {:dependencies [[cider/cider-nrepl   "0.7.0"]]
                      :plugins
                      [[lein-pprint  "1.1.2"]
                       [lein-ancient "0.5.5"]]}}
-  :jvm-opts   ["-server" "-XX:MaxGCPauseMillis=25" "-XX:+UseG1GC" "-Xmx2g"]
+  :jvm-opts   ["-server" "-Xmx2g"]
   :repositories
   {"sonatype-oss-public"             "https://oss.sonatype.org/content/groups/public/"
    "Immutant 2.x incremental builds" "http://downloads.immutant.org/incremental/"}

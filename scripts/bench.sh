@@ -36,6 +36,17 @@ bench_port() {
         wrk -t16 -c256 -d30s "http://127.0.0.1:$1/" # warmup
         sleep_for 10
         wrk -t16 -c256 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
+
+        # 512 connections
+        wrk -t16 -c512 -d30s "http://127.0.0.1:$1/" # warmup
+        sleep_for 10
+        wrk -t16 -c512 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
+
+        # 1024 connections
+        wrk -t16 -c1024 -d30s "http://127.0.0.1:$1/" # warmup
+        sleep_for 10
+        wrk -t16 -c1024 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
+
         echo "===============================================" | tee -a $OUT
         echo | tee -a $OUT
         echo | tee -a $OUT

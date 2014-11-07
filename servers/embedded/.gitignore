@@ -6,3 +6,4 @@ pom.xml
 /target/
 /logs/
 .lein-deps-sum
+.nrepl-port

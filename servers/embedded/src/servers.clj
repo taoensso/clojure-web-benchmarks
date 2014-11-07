@@ -8,6 +8,7 @@
    [ring.adapter.jetty     :as jetty]
    [ring.adapter.undertow  :as undertow]
    [immutant.web           :as immutant]
+   [immutant.web.undertow  :as immutant-undertow]
    [vertx.http             :as vhttp]
    [vertx.embed            :as vembed]
    [aleph.http             :as aleph]
@@ -46,7 +47,7 @@
      :java    (system "java.version")
      :vm      (system "java.vm.name" "java.vm.version")})
 
-  ;; :nginx-php 8081
+  ;; :nginx-php 8081 (removed, not necessary to benchmark)
 
   (start-server! :ring-jetty 8082
     (fn [port]
@@ -65,7 +66,7 @@
 
   (start-server! :http-kit 8087
     (fn [port]
-      ;; :queue-size - default 20k; may want higher for very high concurrency
+      ;; :queue-size - default 20k; should be at least as large as the number of clients
       ;; :thread     - default 4; used for application logic, network IO is
       ;;               always single-threaded
       (http-kit/run-server handler {:port port :queue-size 204800 :thread 4})))
@@ -81,7 +82,9 @@
   (start-server! :ring-undertow 8096
     (fn [port]
       ;; TODO Any special config necessary for manycore systems?
-      (undertow/run-undertow handler {:port port})))
+      (undertow/run-undertow handler
+        {:port port
+         :dispatch? false})))
 
   (start-server! :vertx 8097
     (fn [port]
@@ -95,5 +98,10 @@
 
   (start-server! :immutant2 8099
     (fn [port]
-      ;; TODO Any special config necessary for many-core systems?
-      (immutant/run handler {:port port}))))
+      (let [num-threads (.availableProcessors (Runtime/getRuntime))]
+       (immutant/run handler
+         (immutant-undertow/options
+           :dispatch? false
+           :port port
+           :io-threads num-threads
+           :worker-threads num-threads))))))

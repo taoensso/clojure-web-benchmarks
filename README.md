@@ -49,7 +49,7 @@ Raw results, including latencies, available [here](results/20141106-13-28).
   * [nginx-clojure 0.2.6](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
   * [Immutant 1.1.1](http://immutant.org/)
   * [Immutant 2 "thedeuce"](https://github.com/immutant/immutant)
-  * [Undertow Ring adapter 0.1.2](https://github.com/piranha/ring-undertow-adapter)
+  * [Undertow Ring adapter 0.2.1](https://github.com/piranha/ring-undertow-adapter)
 
 
 ## Contact & contribution

@@ -1,0 +1,85 @@
+Benching port 8099...
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 32 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   605.89us    3.59ms  36.09ms   97.88%
+    Req/Sec    22.93k     7.59k   47.22k    83.68%
+  Latency Distribution
+     50%   64.00us
+     75%   93.00us
+     90%   96.00us
+     99%   24.21ms
+  20540256 requests in 1.00m, 25.02GB read
+Requests/sec: 342356.33
+Transfer/sec:    427.06MB
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 64 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.88ms    7.14ms  42.76ms   95.40%
+    Req/Sec    28.00k    18.48k   82.33k    61.97%
+  Latency Distribution
+     50%   97.00us
+     75%  175.00us
+     90%    3.21ms
+     99%   36.65ms
+  24500646 requests in 1.00m, 29.85GB read
+Requests/sec: 408365.38
+Transfer/sec:    509.40MB
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 128 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     5.17ms   27.23ms 207.88ms   95.61%
+    Req/Sec    30.02k    17.50k   88.67k    62.42%
+  Latency Distribution
+     50%  198.00us
+     75%  345.00us
+     90%    2.67ms
+     99%  207.88ms
+  26405965 requests in 1.00m, 32.17GB read
+Requests/sec: 440128.95
+Transfer/sec:    549.02MB
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 256 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.74ms   57.25ms 415.72ms   97.26%
+    Req/Sec    32.12k    21.21k  108.22k    56.37%
+  Latency Distribution
+     50%  327.00us
+     75%  847.00us
+     90%    3.89ms
+     99%  413.77ms
+  28005910 requests in 1.00m, 34.12GB read
+  Socket errors: connect 0, read 0, write 0, timeout 5
+Requests/sec: 466802.60
+Transfer/sec:    582.29MB
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 512 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    44.83ms  156.43ms 857.60ms   91.37%
+    Req/Sec    32.74k    20.46k  105.78k    58.34%
+  Latency Distribution
+     50%  785.00us
+     75%    2.37ms
+     90%    8.25ms
+     99%  844.34ms
+  28410004 requests in 1.00m, 34.61GB read
+  Socket errors: connect 0, read 0, write 0, timeout 206
+Requests/sec: 473517.48
+Transfer/sec:    590.67MB
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 1024 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   186.21ms  941.03ms   6.72s    96.32%
+    Req/Sec    31.73k    18.23k  102.22k    65.99%
+  Latency Distribution
+     50%    1.94ms
+     75%    3.62ms
+     90%    7.84ms
+     99%    6.72s 
+  27728625 requests in 1.00m, 33.78GB read
+  Socket errors: connect 19, read 0, write 0, timeout 1579
+Requests/sec: 462181.32
+Transfer/sec:    576.53MB
+===============================================
+
+

@@ -98,11 +98,7 @@
 
   (start-server! :immutant2 8099
     (fn [port]
-      (let [num-threads (-> (Runtime/getRuntime)
-                          .availableProcessors
-                          (/ 3)
-                          double
-                          Math/ceil)]
+      (let [num-threads (.availableProcessors (Runtime/getRuntime))]
        (immutant/run handler
          (immutant-undertow/options
            :dispatch? false

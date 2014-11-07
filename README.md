@@ -9,7 +9,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 * Dual Xeon X5650
 * Clojure 1.7.0-alpha2 on Oracle JDK7
 
-![](results/20141106-13-28.png)
+![](results/20141106-13-28.png	)
 
 ### Fedora 19 + i7-3520M
 
@@ -47,7 +47,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
   * [Aleph](https://github.com/ztellman/aleph) - Clojure framework for asynchronous communication, built on top of Netty and Manifold.
   * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
   * [nginx 1.4.4](http://nginx.org) + [php5-fpm 5.5.3+dfsg-1ubuntu2.1](http://php-fpm.org/)
-  * [nginx-clojure 0.1.0](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
+  * [nginx-clojure 0.2.6](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
   * [Immutant 1.1.1](http://immutant.org/)
   * [Immutant 2 "thedeuce"](https://github.com/immutant/immutant)
   * [Undertow Ring adapter 0.1.2](https://github.com/piranha/ring-undertow-adapter)

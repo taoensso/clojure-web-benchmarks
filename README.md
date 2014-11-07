@@ -32,13 +32,10 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
   * **Detailed benchmark results** available in `/results/`.
   * Response length: 1163 bytes (`servers/index.html`).
-  * ApacheBench Version 2.3 Revision: 1430300.
-  * ApacheBench `ab -n 300000 -c <16,64,92,128> -rk`.
-  * Leiningen `trampoline`, `:jvm-opts ["-server" "-XX:+UseConcMarkSweepGC"]`.
+  * wrk - `wrk -t 16 -c <32, 64, 128, 256, 512, 1024> -d 60s`.
+  * Leiningen `trampoline`, `:jvm-opts ["-server"]`.
   * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
   * See `scripts/bench.sh` for full details.
-  * See `servers/nginx-php/conf/nginx.conf` for nginx php config.
-
 
 ## Servers
 

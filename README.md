@@ -9,7 +9,9 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 * Dual Xeon X5650
 * Clojure 1.7.0-alpha2 on Oracle JDK7
 
-![](results/20141106-13-28.png	)
+![](results/20141106-13-28.png)
+
+Raw results, including latencies, available [here](results/20141106-13-28).
 
 ### Fedora 19 + i7-3520M
 

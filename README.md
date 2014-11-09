@@ -2,42 +2,50 @@
 
 This is a **collaborative repo**. Please see [here](#contact--contribution) for info on contributors & contributing.
 
-## Latest Results / 2014-11-06
+## Latest Results
 
-### Ubuntu 14.04 + 2x Xeon X5650
+### 2014 Nov 6
 
-* Dual Xeon X5650
-* Clojure 1.7.0-alpha2 on Oracle JDK7
+  * **Processor**: 2x 2.66GHz Xeon [X5650](http://ark.intel.com/products/47922/Intel-Xeon-Processor-X5650-12M-Cache-2_66-GHz-6_40-GTs-Intel-QPI) (total 24 hardware threads).
+  * **Memory**: TODO.
+  * **OS**: Ubuntu 14.04.
+  * **Clojure**: 1.7.0-alpha2 on Oracle JDK7.
+  * Raw data (incl. latencies) available [here](results/20141106-13-28).
 
-![](results/20141106-13-28.png)
+  ![Chart](results/20141106-13-28.png)
 
-Raw results, including latencies, available [here](results/20141106-13-28).
 
-### Fedora 19 + i7-3520M
+### 2014 May 3
 
-  * 2.9GHz Intel Core i7-3520M with 16GB 1600MHz DDR3
-  * Clojure 1.5.1 on OpenJDK 1.7.0-51
+  * **Processor**: 1x 2.9GHz Intel Core [i7-3520M](http://ark.intel.com/products/64893/Intel-Core-i7-3520M-Processor-4M-Cache-up-to-3_60-GHz) (total 4 hardware threads).
+  * **Memory**: 16GB 1600MHz DDR3.
+  * **OS**: Fedora 19.
+  * **Clojure**: 1.5.1 on OpenJDK 1.7.0-51.
+  * Raw data available [here](http://goo.gl/2FtAFy).
 
-  ![Performance comparison chart](results/20140503-01-04.png)
-  Chart available on [Google Drive](http://goo.gl/2FtAFy)
+  ![Chart](results/20140503-01-04.png)
 
-### Ubuntu 13.04 + i7-4700MQ
 
-  * 2.4GHz Intel Core i7-4700MQ with 16GB 1333MHz DDR3
-  * Clojure 1.5.1 on Oracle JDK7 build  1.7.0_45
+### 2014 Feb 21
 
-  ![Performance comparison chart](results/20140121-14-30.png)
-  Chart available on [Google Drive](http://goo.gl/XrHk7C)
+  * **Processor**: 1x 2.4GHz Intel Core [i7-4700MQ](http://ark.intel.com/products/75117/Intel-Core-i7-4700MQ-Processor-6M-Cache-up-to-3_40-GHz) (total 8 hardware threads).
+  * **Memory**: 16GB 1333MHz DDR3.
+  * **OS**: Ubuntu 13.04.
+  * **Clojure**: 1.5.1 on Oracle JDK7 build  1.7.0_45.
+  * Raw data available [here](http://goo.gl/XrHk7C).
 
-### Configuration
+  ![Chart](results/20140121-14-30.png)
 
-  * **Clojure Google Group discussion**: http://goo.gl/xe46R.
-  * **Detailed benchmark results** available in `/results/`.
+
+## Configuration
+
   * Response length: 1163 bytes (`servers/index.html`).
   * wrk - `wrk -t 16 -c <32, 64, 128, 256, 512, 1024> -d 60s`.
   * Leiningen `trampoline`, `:jvm-opts ["-server"]`.
   * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
   * See `scripts/bench.sh` for full details.
+  * **Detailed benchmark results** available in `/results/`.
+  * **Clojure Google Group discussion**: http://goo.gl/xe46R.
 
 ## Servers
 
@@ -67,29 +75,3 @@ This is a **collaborative repo** maintained by [a number of contributors](https:
   2. Please try ensure that **all** servers being benchmarked have a **reasonable configuration for your hardware environment**. This is especially important if your hardware environment is unusual (e.g. fewer/more cores than usual). If you're unclear on how to adjust some server's configuration for your environment, feel free to open an issue to check that the config you're proposing seems solid to interested maintainers.
 
 You can reach me (Peter Taoussanis) at [taoensso.com](https://www.taoensso.com), or the other contributors through the [issues page](https://github.com/ptaoussanis/clojure-web-server-benchmarks/issues?state=open).
-
-
-## Update History
-
-### 2014-05-03
-
-  * added Immutant 2 "thedeuce" (incremental 88)
-  * included Tomcat 8 in latest chart
-
-### 2014-01-20
-
-  * add immutant testing (latest official release 1.0.2)
-  * add undertow testing
-
-### 2014-01-14
-
-  * org.clojure/clojure 1.4.0 --> 1.5.1
-  * compojure    1.1.4        --> 1.1.6
-  * ring         1.1.6        --> 1.2.1
-  * aleph        0.3.0-beta13 --> 0.3.0
-  * http-kit     1.3.0-alpha2 --> 2.1.16
-  * ring-netty-adapter 0.0.3 -->  netty-ring-adapter 0.4.6
-  * remove testing about pure nginx which generally dosen't service dymanic contents without other modules.
-  * add nginx with php5-fpm 5.5 testing
-  * add nginx-clojure 0.1.0 testing
-  * add 128 clients testing

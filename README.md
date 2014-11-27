@@ -7,7 +7,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 ### 2014 Nov 6
 
   * **Processor**: 2x 2.66GHz Xeon [X5650](http://ark.intel.com/products/47922/Intel-Xeon-Processor-X5650-12M-Cache-2_66-GHz-6_40-GTs-Intel-QPI) (total 24 hardware threads).
-  * **Memory**: TODO.
+  * **Memory**: 144GB.
   * **OS**: Ubuntu 14.04.
   * **Clojure**: 1.7.0-alpha2 on Oracle JDK7.
   * Raw data (incl. latencies) available [here](results/20141106-13-28).

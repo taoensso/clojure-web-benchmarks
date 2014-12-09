@@ -8,7 +8,6 @@
    [ring.adapter.jetty     :as jetty]
    [ring.adapter.undertow  :as undertow]
    [immutant.web           :as immutant]
-   [immutant.web.undertow  :as immutant-undertow]
    [vertx.http             :as vhttp]
    [vertx.embed            :as vembed]
    [aleph.http             :as aleph]
@@ -99,9 +98,8 @@
   (start-server! :immutant2 8099
     (fn [port]
       (let [num-threads (.availableProcessors (Runtime/getRuntime))]
-       (immutant/run handler
-         (immutant-undertow/options
-           :dispatch? false
-           :port port
-           :io-threads num-threads
-           :worker-threads num-threads))))))
+        (immutant/run handler
+          :dispatch? false
+          :port port
+          :io-threads num-threads
+          :worker-threads num-threads)))))

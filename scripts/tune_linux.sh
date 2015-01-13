@@ -34,6 +34,7 @@ tune_linux() {
     echo "If 'ulimit -n 500000' fails, we should modify /etc/security/limits.conf and re-login"
     ulimit -n 500000
     ulimit -S -n 500000
+    ulimit -u 127581
 
     echo | tee -a $OUT
     echo "$(ulimit -a)" | tee -a $OUT

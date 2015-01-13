@@ -59,7 +59,8 @@
               (println "nginx-dir" nginx-dir)
               (osh "sh"  "-c"  (str "mv "  "nginx-clojure-"  nginx-clojure-ver "/" nginx-dir "/* ./")))
             (osh "sh" "-c"  (str "chmod +x  " nginx-exe)))
-      (osh "sh" "-c" (str "rm -rf nginx && ln -s " nginx-exe " nginx"))))
+     (when (.exists (io/as-file nginx-exe))
+       (osh "sh" "-c" (str "rm -rf nginx && ln -s " nginx-exe " nginx")))))
 
 (defn gen-nginx-conf-by-tpl
   []

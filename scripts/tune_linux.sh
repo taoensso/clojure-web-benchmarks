@@ -27,12 +27,13 @@ tune_linux() {
 					net.ipv4.tcp_max_syn_backlog=30000 \
 					net.ipv4.tcp_max_tw_buckets=2000000 \
 					net.ipv4.tcp_tw_reuse=1 \
-					net.ipv4.tcp_fin_timeout=10
+					net.ipv4.tcp_fin_timeout=10 \
+					net.core.somaxconn=1024
 					
 
-
-    ulimit -n 50000
-    ulimit -S -n 50000
+    echo "If 'ulimit -n 500000' fails, we should modify /etc/security/limits.conf and re-login"
+    ulimit -n 500000
+    ulimit -S -n 500000
 
     echo | tee -a $OUT
     echo "$(ulimit -a)" | tee -a $OUT

@@ -11,14 +11,15 @@ start_server() {
 start_servlet() {
     cd servers/$1
     echo "Starting servlet in $(pwd)..."
-    (nohup lein with-profile 1.5 trampoline servlet run 1>>../../logs/run-servers 2>&1 &)
+    (nohup lein with-profile 1.7 trampoline servlet  run 1>>../../logs/run-servers 2>&1 &)
     cd ../../
 }
 
-start_nginx_xxx() {
-    cd servers/$1
-    mkdir -p temp logs
-    echo "Starting $1 in $(pwd)..."
+start_nginx_clojure() {
+    cd servers/nginx-clojure
+    echo "Prepare nginx-clojure in $(pwd)..."
+    (nohup lein with-profile 1.7.0-alpha3 trampoline  run 1>>../../logs/run-servers 2>&1)
+    echo "Starting nginx-clojure in $(pwd)..."
     ./nginx
     cd ../..
 }

@@ -11,7 +11,7 @@ start_server() {
 start_servlet() {
     cd servers/$1
     echo "Starting servlet in $(pwd)..."
-    (nohup lein with-profile 1.5 trampoline servlet  run 1>>../../logs/run-servers 2>&1 &)
+    (nohup lein with-profile 1.7 trampoline servlet  run 1>>../../logs/run-servers 2>&1 &)
     cd ../../
 }
 

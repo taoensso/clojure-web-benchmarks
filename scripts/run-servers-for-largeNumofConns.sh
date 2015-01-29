@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source run-server-util.sh
+source scripts/run-server-util.sh
 
 mkdir -p logs
 

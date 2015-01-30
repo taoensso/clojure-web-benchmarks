@@ -4,7 +4,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 
 ## Latest Results
 
-### 2015 Feb 30
+### 2015 Jan 31
 
   * **Processor**: 2x 2.10GHz Xeon [E5-2620 v2](http://ark.intel.com/products/75789/Intel-Xeon-Processor-E5-2620-v2-15M-Cache-2_10-GHz) (total 24 hardware threads).
   * **Memory**: 128GB.
@@ -86,7 +86,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
      + `scripts/run-servers-for-largeNumofConns.sh`.
      +  `wrk2  -t 16 -c <10000, 20000, 40000, 60000> -R 200000  -d 60s`.
   * Leiningen `trampoline`, `:jvm-opts ["-server"]`.
-  * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab.
+  * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab/wrk/wrk2.
   * See `scripts/bench*.sh` for full details.
   * See `scripts/strip-results.sh` for full details about  generating stripped results
   * See `utils/results-parser/src/wrk2_result_parser.clj` for full details about generating text table and charts from stripped results.
@@ -100,8 +100,7 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
   * [http-kit](https://github.com/shenfeng/http-kit) - HTTP client/server with async & WebSockets support.
   * [Aleph](https://github.com/ztellman/aleph) - Clojure framework for asynchronous communication, built on top of Netty and Manifold.
   * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet](https://github.com/kumarshantanu/lein-servlet).
-  * [nginx 1.4.4](http://nginx.org) + [php5-fpm 5.5.3+dfsg-1ubuntu2.1](http://php-fpm.org/)
-  * [nginx-clojure 0.2.6](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.4.4](http://nginx.org)  .
+  * [nginx-clojure 0.3.0](https://github.com/xfeep/nginx-clojure) compiled into [nginx 1.6.2](http://nginx.org)  .
   * [Immutant 1.1.1](http://immutant.org/)
   * [Immutant 2 "thedeuce"](https://github.com/immutant/immutant)
   * [Undertow Ring adapter 0.2.1](https://github.com/piranha/ring-undertow-adapter)

@@ -25,7 +25,7 @@
                      :plugins
                      [[lein-pprint  "1.1.2"]
                       [lein-ancient "0.5.5"]]}}
-  :jvm-opts   ["-server" "-Xmx2g"]
+  :jvm-opts   ^:replace ["-server" "-Xmx2g"]
   :repositories
   {"sonatype-oss-public"             "https://oss.sonatype.org/content/groups/public/"
    "Immutant 2.x incremental builds" "http://downloads.immutant.org/incremental/"}

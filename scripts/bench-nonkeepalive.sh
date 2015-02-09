@@ -19,9 +19,9 @@ bench_port() {
 
         for CONNECTION_NUM in  32 64 128 256 512 1024
         do
-	        wrk2 -t16 -c${CONNECTION_NUM} -R400000  -d30s "http://127.0.0.1:$1/" # warmup
-	        sleep_for 10
-	        wrk2 -t16 -c${CONNECTION_NUM} -R400000 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
+	        wrk2 -t16 -c${CONNECTION_NUM} -R40000  -d30s -H 'Connection: Close'  "http://127.0.0.1:$1/" # warmup
+	        sleep_for 30
+	        wrk2 -t16 -c${CONNECTION_NUM} -R40000 -d60s --latency  -H 'Connection: Close' "http://127.0.0.1:$1/" | tee -a $OUT
                 echo "------------------------${CONNECTION_NUM}--DONE------------------------" | tee -a $OUT
         done
 
@@ -32,7 +32,7 @@ bench_port() {
 }
 
 mkdir -p results
-OUT="results/$(date +%Y%m%d"-"%H-%M)"
+OUT="results/$(date +%Y%m%d"-"%H-%M)-nonkeepalive"
 echo "Logging bench results to $OUT..."
 echo
 

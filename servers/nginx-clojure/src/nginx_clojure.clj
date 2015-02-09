@@ -10,7 +10,7 @@
 
 (def nginx-clojure-ver "0.3.0")
 
-(def max-balanced-tcp-connections "65000")
+;(def max-balanced-tcp-connections "65000")
 
 (def properties (into {} (System/getProperties)))
 
@@ -63,7 +63,8 @@
        (osh "sh" "-c" (str "rm -rf nginx && ln -s " nginx-exe " nginx")))))
 
 (defn gen-nginx-conf-by-tpl
-  []
+  [conns]
+  (println "max-balanced-tcp-connections:" conns)
   (let [pid (-> (java.lang.management.ManagementFactory/getRuntimeMXBean) (.getName) (.split "@") (first))
              libjvm (-> (:out (osh "sh" "-c" (str "lsof  -p " pid "  | grep libjvm."))) (.split "\\s+") (last) (.trim) )
              clojure-rt (-> (:out (sh "sh" "-c" (str "lsof  -p  " pid "  | grep clojure-.*\\.jar"))) (.split "\\s+") (last) (.trim) )
@@ -72,7 +73,7 @@
     (println "nginx-exe" nginx-exe)
     (println "clojure rt" clojure-rt)
     (spit "conf/nginx.conf" 
-          (-> tpl (str/replace "#{max_balanced_tcp_connections}" max-balanced-tcp-connections )
+          (-> tpl (str/replace "#{max_balanced_tcp_connections}" conns )
                         (str/replace "#{jvm_shared_library_path}" libjvm )
                         (str/replace "#{class-path}" (str clojure-rt 
                                                           java.io.File/pathSeparator   "jars/nginx-clojure-" nginx-clojure-ver ".jar" 
@@ -82,6 +83,6 @@
   ;;;check 
   ;(println (slurp tpl-file))
   (check-download)
-  (gen-nginx-conf-by-tpl)
+  (gen-nginx-conf-by-tpl (first args))
   (clojure.lang.Agent/shutdown)
   )

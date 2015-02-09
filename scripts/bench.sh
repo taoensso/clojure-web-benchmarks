@@ -17,12 +17,13 @@ bench_port() {
     else
         echo "Benching port $1..." | tee -a $OUT
 
-        for CONNECTION_NUM in  32 64 128 256 512 1024
+        for CONN_NUM in 32 64 128 256 512 1024
         do
-	        wrk2 -t16 -c${CONNECTION_NUM} -R400000  -d30s "http://127.0.0.1:$1/" # warmup
-	        sleep_for 10
-	        wrk2 -t16 -c${CONNECTION_NUM} -R400000 -d60s --latency "http://127.0.0.1:$1/" | tee -a $OUT
-                echo "------------------------${CONNECTION_NUM}--DONE------------------------" | tee -a $OUT
+            wrk2 -t16 -c${CONN_NUM} -R400000 -d30s "http://127.0.0.1:$1/" # warmup
+            sleep_for 10
+            wrk2 -t16 -c${CONN_NUM} -R400000 -d60s \
+                 --latency "http://127.0.0.1:$1/" | tee -a $OUT
+            echo "-----${CONN_NUM}--DONE-----" | tee -a $OUT
         done
 
         echo "===============================================" | tee -a $OUT

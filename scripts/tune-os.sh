@@ -66,10 +66,16 @@ tune_linux() {
   echo | tee -a $OUT
 }
 
+# TODO Why has this been commented out? Don't we need this?
+# if [[ $(/usr/bin/id -u) -ne 0 ]]; then
+#     echo "ABORTING: Please run $0 as sudoer (necessary for OS tuning)"
+#     exit 1
+# fi
+
 case "$1" in
   "osx") tune_osx ;;
   "linux") tune_linux ;;
-  *) echo "Usage: $0 [osx|linux]"
+  *) echo "Usage: $0 {osx|linux}"
      exit 1 ;;
 esac
 

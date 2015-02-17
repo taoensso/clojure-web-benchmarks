@@ -6,3 +6,5 @@ if [ $# -ne 1 ]; then
 else
     egrep "(Running|Latency Distribution|requests|Socket errors|connections|%|\-+$|#|Requests|Transfer|=+$)" $1 > "$1.stripped"
 fi
+
+exit 0

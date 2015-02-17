@@ -7,25 +7,25 @@
             :comments "Same as Clojure"}
   :min-lein-version "2.3.3"
   :global-vars {*warn-on-reflection* true
-                *assert*             false}
+                *assert*             false
+                ;; *unchecked-math*  :warn-on-boxed
+                }
   :main servers
   :dependencies
-  [[org.clojure/clojure    "1.7.0-alpha3"]
+  [[org.clojure/clojure    "1.7.0-alpha5"]
    [compojure              "1.2.1"]
    [ring                   "1.3.1"]
    [com.taoensso/timbre    "3.3.1"]
    [aleph                  "0.4.0-alpha9"]
    [http-kit               "2.1.19"]
    [org.immutant/web       "2.x.incremental.413"]
-   [ring-undertow-adapter  "0.2.1"
-    :exclusions [io.undertow/undertow-core]]
+   [ring-undertow-adapter  "0.2.1" :exclusions [io.undertow/undertow-core]]
    [io.vertx/clojure-api   "1.0.4"]]
   :exclusions [org.clojure/clojure]
-  :profiles   {:dev {:dependencies [[cider/cider-nrepl   "0.7.0"]]
-                     :plugins
-                     [[lein-pprint  "1.1.2"]
-                      [lein-ancient "0.5.5"]]}}
-  :jvm-opts   ^:replace ["-server" "-Xmx2g"]
+  :profiles   {:dev {:dependencies [[cider/cider-nrepl "0.7.0"]]
+                     :plugins      [[lein-pprint       "1.1.2"]
+                                    [lein-ancient      "0.5.5"]]}}
+  :jvm-opts ^:replace ["-server" "-Xmx2g"]
   :repositories
   {"sonatype-oss-public"             "https://oss.sonatype.org/content/groups/public/"
    "Immutant 2.x incremental builds" "http://downloads.immutant.org/incremental/"}

@@ -1,0 +1,1559 @@
+Running 1m test @ http://127.0.0.1:8082/
+  16 threads and 32 connections
+    Latency     1.63s   697.05ms   3.68s    59.61%
+    Req/Sec     1.79k    39.38     1.92k    72.49%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.62s 
+ 75.000%    2.23s 
+ 90.000%    2.55s 
+ 99.000%    3.00s 
+ 99.900%    3.60s 
+ 99.990%    3.68s 
+ 99.999%    3.68s 
+100.000%    3.69s 
+#[Mean    =     1634.031, StdDeviation   =      697.052]
+#[Max     =     3684.352, Total count    =      1431545]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1717201 requests in 1.00m, 2.10GB read
+Requests/sec:  28622.70
+Transfer/sec:     35.90MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8082/
+  16 threads and 64 connections
+    Latency   295.76ms  483.23ms   3.52s    84.27%
+    Req/Sec     1.87k   298.56     2.62k    68.90%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    5.58ms
+ 75.000%  498.69ms
+ 90.000%  943.61ms
+ 99.000%    2.16s 
+ 99.900%    3.07s 
+ 99.990%    3.47s 
+ 99.999%    3.52s 
+100.000%    3.53s 
+#[Mean    =      295.759, StdDeviation   =      483.228]
+#[Max     =     3524.608, Total count    =      1495476]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1788331 requests in 1.00m, 2.19GB read
+Requests/sec:  29808.36
+Transfer/sec:     37.38MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8082/
+  16 threads and 128 connections
+    Latency   853.07ms    1.00s    9.16s    86.35%
+    Req/Sec     1.87k   198.75     2.46k    70.98%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  595.46ms
+ 75.000%    1.23s 
+ 90.000%    2.16s 
+ 99.000%    4.47s 
+ 99.900%    6.50s 
+ 99.990%    8.77s 
+ 99.999%    9.13s 
+100.000%    9.17s 
+#[Mean    =      853.073, StdDeviation   =     1003.577]
+#[Max     =     9158.656, Total count    =      1492457]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1769979 requests in 1.00m, 2.17GB read
+  Socket errors: connect 0, read 0, write 0, timeout 11
+Requests/sec:  29502.37
+Transfer/sec:     37.00MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8082/
+  16 threads and 256 connections
+    Latency     1.10s     1.30s   10.94s    86.39%
+    Req/Sec     1.87k   154.39     2.53k    72.38%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  733.18ms
+ 75.000%    1.59s 
+ 90.000%    2.83s 
+ 99.000%    5.87s 
+ 99.900%    8.24s 
+ 99.990%   10.18s 
+ 99.999%   10.85s 
+100.000%   10.95s 
+#[Mean    =     1102.158, StdDeviation   =     1302.463]
+#[Max     =    10944.512, Total count    =      1495247]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1765848 requests in 1.00m, 2.16GB read
+  Socket errors: connect 0, read 0, write 0, timeout 45
+Requests/sec:  29432.69
+Transfer/sec:     36.91MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8082/
+  16 threads and 512 connections
+    Latency     1.35s     1.70s   20.19s    87.22%
+    Req/Sec     1.85k   149.57     2.31k    69.04%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  824.32ms
+ 75.000%    1.93s 
+ 90.000%    3.47s 
+ 99.000%    7.74s 
+ 99.900%   12.19s 
+ 99.990%   18.27s 
+ 99.999%   19.99s 
+100.000%   20.20s 
+#[Mean    =     1352.379, StdDeviation   =     1703.952]
+#[Max     =    20185.088, Total count    =      1480130]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1748969 requests in 1.00m, 2.14GB read
+  Socket errors: connect 0, read 0, write 0, timeout 237
+Requests/sec:  29151.81
+Transfer/sec:     36.56MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8082/
+  16 threads and 1024 connections
+    Latency     1.79s     2.17s   20.99s    86.35%
+    Req/Sec     1.85k    98.13     2.10k    73.19%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.03s 
+ 75.000%    2.64s 
+ 90.000%    4.63s 
+ 99.000%    9.49s 
+ 99.900%   15.20s 
+ 99.990%   18.68s 
+ 99.999%   20.35s 
+100.000%   21.00s 
+#[Mean    =     1787.616, StdDeviation   =     2166.326]
+#[Max     =    20987.904, Total count    =      1468347]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1726357 requests in 1.00m, 2.11GB read
+  Socket errors: connect 0, read 0, write 0, timeout 1034
+Requests/sec:  28776.49
+Transfer/sec:     36.09MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8084/
+  16 threads and 32 connections
+    Latency     1.87s   907.87ms   4.95s    64.28%
+    Req/Sec     1.79k   158.06     2.28k    69.83%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.93s 
+ 75.000%    2.48s 
+ 90.000%    3.07s 
+ 99.000%    3.79s 
+ 99.900%    4.62s 
+ 99.990%    4.92s 
+ 99.999%    4.95s 
+100.000%    4.95s 
+#[Mean    =     1868.077, StdDeviation   =      907.872]
+#[Max     =     4947.968, Total count    =      1431167]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1713547 requests in 1.00m, 2.08GB read
+Requests/sec:  28561.68
+Transfer/sec:     35.55MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8084/
+  16 threads and 64 connections
+    Latency     1.02s   845.27ms   4.78s    71.82%
+    Req/Sec     1.82k   220.71     2.47k    68.63%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  812.03ms
+ 75.000%    1.49s 
+ 90.000%    2.15s 
+ 99.000%    3.78s 
+ 99.900%    4.55s 
+ 99.990%    4.72s 
+ 99.999%    4.78s 
+100.000%    4.79s 
+#[Mean    =     1018.273, StdDeviation   =      845.273]
+#[Max     =     4784.128, Total count    =      1453096]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1745592 requests in 1.00m, 2.12GB read
+Requests/sec:  29095.99
+Transfer/sec:     36.21MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8084/
+  16 threads and 128 connections
+    Latency     1.33s     1.20s    8.01s    75.45%
+    Req/Sec     1.81k   200.12     2.48k    68.60%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.01s 
+ 75.000%    1.90s 
+ 90.000%    3.00s 
+ 99.000%    5.37s 
+ 99.900%    6.60s 
+ 99.990%    7.73s 
+ 99.999%    8.00s 
+100.000%    8.02s 
+#[Mean    =     1330.700, StdDeviation   =     1203.331]
+#[Max     =     8011.776, Total count    =      1445446]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1734153 requests in 1.00m, 2.11GB read
+Requests/sec:  28905.01
+Transfer/sec:     35.97MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8084/
+  16 threads and 256 connections
+    Latency     1.30s     1.32s    9.54s    85.31%
+    Req/Sec     1.81k   163.02     2.38k    69.34%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  894.46ms
+ 75.000%    1.91s 
+ 90.000%    3.10s 
+ 99.000%    5.84s 
+ 99.900%    8.22s 
+ 99.990%    9.41s 
+ 99.999%    9.55s 
+100.000%    9.55s 
+#[Mean    =     1301.469, StdDeviation   =     1317.923]
+#[Max     =     9543.680, Total count    =      1441507]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1729579 requests in 1.00m, 2.10GB read
+Requests/sec:  28828.86
+Transfer/sec:     35.88MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8084/
+  16 threads and 512 connections
+    Latency     1.30s     1.37s   11.31s    85.77%
+    Req/Sec     1.81k   151.27     2.28k    70.75%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  883.71ms
+ 75.000%    1.88s 
+ 90.000%    3.17s 
+ 99.000%    5.99s 
+ 99.900%    8.28s 
+ 99.990%   10.77s 
+ 99.999%   11.20s 
+100.000%   11.32s 
+#[Mean    =     1295.768, StdDeviation   =     1374.158]
+#[Max     =    11313.152, Total count    =      1440423]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1729334 requests in 1.00m, 2.10GB read
+Requests/sec:  28825.38
+Transfer/sec:     35.87MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8084/
+  16 threads and 1024 connections
+    Latency     1.62s     1.84s   15.89s    86.15%
+    Req/Sec     1.78k   118.00     2.15k    72.53%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.05s 
+ 75.000%    2.34s 
+ 90.000%    4.07s 
+ 99.000%    8.14s 
+ 99.900%   12.14s 
+ 99.990%   14.16s 
+ 99.999%   15.22s 
+100.000%   15.90s 
+#[Mean    =     1623.479, StdDeviation   =     1838.399]
+#[Max     =    15892.480, Total count    =      1415796]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1704539 requests in 1.00m, 2.07GB read
+Requests/sec:  28411.62
+Transfer/sec:     35.36MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8090/
+  16 threads and 32 connections
+    Latency    66.02ms  133.32ms   1.02s    87.02%
+    Req/Sec     1.88k   239.04     2.61k    71.86%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.40ms
+ 75.000%   49.82ms
+ 90.000%  242.82ms
+ 99.000%  557.57ms
+ 99.900%  595.46ms
+ 99.990%  905.73ms
+ 99.999%    1.01s 
+100.000%    1.02s 
+#[Mean    =       66.024, StdDeviation   =      133.321]
+#[Max     =     1019.392, Total count    =      1496296]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1794627 requests in 1.00m, 2.23GB read
+Requests/sec:  29898.76
+Transfer/sec:     37.98MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8090/
+  16 threads and 64 connections
+    Latency    39.50ms   90.45ms   1.01s    86.57%
+    Req/Sec     1.87k   377.07     3.43k    82.92%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.22ms
+ 75.000%    7.66ms
+ 90.000%  184.83ms
+ 99.000%  339.71ms
+ 99.900%  713.73ms
+ 99.990%  979.97ms
+ 99.999%    1.01s 
+100.000%    1.01s 
+#[Mean    =       39.501, StdDeviation   =       90.452]
+#[Max     =     1009.152, Total count    =      1487023]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1787421 requests in 1.00m, 2.22GB read
+Requests/sec:  29793.12
+Transfer/sec:     37.85MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8090/
+  16 threads and 128 connections
+    Latency   195.11ms  363.09ms   3.84s    84.96%
+    Req/Sec     1.88k   402.22     3.69k    72.94%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.28ms
+ 75.000%  262.91ms
+ 90.000%  777.73ms
+ 99.000%    1.54s 
+ 99.900%    2.25s 
+ 99.990%    3.50s 
+ 99.999%    3.80s 
+100.000%    3.85s 
+#[Mean    =      195.109, StdDeviation   =      363.094]
+#[Max     =     3844.096, Total count    =      1492080]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1780890 requests in 1.00m, 2.21GB read
+Requests/sec:  29684.90
+Transfer/sec:     37.71MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8090/
+  16 threads and 256 connections
+    Latency   455.04ms  666.05ms   5.34s    86.78%
+    Req/Sec     1.88k   234.49     2.64k    74.92%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   74.43ms
+ 75.000%  755.71ms
+ 90.000%    1.34s 
+ 99.000%    2.87s 
+ 99.900%    4.23s 
+ 99.990%    5.01s 
+ 99.999%    5.28s 
+100.000%    5.34s 
+#[Mean    =      455.040, StdDeviation   =      666.051]
+#[Max     =     5337.088, Total count    =      1497781]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1786092 requests in 1.00m, 2.22GB read
+  Socket errors: connect 0, read 0, write 0, timeout 31
+Requests/sec:  29769.44
+Transfer/sec:     37.82MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8090/
+  16 threads and 512 connections
+    Latency   759.02ms    1.07s   11.22s    86.59%
+    Req/Sec     1.87k   201.33     2.43k    71.36%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  353.79ms
+ 75.000%    1.07s 
+ 90.000%    2.19s 
+ 99.000%    4.70s 
+ 99.900%    7.14s 
+ 99.990%    9.33s 
+ 99.999%   11.01s 
+100.000%   11.23s 
+#[Mean    =      759.020, StdDeviation   =     1066.067]
+#[Max     =    11223.040, Total count    =      1489489]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1769176 requests in 1.00m, 2.19GB read
+  Socket errors: connect 0, read 0, write 0, timeout 454
+Requests/sec:  29489.77
+Transfer/sec:     37.46MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8090/
+  16 threads and 1024 connections
+    Latency     3.41s     4.22s   38.63s    86.71%
+    Req/Sec     1.78k   124.75     2.05k    69.57%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.95s 
+ 75.000%    4.87s 
+ 90.000%    8.95s 
+ 99.000%   18.84s 
+ 99.900%   30.03s 
+ 99.990%   37.32s 
+ 99.999%   38.31s 
+100.000%   38.67s 
+#[Mean    =     3411.268, StdDeviation   =     4216.475]
+#[Max     =    38633.472, Total count    =      1416266]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1646890 requests in 1.00m, 2.04GB read
+  Socket errors: connect 0, read 0, write 0, timeout 4042
+Requests/sec:  27451.25
+Transfer/sec:     34.87MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8091/
+  16 threads and 32 connections
+    Latency   451.75ms  338.16ms   1.98s    87.80%
+    Req/Sec     1.85k   101.09     2.15k    74.03%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  365.31ms
+ 75.000%  532.48ms
+ 90.000%  725.50ms
+ 99.000%    1.83s 
+ 99.900%    1.94s 
+ 99.990%    1.97s 
+ 99.999%    1.98s 
+100.000%    1.98s 
+#[Mean    =      451.755, StdDeviation   =      338.163]
+#[Max     =     1975.296, Total count    =      1479124]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1776099 requests in 1.00m, 2.12GB read
+Requests/sec:  29604.34
+Transfer/sec:     36.11MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8091/
+  16 threads and 64 connections
+    Latency   497.69ms  767.26ms   5.55s    88.10%
+    Req/Sec     1.90k   454.75     3.43k    70.53%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   96.83ms
+ 75.000%  793.60ms
+ 90.000%    1.44s 
+ 99.000%    3.45s 
+ 99.900%    5.35s 
+ 99.990%    5.53s 
+ 99.999%    5.55s 
+100.000%    5.56s 
+#[Mean    =      497.694, StdDeviation   =      767.262]
+#[Max     =     5554.176, Total count    =      1471864]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1766012 requests in 1.00m, 2.10GB read
+Requests/sec:  29436.01
+Transfer/sec:     35.90MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8091/
+  16 threads and 128 connections
+    Latency   856.80ms    1.02s    6.96s    86.66%
+    Req/Sec     1.86k   221.31     2.63k    68.86%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  592.90ms
+ 75.000%    1.22s 
+ 90.000%    2.19s 
+ 99.000%    4.60s 
+ 99.900%    6.20s 
+ 99.990%    6.80s 
+ 99.999%    6.92s 
+100.000%    6.96s 
+#[Mean    =      856.801, StdDeviation   =     1021.931]
+#[Max     =     6955.008, Total count    =      1487093]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1767905 requests in 1.00m, 2.11GB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:  29468.61
+Transfer/sec:     35.94MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8091/
+  16 threads and 256 connections
+    Latency     1.26s     1.40s   10.69s    86.03%
+    Req/Sec     1.86k   170.80     2.32k    71.05%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  850.94ms
+ 75.000%    1.83s 
+ 90.000%    3.13s 
+ 99.000%    6.22s 
+ 99.900%    8.92s 
+ 99.990%   10.08s 
+ 99.999%   10.60s 
+100.000%   10.70s 
+#[Mean    =     1258.174, StdDeviation   =     1404.278]
+#[Max     =    10690.560, Total count    =      1486330]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1758834 requests in 1.00m, 2.10GB read
+  Socket errors: connect 0, read 0, write 0, timeout 27
+Requests/sec:  29317.04
+Transfer/sec:     35.76MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8091/
+  16 threads and 512 connections
+    Latency     1.52s     1.75s   13.41s    86.05%
+    Req/Sec     1.86k   119.00     2.24k    68.18%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  943.61ms
+ 75.000%    2.21s 
+ 90.000%    3.85s 
+ 99.000%    7.91s 
+ 99.900%   10.94s 
+ 99.990%   12.82s 
+ 99.999%   13.28s 
+100.000%   13.42s 
+#[Mean    =     1518.170, StdDeviation   =     1751.602]
+#[Max     =    13410.304, Total count    =      1478545]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1744784 requests in 1.00m, 2.08GB read
+  Socket errors: connect 0, read 0, write 0, timeout 240
+Requests/sec:  29080.59
+Transfer/sec:     35.47MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8091/
+  16 threads and 1024 connections
+    Latency     1.73s     2.01s   15.25s    85.61%
+    Req/Sec     1.85k   115.31     2.15k    68.69%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.03s 
+ 75.000%    2.57s 
+ 90.000%    4.51s 
+ 99.000%    8.69s 
+ 99.900%   11.71s 
+ 99.990%   13.81s 
+ 99.999%   14.93s 
+100.000%   15.26s 
+#[Mean    =     1733.436, StdDeviation   =     2005.849]
+#[Max     =    15253.504, Total count    =      1471058]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1736508 requests in 1.00m, 2.07GB read
+  Socket errors: connect 0, read 0, write 0, timeout 930
+Requests/sec:  28945.17
+Transfer/sec:     35.31MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8092/
+  16 threads and 32 connections
+    Latency   717.35ms  450.82ms   2.36s    81.71%
+    Req/Sec     1.84k    95.37     2.13k    88.93%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  586.24ms
+ 75.000%  871.93ms
+ 90.000%    1.40s 
+ 99.000%    2.22s 
+ 99.900%    2.32s 
+ 99.990%    2.35s 
+ 99.999%    2.35s 
+100.000%    2.36s 
+#[Mean    =      717.353, StdDeviation   =      450.823]
+#[Max     =     2355.200, Total count    =      1468437]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1761337 requests in 1.00m, 2.10GB read
+Requests/sec:  29359.18
+Transfer/sec:     35.81MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8092/
+  16 threads and 64 connections
+    Latency   471.04ms  685.65ms   4.74s    86.88%
+    Req/Sec     1.94k   536.64     6.85k    74.43%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   96.89ms
+ 75.000%  794.62ms
+ 90.000%    1.36s 
+ 99.000%    3.21s 
+ 99.900%    4.19s 
+ 99.990%    4.66s 
+ 99.999%    4.74s 
+100.000%    4.74s 
+#[Mean    =      471.036, StdDeviation   =      685.648]
+#[Max     =     4739.072, Total count    =      1491305]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1784587 requests in 1.00m, 2.13GB read
+Requests/sec:  29746.51
+Transfer/sec:     36.28MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8092/
+  16 threads and 128 connections
+    Latency   896.15ms    1.10s    8.52s    87.25%
+    Req/Sec     1.85k   238.49     2.61k    67.30%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  613.38ms
+ 75.000%    1.28s 
+ 90.000%    2.27s 
+ 99.000%    5.07s 
+ 99.900%    7.58s 
+ 99.990%    8.20s 
+ 99.999%    8.50s 
+100.000%    8.53s 
+#[Mean    =      896.148, StdDeviation   =     1095.360]
+#[Max     =     8519.680, Total count    =      1483380]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1765405 requests in 1.00m, 2.10GB read
+  Socket errors: connect 0, read 0, write 0, timeout 15
+Requests/sec:  29426.63
+Transfer/sec:     35.89MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8092/
+  16 threads and 256 connections
+    Latency     1.11s     1.25s   10.26s    85.95%
+    Req/Sec     1.86k   175.61     2.44k    71.11%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  766.97ms
+ 75.000%    1.61s 
+ 90.000%    2.79s 
+ 99.000%    5.46s 
+ 99.900%    8.06s 
+ 99.990%    9.58s 
+ 99.999%   10.17s 
+100.000%   10.27s 
+#[Mean    =     1105.787, StdDeviation   =     1247.196]
+#[Max     =    10264.576, Total count    =      1484703]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1763230 requests in 1.00m, 2.10GB read
+  Socket errors: connect 0, read 0, write 0, timeout 34
+Requests/sec:  29389.63
+Transfer/sec:     35.85MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8092/
+  16 threads and 512 connections
+    Latency     1.72s     1.93s   13.68s    85.53%
+    Req/Sec     1.84k   149.68     2.23k    67.42%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.06s 
+ 75.000%    2.52s 
+ 90.000%    4.42s 
+ 99.000%    8.38s 
+ 99.900%   11.39s 
+ 99.990%   12.69s 
+ 99.999%   13.45s 
+100.000%   13.69s 
+#[Mean    =     1721.744, StdDeviation   =     1929.037]
+#[Max     =    13680.640, Total count    =      1469008]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1738336 requests in 1.00m, 2.07GB read
+  Socket errors: connect 0, read 0, write 0, timeout 194
+Requests/sec:  28972.12
+Transfer/sec:     35.34MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8092/
+  16 threads and 1024 connections
+    Latency     1.99s     2.57s   20.89s    87.64%
+    Req/Sec     1.84k   140.13     2.20k    69.52%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.08s 
+ 75.000%    2.76s 
+ 90.000%    5.13s 
+ 99.000%   12.72s 
+ 99.900%   17.30s 
+ 99.990%   19.61s 
+ 99.999%   20.51s 
+100.000%   20.91s 
+#[Mean    =     1986.731, StdDeviation   =     2569.600]
+#[Max     =    20889.600, Total count    =      1465349]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1730861 requests in 1.00m, 2.06GB read
+  Socket errors: connect 0, read 0, write 0, timeout 1014
+Requests/sec:  28850.70
+Transfer/sec:     35.19MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8093/
+  16 threads and 32 connections
+    Latency    12.79ms   65.49ms   1.04s    99.25%
+    Req/Sec     1.90k   189.98     2.72k    83.18%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    5.01ms
+ 75.000%   12.71ms
+ 90.000%   17.77ms
+ 99.000%   36.03ms
+ 99.900%    1.02s 
+ 99.990%    1.04s 
+ 99.999%    1.04s 
+100.000%    1.04s 
+#[Mean    =       12.789, StdDeviation   =       65.486]
+#[Max     =     1040.896, Total count    =      1498504]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1798645 requests in 1.00m, 2.20GB read
+Requests/sec:  29980.34
+Transfer/sec:     37.63MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8093/
+  16 threads and 64 connections
+    Latency   109.07ms  270.43ms   2.27s    87.93%
+    Req/Sec     1.95k   562.49     5.11k    75.87%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.43ms
+ 75.000%    2.94ms
+ 90.000%  503.04ms
+ 99.000%    1.13s 
+ 99.900%    1.82s 
+ 99.990%    2.13s 
+ 99.999%    2.25s 
+100.000%    2.27s 
+#[Mean    =      109.070, StdDeviation   =      270.435]
+#[Max     =     2265.088, Total count    =      1498691]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1796375 requests in 1.00m, 2.20GB read
+Requests/sec:  29942.47
+Transfer/sec:     37.58MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8093/
+  16 threads and 128 connections
+    Latency   499.18ms  741.95ms  11.65s    88.61%
+    Req/Sec     1.87k   267.31     2.74k    70.60%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  209.79ms
+ 75.000%  800.26ms
+ 90.000%    1.35s 
+ 99.000%    2.98s 
+ 99.900%    7.95s 
+ 99.990%   11.22s 
+ 99.999%   11.61s 
+100.000%   11.66s 
+#[Mean    =      499.179, StdDeviation   =      741.950]
+#[Max     =    11649.024, Total count    =      1493501]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1782610 requests in 1.00m, 2.18GB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:  29712.29
+Transfer/sec:     37.29MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8093/
+  16 threads and 256 connections
+    Latency   766.53ms    1.01s    8.45s    86.93%
+    Req/Sec     1.87k   170.99     2.38k    69.52%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  451.58ms
+ 75.000%    1.08s 
+ 90.000%    2.04s 
+ 99.000%    4.60s 
+ 99.900%    6.89s 
+ 99.990%    7.86s 
+ 99.999%    8.36s 
+100.000%    8.46s 
+#[Mean    =      766.529, StdDeviation   =     1011.738]
+#[Max     =     8454.144, Total count    =      1493857]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1773479 requests in 1.00m, 2.17GB read
+  Socket errors: connect 0, read 0, write 0, timeout 37
+Requests/sec:  29561.17
+Transfer/sec:     37.10MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8093/
+  16 threads and 512 connections
+    Latency     1.24s     1.66s   15.56s    87.07%
+    Req/Sec     1.86k   144.35     2.25k    68.04%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  702.46ms
+ 75.000%    1.77s 
+ 90.000%    3.36s 
+ 99.000%    7.46s 
+ 99.900%   12.04s 
+ 99.990%   14.92s 
+ 99.999%   15.46s 
+100.000%   15.57s 
+#[Mean    =     1241.050, StdDeviation   =     1660.072]
+#[Max     =    15564.800, Total count    =      1486509]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1758064 requests in 1.00m, 2.15GB read
+  Socket errors: connect 0, read 0, write 0, timeout 291
+Requests/sec:  29303.25
+Transfer/sec:     36.78MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8093/
+  16 threads and 1024 connections
+    Latency     1.47s     1.94s   17.24s    86.88%
+    Req/Sec     1.88k   131.35     2.24k    69.36%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  809.98ms
+ 75.000%    2.11s 
+ 90.000%    3.96s 
+ 99.000%    8.93s 
+ 99.900%   12.80s 
+ 99.990%   15.68s 
+ 99.999%   16.86s 
+100.000%   17.25s 
+#[Mean    =     1472.834, StdDeviation   =     1941.369]
+#[Max     =    17235.968, Total count    =      1496461]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1754540 requests in 1.00m, 2.15GB read
+  Socket errors: connect 0, read 0, write 0, timeout 1202
+Requests/sec:  29244.65
+Transfer/sec:     36.70MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8094/
+  16 threads and 32 connections
+    Latency    23.11ms  113.22ms   1.02s    96.90%
+    Req/Sec     1.91k   248.67     2.86k    86.27%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    2.04ms
+ 75.000%    5.40ms
+ 90.000%   15.41ms
+ 99.000%  779.26ms
+ 99.900%  998.40ms
+ 99.990%    1.02s 
+ 99.999%    1.02s 
+100.000%    1.02s 
+#[Mean    =       23.108, StdDeviation   =      113.221]
+#[Max     =     1024.000, Total count    =      1499589]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1799794 requests in 1.00m, 2.19GB read
+Requests/sec:  29998.97
+Transfer/sec:     37.42MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8094/
+  16 threads and 64 connections
+    Latency   104.92ms  273.39ms   2.87s    88.88%
+    Req/Sec     1.96k   578.47     5.22k    73.96%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.68ms
+ 75.000%    3.45ms
+ 90.000%  454.40ms
+ 99.000%    1.14s 
+ 99.900%    2.13s 
+ 99.990%    2.75s 
+ 99.999%    2.85s 
+100.000%    2.87s 
+#[Mean    =      104.923, StdDeviation   =      273.388]
+#[Max     =     2867.200, Total count    =      1499995]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1796838 requests in 1.00m, 2.19GB read
+Requests/sec:  29949.87
+Transfer/sec:     37.36MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8094/
+  16 threads and 128 connections
+    Latency   314.87ms  486.12ms   4.85s    84.41%
+    Req/Sec     1.87k   271.11     2.84k    71.40%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   53.50ms
+ 75.000%  525.82ms
+ 90.000%  960.51ms
+ 99.000%    2.08s 
+ 99.900%    3.27s 
+ 99.990%    4.36s 
+ 99.999%    4.81s 
+100.000%    4.86s 
+#[Mean    =      314.874, StdDeviation   =      486.125]
+#[Max     =     4853.760, Total count    =      1497995]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1789127 requests in 1.00m, 2.18GB read
+Requests/sec:  29821.75
+Transfer/sec:     37.20MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8094/
+  16 threads and 256 connections
+    Latency   205.50ms  380.69ms   3.72s    85.29%
+    Req/Sec     1.87k   210.42     2.71k    69.55%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    2.92ms
+ 75.000%  217.98ms
+ 90.000%  787.46ms
+ 99.000%    1.73s 
+ 99.900%    2.57s 
+ 99.990%    3.14s 
+ 99.999%    3.60s 
+100.000%    3.72s 
+#[Mean    =      205.497, StdDeviation   =      380.686]
+#[Max     =     3721.216, Total count    =      1493708]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1790814 requests in 1.00m, 2.18GB read
+Requests/sec:  29848.94
+Transfer/sec:     37.23MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8094/
+  16 threads and 512 connections
+    Latency   111.71ms  274.72ms   3.54s    89.37%
+    Req/Sec     1.87k   199.56     2.85k    68.44%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.96ms
+ 75.000%    7.86ms
+ 90.000%  428.03ms
+ 99.000%    1.23s 
+ 99.900%    2.02s 
+ 99.990%    2.93s 
+ 99.999%    3.45s 
+100.000%    3.55s 
+#[Mean    =      111.711, StdDeviation   =      274.715]
+#[Max     =     3543.040, Total count    =      1493411]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1794268 requests in 1.00m, 2.19GB read
+Requests/sec:  29906.57
+Transfer/sec:     37.31MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8094/
+  16 threads and 1024 connections
+    Latency    58.11ms  192.49ms   3.02s    92.19%
+    Req/Sec     1.91k   403.88     4.53k    77.57%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.73ms
+ 75.000%    2.85ms
+ 90.000%  153.85ms
+ 99.000%  941.05ms
+ 99.900%    1.62s 
+ 99.990%    2.47s 
+ 99.999%    2.95s 
+100.000%    3.02s 
+#[Mean    =       58.108, StdDeviation   =      192.493]
+#[Max     =     3022.848, Total count    =      1490068]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1793975 requests in 1.00m, 2.19GB read
+Requests/sec:  29902.90
+Transfer/sec:     37.30MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8095/
+  16 threads and 32 connections
+    Latency    19.60ms   45.96ms   1.12s    87.31%
+    Req/Sec     1.89k   350.28     3.92k    83.19%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.26ms
+ 75.000%    4.27ms
+ 90.000%   89.54ms
+ 99.000%  166.78ms
+ 99.900%  188.16ms
+ 99.990%    1.01s 
+ 99.999%    1.11s 
+100.000%    1.12s 
+#[Mean    =       19.603, StdDeviation   =       45.964]
+#[Max     =     1118.208, Total count    =      1501906]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1799794 requests in 1.00m, 2.23GB read
+Requests/sec:  29999.32
+Transfer/sec:     38.08MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8095/
+  16 threads and 64 connections
+    Latency    29.22ms   97.46ms   1.14s    92.73%
+    Req/Sec     1.88k   391.69     4.38k    79.26%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.21ms
+ 75.000%    2.07ms
+ 90.000%  100.99ms
+ 99.000%  614.91ms
+ 99.900%  966.66ms
+ 99.990%    1.02s 
+ 99.999%    1.11s 
+100.000%    1.14s 
+#[Mean    =       29.215, StdDeviation   =       97.455]
+#[Max     =     1136.640, Total count    =      1496878]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1797265 requests in 1.00m, 2.23GB read
+Requests/sec:  29957.36
+Transfer/sec:     38.03MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8095/
+  16 threads and 128 connections
+    Latency   110.60ms  275.57ms   2.92s    88.65%
+    Req/Sec     1.88k   551.87     5.22k    78.26%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.21ms
+ 75.000%    5.01ms
+ 90.000%  470.27ms
+ 99.000%    1.16s 
+ 99.900%    1.95s 
+ 99.990%    2.48s 
+ 99.999%    2.87s 
+100.000%    2.92s 
+#[Mean    =      110.603, StdDeviation   =      275.569]
+#[Max     =     2920.448, Total count    =      1497481]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1794963 requests in 1.00m, 2.23GB read
+Requests/sec:  29918.46
+Transfer/sec:     37.98MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8095/
+  16 threads and 256 connections
+    Latency   317.44ms  518.78ms   4.49s    84.98%
+    Req/Sec     1.87k   205.91     2.60k    70.21%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.65ms
+ 75.000%  541.70ms
+ 90.000%  977.41ms
+ 99.000%    2.25s 
+ 99.900%    3.26s 
+ 99.990%    4.09s 
+ 99.999%    4.39s 
+100.000%    4.49s 
+#[Mean    =      317.439, StdDeviation   =      518.776]
+#[Max     =     4489.216, Total count    =      1494241]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1789040 requests in 1.00m, 2.22GB read
+  Socket errors: connect 0, read 0, write 0, timeout 4
+Requests/sec:  29819.36
+Transfer/sec:     37.85MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8095/
+  16 threads and 512 connections
+    Latency   562.24ms  877.40ms   9.12s    86.59%
+    Req/Sec     1.87k   197.70     2.39k    71.81%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   39.87ms
+ 75.000%  852.99ms
+ 90.000%    1.78s 
+ 99.000%    3.76s 
+ 99.900%    5.51s 
+ 99.990%    7.14s 
+ 99.999%    8.91s 
+100.000%    9.13s 
+#[Mean    =      562.237, StdDeviation   =      877.404]
+#[Max     =     9117.696, Total count    =      1489882]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1774103 requests in 1.00m, 2.20GB read
+  Socket errors: connect 0, read 0, write 0, timeout 547
+Requests/sec:  29559.89
+Transfer/sec:     37.52MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8095/
+  16 threads and 1024 connections
+    Latency     1.19s     1.84s   18.35s    87.68%
+    Req/Sec     1.89k   199.50     2.42k    69.63%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  466.94ms
+ 75.000%    1.65s 
+ 90.000%    3.38s 
+ 99.000%    7.77s 
+ 99.900%   14.94s 
+ 99.990%   17.20s 
+ 99.999%   18.14s 
+100.000%   18.37s 
+#[Mean    =     1188.553, StdDeviation   =     1836.076]
+#[Max     =    18350.080, Total count    =      1505157]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1764854 requests in 1.00m, 2.19GB read
+  Socket errors: connect 0, read 0, write 0, timeout 2822
+Requests/sec:  29405.82
+Transfer/sec:     37.33MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8096/
+  16 threads and 32 connections
+    Latency    17.00s     6.71s   28.34s    58.47%
+    Req/Sec     0.98k    37.66     1.04k    60.00%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   17.33s 
+ 75.000%   22.71s 
+ 90.000%   26.17s 
+ 99.000%   28.13s 
+ 99.900%   28.33s 
+ 99.990%   28.34s 
+ 99.999%   28.36s 
+100.000%   28.36s 
+#[Mean    =    16997.431, StdDeviation   =     6714.477]
+#[Max     =    28344.320, Total count    =       792002]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  949667 requests in 1.00m, 1.14GB read
+Requests/sec:  15829.08
+Transfer/sec:     19.40MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8096/
+  16 threads and 64 connections
+    Latency    15.20s     6.49s   31.62s    59.71%
+    Req/Sec     1.05k    87.01     1.24k    67.39%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   15.11s 
+ 75.000%   20.55s 
+ 90.000%   24.04s 
+ 99.000%   27.84s 
+ 99.900%   30.64s 
+ 99.990%   31.56s 
+ 99.999%   31.62s 
+100.000%   31.64s 
+#[Mean    =    15204.824, StdDeviation   =     6486.217]
+#[Max     =    31621.120, Total count    =       842898]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1009190 requests in 1.00m, 1.21GB read
+  Socket errors: connect 0, read 0, write 0, timeout 7
+Requests/sec:  16820.74
+Transfer/sec:     20.61MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8096/
+  16 threads and 128 connections
+    Latency    14.72s     7.07s   35.88s    62.38%
+    Req/Sec     1.06k   123.46     1.40k    69.23%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.11s 
+ 75.000%   20.05s 
+ 90.000%   24.59s 
+ 99.000%   30.88s 
+ 99.900%   33.72s 
+ 99.990%   35.82s 
+ 99.999%   35.91s 
+100.000%   35.91s 
+#[Mean    =    14715.949, StdDeviation   =     7068.417]
+#[Max     =    35880.960, Total count    =       847887]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1017307 requests in 1.00m, 1.22GB read
+  Socket errors: connect 0, read 0, write 0, timeout 86
+Requests/sec:  16956.21
+Transfer/sec:     20.78MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8096/
+  16 threads and 256 connections
+    Latency    15.05s     8.11s   47.87s    64.90%
+    Req/Sec     1.05k   127.22     1.42k    71.76%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.34s 
+ 75.000%   20.53s 
+ 90.000%   25.94s 
+ 99.000%   36.27s 
+ 99.900%   44.66s 
+ 99.990%   47.51s 
+ 99.999%   47.87s 
+100.000%   47.91s 
+#[Mean    =    15046.329, StdDeviation   =     8114.023]
+#[Max     =    47874.048, Total count    =       838303]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1000147 requests in 1.00m, 1.20GB read
+  Socket errors: connect 0, read 0, write 0, timeout 436
+Requests/sec:  16670.67
+Transfer/sec:     20.43MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8096/
+  16 threads and 512 connections
+    Latency    15.48s     8.29s   49.81s    65.55%
+    Req/Sec     1.03k    85.11     1.27k    69.14%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.56s 
+ 75.000%   21.10s 
+ 90.000%   27.07s 
+ 99.000%   37.09s 
+ 99.900%   44.63s 
+ 99.990%   48.86s 
+ 99.999%   49.74s 
+100.000%   49.84s 
+#[Mean    =    15475.293, StdDeviation   =     8289.624]
+#[Max     =    49807.360, Total count    =       820995]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  972822 requests in 1.00m, 1.16GB read
+  Socket errors: connect 0, read 18, write 0, timeout 1369
+Requests/sec:  16215.12
+Transfer/sec:     19.87MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8096/
+  16 threads and 1024 connections
+    Latency    15.27s     8.46s    0.94m    66.10%
+    Req/Sec     1.00k    79.60     1.27k    75.58%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.41s 
+ 75.000%   20.96s 
+ 90.000%   26.89s 
+ 99.000%   37.03s 
+ 99.900%   48.37s 
+ 99.990%    0.90m 
+ 99.999%    0.94m 
+100.000%    0.94m 
+#[Mean    =    15265.273, StdDeviation   =     8456.938]
+#[Max     =    56459.264, Total count    =       799197]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  960323 requests in 1.00m, 1.15GB read
+  Socket errors: connect 0, read 0, write 0, timeout 5118
+Requests/sec:  16006.93
+Transfer/sec:     19.62MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8097/
+  16 threads and 32 connections
+    Latency     5.84ms   29.31ms 798.72ms   96.21%
+    Req/Sec     1.88k   122.80     3.69k    87.80%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.08ms
+ 75.000%    1.62ms
+ 90.000%    8.19ms
+ 99.000%   76.48ms
+ 99.900%  522.24ms
+ 99.990%  774.14ms
+ 99.999%  796.67ms
+100.000%  799.23ms
+#[Mean    =        5.842, StdDeviation   =       29.313]
+#[Max     =      798.720, Total count    =      1499576]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1799799 requests in 1.00m, 2.02GB read
+Requests/sec:  29999.10
+Transfer/sec:     34.45MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8097/
+  16 threads and 64 connections
+    Latency     1.90ms    4.14ms 157.70ms   93.64%
+    Req/Sec     1.91k   129.34     3.80k    89.20%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.03ms
+ 75.000%    1.43ms
+ 90.000%    3.38ms
+ 99.000%   19.15ms
+ 99.900%   44.45ms
+ 99.990%  118.33ms
+ 99.999%  153.73ms
+100.000%  157.82ms
+#[Mean    =        1.896, StdDeviation   =        4.138]
+#[Max     =      157.696, Total count    =      1499221]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1799600 requests in 1.00m, 2.02GB read
+Requests/sec:  29993.05
+Transfer/sec:     34.44MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8097/
+  16 threads and 128 connections
+    Latency     3.58ms    7.56ms 378.62ms   91.49%
+    Req/Sec     1.91k   122.11     3.29k    82.67%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.20ms
+ 75.000%    2.00ms
+ 90.000%    9.27ms
+ 99.000%   34.40ms
+ 99.900%   44.22ms
+ 99.990%  292.10ms
+ 99.999%  373.76ms
+100.000%  378.88ms
+#[Mean    =        3.582, StdDeviation   =        7.561]
+#[Max     =      378.624, Total count    =      1499713]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1799372 requests in 1.00m, 2.02GB read
+Requests/sec:  29992.36
+Transfer/sec:     34.44MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8097/
+  16 threads and 256 connections
+    Latency     2.07ms    2.90ms  46.34ms   90.10%
+    Req/Sec     1.92k   151.02     2.48k    86.84%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.15ms
+ 75.000%    1.67ms
+ 90.000%    4.90ms
+ 99.000%   14.19ms
+ 99.900%   24.16ms
+ 99.990%   25.84ms
+ 99.999%   32.37ms
+100.000%   46.37ms
+#[Mean    =        2.065, StdDeviation   =        2.901]
+#[Max     =       46.336, Total count    =      1497448]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1798817 requests in 1.00m, 2.02GB read
+Requests/sec:  29984.28
+Transfer/sec:     34.43MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8097/
+  16 threads and 512 connections
+    Latency     3.23ms    6.73ms  82.94ms   93.59%
+    Req/Sec     1.91k   139.85     2.48k    88.33%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.21ms
+ 75.000%    1.94ms
+ 90.000%    7.82ms
+ 99.000%   36.45ms
+ 99.900%   66.56ms
+ 99.990%   78.40ms
+ 99.999%   82.56ms
+100.000%   83.01ms
+#[Mean    =        3.227, StdDeviation   =        6.734]
+#[Max     =       82.944, Total count    =      1495036]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1797750 requests in 1.00m, 2.02GB read
+Requests/sec:  29965.23
+Transfer/sec:     34.41MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8097/
+  16 threads and 1024 connections
+    Latency   882.32ms  354.12ms   1.73s    52.61%
+    Req/Sec     1.84k    48.06     2.03k    73.76%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%  819.71ms
+ 75.000%    1.20s 
+ 90.000%    1.41s 
+ 99.000%    1.56s 
+ 99.900%    1.69s 
+ 99.990%    1.72s 
+ 99.999%    1.73s 
+100.000%    1.73s 
+#[Mean    =      882.315, StdDeviation   =      354.125]
+#[Max     =     1730.560, Total count    =      1457956]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1751021 requests in 1.00m, 1.96GB read
+Requests/sec:  29187.20
+Transfer/sec:     33.51MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8098/
+  16 threads and 32 connections
+    Latency     3.34ms   20.07ms   1.02s    99.19%
+    Req/Sec     1.94k   304.45     4.20k    87.71%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.20ms
+ 75.000%    1.77ms
+ 90.000%    8.65ms
+ 99.000%   21.17ms
+ 99.900%  146.69ms
+ 99.990%  926.21ms
+ 99.999%    1.01s 
+100.000%    1.02s 
+#[Mean    =        3.343, StdDeviation   =       20.069]
+#[Max     =     1020.416, Total count    =      1499546]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1799762 requests in 1.00m, 314.10MB read
+Requests/sec:  29999.70
+Transfer/sec:      5.24MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8098/
+  16 threads and 64 connections
+    Latency    24.61ms  121.65ms   1.03s    96.02%
+    Req/Sec     1.98k   369.78     5.00k    83.71%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.14ms
+ 75.000%    1.68ms
+ 90.000%    2.98ms
+ 99.000%  786.94ms
+ 99.900%  985.09ms
+ 99.990%    1.01s 
+ 99.999%    1.03s 
+100.000%    1.03s 
+#[Mean    =       24.611, StdDeviation   =      121.651]
+#[Max     =     1029.120, Total count    =      1504638]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1799663 requests in 1.00m, 314.08MB read
+Requests/sec:  29996.88
+Transfer/sec:      5.24MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8098/
+  16 threads and 128 connections
+    Latency    75.00ms  220.54ms   1.99s    90.14%
+    Req/Sec     1.98k   603.64     6.22k    79.02%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    1.17ms
+ 75.000%    1.81ms
+ 90.000%  284.67ms
+ 99.000%  966.14ms
+ 99.900%    1.56s 
+ 99.990%    1.87s 
+ 99.999%    1.96s 
+100.000%    1.99s 
+#[Mean    =       74.995, StdDeviation   =      220.544]
+#[Max     =     1991.680, Total count    =      1500392]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1797829 requests in 1.00m, 313.76MB read
+Requests/sec:  29966.29
+Transfer/sec:      5.23MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8098/
+  16 threads and 256 connections
+    Latency   369.40ms  620.63ms   6.89s    88.79%
+    Req/Sec     1.87k   235.08     2.75k    68.33%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    2.06ms
+ 75.000%  612.35ms
+ 90.000%    1.06s 
+ 99.000%    2.77s 
+ 99.900%    4.84s 
+ 99.990%    6.29s 
+ 99.999%    6.81s 
+100.000%    6.90s 
+#[Mean    =      369.400, StdDeviation   =      620.635]
+#[Max     =     6893.568, Total count    =      1493542]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1789779 requests in 1.00m, 312.36MB read
+  Socket errors: connect 0, read 0, write 0, timeout 19
+Requests/sec:  29832.89
+Transfer/sec:      5.21MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8098/
+  16 threads and 512 connections
+    Latency   528.40ms  870.51ms  10.19s    87.63%
+    Req/Sec     1.87k   189.53     2.62k    72.65%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    5.02ms
+ 75.000%  800.26ms
+ 90.000%    1.62s 
+ 99.000%    3.96s 
+ 99.900%    6.37s 
+ 99.990%    8.99s 
+ 99.999%   10.00s 
+100.000%   10.20s 
+#[Mean    =      528.396, StdDeviation   =      870.511]
+#[Max     =    10190.848, Total count    =      1489696]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1778203 requests in 1.00m, 310.34MB read
+  Socket errors: connect 0, read 0, write 0, timeout 103
+Requests/sec:  29640.00
+Transfer/sec:      5.17MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8098/
+  16 threads and 1024 connections
+    Latency   736.04ms    1.26s   12.21s    88.07%
+    Req/Sec     1.87k   112.67     2.16k    73.36%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   56.13ms
+ 75.000%  943.61ms
+ 90.000%    2.29s 
+ 99.000%    6.01s 
+ 99.900%    9.13s 
+ 99.990%   11.26s 
+ 99.999%   11.99s 
+100.000%   12.21s 
+#[Mean    =      736.039, StdDeviation   =     1257.235]
+#[Max     =    12206.080, Total count    =      1487884]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1773843 requests in 1.00m, 309.58MB read
+  Socket errors: connect 0, read 0, write 0, timeout 743
+Requests/sec:  29567.18
+Transfer/sec:      5.16MB
+-----1024--DONE-----
+===============================================
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 32 connections
+    Latency    16.50s     6.81s   28.77s    57.65%
+    Req/Sec     0.98k    20.44     1.02k    78.75%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   16.32s 
+ 75.000%   22.61s 
+ 90.000%   25.84s 
+ 99.000%   28.02s 
+ 99.900%   28.25s 
+ 99.990%   28.70s 
+ 99.999%   28.77s 
+100.000%   28.79s 
+#[Mean    =    16502.022, StdDeviation   =     6809.608]
+#[Max     =    28770.304, Total count    =       789890]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  951807 requests in 1.00m, 1.16GB read
+Requests/sec:  15864.75
+Transfer/sec:     19.71MB
+-----32--DONE-----
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 64 connections
+    Latency    15.26s     6.67s   31.46s    59.12%
+    Req/Sec     1.04k    73.63     1.24k    72.53%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.95s 
+ 75.000%   20.89s 
+ 90.000%   24.41s 
+ 99.000%   28.49s 
+ 99.900%   30.65s 
+ 99.990%   31.38s 
+ 99.999%   31.47s 
+100.000%   31.47s 
+#[Mean    =    15257.421, StdDeviation   =     6665.243]
+#[Max     =    31457.280, Total count    =       831460]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1000145 requests in 1.00m, 1.21GB read
+  Socket errors: connect 0, read 0, write 0, timeout 5
+Requests/sec:  16670.28
+Transfer/sec:     20.72MB
+-----64--DONE-----
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 128 connections
+    Latency    15.57s     6.89s   38.73s    63.17%
+    Req/Sec     1.05k    95.90     1.29k    72.09%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   15.47s 
+ 75.000%   20.84s 
+ 90.000%   24.77s 
+ 99.000%   30.95s 
+ 99.900%   36.27s 
+ 99.990%   37.85s 
+ 99.999%   38.73s 
+100.000%   38.76s 
+#[Mean    =    15567.865, StdDeviation   =     6885.328]
+#[Max     =    38731.776, Total count    =       842067]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1002402 requests in 1.00m, 1.22GB read
+  Socket errors: connect 0, read 0, write 0, timeout 95
+Requests/sec:  16707.78
+Transfer/sec:     20.76MB
+-----128--DONE-----
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 256 connections
+    Latency    15.08s     7.11s   39.22s    62.35%
+    Req/Sec     1.07k   110.95     1.41k    69.74%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.88s 
+ 75.000%   20.35s 
+ 90.000%   24.77s 
+ 99.000%   30.92s 
+ 99.900%   35.26s 
+ 99.990%   37.29s 
+ 99.999%   39.19s 
+100.000%   39.26s 
+#[Mean    =    15078.545, StdDeviation   =     7108.558]
+#[Max     =    39223.296, Total count    =       853601]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1010672 requests in 1.00m, 1.23GB read
+  Socket errors: connect 0, read 3, write 0, timeout 334
+Requests/sec:  16845.98
+Transfer/sec:     20.93MB
+-----256--DONE-----
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 512 connections
+    Latency    15.38s     7.27s   42.37s    63.13%
+    Req/Sec     1.06k    78.38     1.26k    65.79%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.97s 
+ 75.000%   20.76s 
+ 90.000%   25.35s 
+ 99.000%   32.44s 
+ 99.900%   36.73s 
+ 99.990%   40.37s 
+ 99.999%   42.27s 
+100.000%   42.40s 
+#[Mean    =    15384.117, StdDeviation   =     7272.365]
+#[Max     =    42369.024, Total count    =       841277]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  1000578 requests in 1.00m, 1.21GB read
+  Socket errors: connect 0, read 7, write 0, timeout 1153
+Requests/sec:  16677.52
+Transfer/sec:     20.72MB
+-----512--DONE-----
+Running 1m test @ http://127.0.0.1:8099/
+  16 threads and 1024 connections
+    Latency    15.19s     8.26s    0.97m    65.88%
+    Req/Sec     1.00k    81.72     1.17k    65.56%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%   14.23s 
+ 75.000%   20.86s 
+ 90.000%   26.62s 
+ 99.000%   35.95s 
+ 99.900%   44.89s 
+ 99.990%   49.55s 
+ 99.999%    0.96m 
+100.000%    0.97m 
+#[Mean    =    15193.461, StdDeviation   =     8259.687]
+#[Max     =    57933.824, Total count    =       793226]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  960440 requests in 1.00m, 1.17GB read
+  Socket errors: connect 0, read 0, write 0, timeout 5201
+Requests/sec:  15999.17
+Transfer/sec:     19.88MB
+-----1024--DONE-----
+===============================================

@@ -1,56 +1,59 @@
 #!/bin/bash
-mkdir -p logs
 
-start_server() {
-    cd servers/$1
-    echo "Starting server in $(pwd)..."
-    (nohup lein with-profile 1.5 trampoline run 1>>../../logs/run-servers 2>&1 &)
-    cd ../../
-}
+case $1 in
+	1k-keepalive)
+	  echo "Starting  Servers for benchmark with keepalive connections ranging  from 32 ~ 1024"
+	  NGINX_MB_CONNS=1400
+	  ##TODO: some optimizations for other server??? 
+	  ;;
+	1k-nonkeepalive)
+	  echo "Starting  Servers for benchmark with non-keepalive connections ranging  from 32 ~ 1024"
+	  NGINX_MB_CONNS=65000
+	  ##TODO: some optimizations for other server??? 
+	  ;;
+	60k-keepalive)
+	  echo "Starting  Servers for benchmark with keepalive connections ranging  from 10000 ~ 60000"
+	  NGINX_MB_CONNS=65000
+	  ##TODO: some optimizations for other server??? 
+	  ;;
+	60k-nonkeepalive)
+	  echo "Starting  Servers for benchmark with non-keepalive connections ranging  from 10000 ~ 60000"
+	  NGINX_MB_CONNS=65000
+	  ##TODO: some optimizations for other server??? 
+	  ;;
+	*)
+	  echo "Usage: scripts/run-servers.sh profile"
+	  echo "profiles:"
+	  echo "  1k-keepalive      Start  Servers for benchmark with keepalive connections ranging  from 32 ~ 1024"
+	  echo "  1k-nonkeepalive   Start  Servers for benchmark with non-keepalive connections ranging  from 32 ~ 1024"
+	  echo "  60k-keepalive     Start  Servers for benchmark with keepalive connections ranging  from 10000 ~ 60000"
+	  echo "  60k-nonkeepalive  Start  Servers for benchmark with non-keepalive connections ranging  from 10000 ~ 60000"
+	  exit 1
+	  ;;
+esac
 
-start_servlet() {
-    cd servers/$1
-    echo "Starting servlet in $(pwd)..."
-    (nohup lein with-profile 1.7 trampoline servlet  run 1>>../../logs/run-servers 2>&1 &)
-    cd ../../
-}
+source scripts/run-server-util.sh
 
-start_nginx_clojure() {
-    cd servers/nginx-clojure
-    echo "Prepare nginx-clojure in $(pwd)..."
-    (nohup lein with-profile 1.7.0-alpha3 trampoline  run 1>>../../logs/run-servers 2>&1)
-    echo "Starting nginx-clojure in $(pwd)..."
-    ./nginx
-    cd ../..
-}
+mkdir -p logs/$1
 
-start_immutant() {
-    cd servers/immutant
-    export LEIN_IMMUTANT_BASE_DIR=.install
-    echo "Starting Immutant in $(pwd)..."
-    if [[ "$IMMUTANT" == "servlet" ]]; then
-        (nohup lein with-profiles benchmark,servlet do compile, immutant server 8095 1>>../../logs/run-servers 2>&1 &)
-    else
-        (nohup lein with-profile benchmark immutant server 8095 1>>../../logs/run-servers 2>&1 &)
-    fi
-    cd ../..
-}
+##TODO: some optimizations for these server??? 
+start_server  "embedded" $1
+start_servlet "tomcat7"  $1
+start_servlet "tomcat8"  $1
+start_servlet "jetty7"   $1
+start_servlet "jetty8"   $1
+start_servlet "jetty9"   $1
 
-start_server  "embedded"
-start_servlet "tomcat7"
-start_servlet "tomcat8"
-start_servlet "jetty7"
-start_servlet "jetty8"
-start_servlet "jetty9"
 
-# start_nginx_xxx "nginx-php"
-start_nginx_xxx "nginx-clojure"
+start_nginx_clojure $NGINX_MB_CONNS $1
 echo "If you cannot start nginx-clojure, please check jvm configuration in the file ../servers/nginx-clojure/conf/nginx.conf"
 
-start_immutant
+start_immutant   $1
 
-tail -fn 0 logs/run-servers
+
+tail -fn 0 logs/$1/run-servers
 
 # killall java
 # killall nginx
-# ps aux | grep java
+# ps aux | grep -e java -e nginx
+

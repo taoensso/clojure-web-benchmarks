@@ -161,18 +161,23 @@
           :y-label (str (tb-headers :err-rate) y-label))
         (str f "-errs.png") :width 800 :height 600))))
 
+(def args-example-str "args: stripped-result-file title-string, e.g. 20150129-06-24-large.stripped  '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32 ~ 1024 Connections'")
+
 (defn -main [& args]
-  (let [[f title] args
+  (if (< (count args) 2)
+    (println "wrong args\n" args-example-str)
+    (let [[f title] args
         stripped? (.endsWith f ".stripped")
         pf (subs f 0 (- (.length f) (.length ".stripped")))
         keep-alive? (> 0 (.indexOf f "-nonkeepalive"))]
-    (when stripped?
+    (if stripped?
       (let [r (parse-file f)]
         (save-table! r pf title keep-alive?)
-        (save-pngs!  r pf title keep-alive?)))))
+        (save-pngs!  r pf title keep-alive?))
+      (println "wrong args\n" args-example-str)))))
 
-;; lein run ../../results/20150129-01-40.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32 ~ 1024 Connections'
+;; lein run ../../results/20150129-01-40-small.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32 ~ 1024 Connections'
 
-;; lein run  ../../results/20150129-06-24-largeNumofConns.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 10000~60000 Connections'
+;; lein run  ../../results/20150129-06-24-large.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 10000~60000 Connections'
 
 ;; lein run ../../results/20150129-03-55-nonkeepalive.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32~1024 Connections'

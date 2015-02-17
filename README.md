@@ -4,37 +4,42 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
 
 ## Latest Results
 
-### 2015 Jan 31
+### 2015 Feb 17
 
   * **Processor**: 2x 2.10GHz Xeon [E5-2620 v2](http://ark.intel.com/products/75789/Intel-Xeon-Processor-E5-2620-v2-15M-Cache-2_10-GHz) (total 24 hardware threads).
   * **Memory**: 128GB.
   * **OS**: CentOS 7.
   * **Clojure**: 1.7.0-alpha2 on Oracle JDK7.
-  * **Tool** : wrk2
-  * **TODO** : use wrk [patch](https://github.com/wg/wrk/issues/118#issuecomment-72155351) to fix jetty errors when under non-keepalive benchmark 
+  * **Tool** : wrk2 with [patch](https://github.com/wg/wrk/issues/118#issuecomment-72155351)
   * Raw data (incl. latencies)
-    +  [32~1024 keepalived connections](results/20150129-01-40)
-    +  [32~1024 non-keepalived connections](results/20150129-03-55-nonkeepalive)
-    +  [10000 ~ 60000  keepalived connections] (results/20150129-06-24-largeNumofConns)
-
+    +  [32~1024 keepalived connections](results/1k-keepalive/20150217-16-34)
+    +  [32~1024 non-keepalived connections](results/1k-nonkeepalive/20150217-11-17)
+    +  [10000 ~ 60000  keepalived connections] (results/60k-keepalive/20150217-13-18)
+    +  [10000 ~ 60000  non-keepalived connections] (results/60k-nonkeepalive/20150217-15-00)
 
 + 32~1024 connections
-     + keepAlive on [(text table)](results/20150129-01-40-table.txt) 
-       * [throughput chart](results/20150129-01-40-qps.png)
-       * [errors chart](results/20150129-01-40-errs.png)
-       * [mean latency chart](results/20150129-01-40-mlat.png) 
-       * [99.99% latency chart](results/20150129-01-40-n4lat.png)
-     + keepAlive off  [(text table)](results/20150129-03-55-nonkeepalive-table.txt)
-       * [throughput chart](results/20150129-03-55-nonkeepalive-qps.png)
-       * [errors chart](results/20150129-03-55-nonkeepalive-errs.png)
-       * [mean latency chart](results/20150129-03-55-nonkeepalive-mlat.png) 
-       * [99.99% latency chart](results/20150129-03-55-nonkeepalive-n4lat.png)
+     + keepAlive on [(text table)](results/1k-keepalive/20150217-16-34-table.txt) 
+       * [throughput chart](results/1k-keepalive/20150217-16-34-qps.png)
+       * [errors chart](results/1k-keepalive/20150217-16-34-errs.png)
+       * [mean latency chart](results/1k-keepalive/20150217-16-34-mlat.png) 
+       * [99.99% latency chart](results/1k-keepalive/20150217-16-34-n4lat.png)
+     + keepAlive off  [(text table)](results/1k-nonkeepalive/20150217-11-17-table.txt)
+       * [throughput chart](results/1k-nonkeepalive/20150217-11-17-qps.png)
+       * [errors chart](results/1k-nonkeepalive/20150217-11-17-errs.png)
+       * [mean latency chart](results/1k-nonkeepalive/20150217-11-17-mlat.png) 
+       * [99.99% latency chart](results/1k-nonkeepalive/20150217-11-17-n4lat.png)
 + 10000 ~ 60000 connections
-     + keepAlive on [ (text table)](results/20150129-06-24-largeNumofConns-table.txt) 
-       * [throughput chart](results/20150129-06-24-largeNumofConns-qps.png)
-       * [errors chart](results/20150129-06-24-largeNumofConns-errs.png)
-       * [mean latency chart](results/20150129-06-24-largeNumofConns-mlat.png) 
-       * [99.99% latency chart](results/20150129-06-24-largeNumofConns-n4lat.png)
+     + keepAlive on [ (text table)](results/60k-keepalive/20150217-13-18-table.txt) 
+       * [throughput chart](results/60k-keepalive/20150217-13-18-qps.png)
+       * [errors chart](results/60k-keepalive/20150217-13-18-errs.png)
+       * [mean latency chart](results/60k-keepalive/20150217-13-18-mlat.png) 
+       * [99.99% latency chart](results/60k-keepalive/20150217-13-18-n4lat.png)
++ 10000 ~ 60000 connections
+     + keepAlive off [ (text table)](results/60k-nonkeepalive/20150217-15-00-table.txt) 
+       * [throughput chart](results/60k-nonkeepalive/20150217-15-00-qps.png)
+       * [errors chart](results/60k-nonkeepalive/20150217-15-00-errs.png)
+       * [mean latency chart](results/60k-nonkeepalive/20150217-15-00-mlat.png) 
+       * [99.99% latency chart](results/60k-nonkeepalive/20150217-15-00-n4lat.png)
 
 ### 2014 Nov 6
 
@@ -77,21 +82,25 @@ This is a **collaborative repo**. Please see [here](#contact--contribution) for 
   * Response length: 1163 bytes (`servers/index.html`).
   * 32~1024 connections
      + keepAlive on  
-          + `scripts/run-servers.sh`.
-          + `wrk2  -t 16 -c <32, 64, 128, 256, 512, 1024> -R 400000  -d 60s`.
+          + `scripts/run-servers.sh 1k-keepalive`.
+          + `scripts/run-benchmarks.sh 1k-keepalive` (viz. `wrk2  -t 16 -c <32, 64, 128, 256, 512, 1024> -R 400000  -d 60s`)
      + keepAlive off 
-          + `scripts/run-servers-for-largeNumofConns.sh`.
-          +  `wrk2  -H 'Connection: Close' -t 16 -c <32, 64, 128, 256, 512, 1024> -R 400000  -d 60s`.
+          + `scripts/run-servers 1k-nonkeepalive`.
+          + `scripts/run-benchmarks.sh 1k-nonkeepalive` (viz. `wrk2  -t 16 -c <32, 64, 128, 256, 512, 1024> -R 30000  -d 60s`)
   * 10000 ~ 60000 connections
-     + `scripts/run-servers-for-largeNumofConns.sh`.
-     +  `wrk2  -t 16 -c <10000, 20000, 40000, 60000> -R 200000  -d 60s`.
+     + keepAlive on  
+          + `scripts/run-servers.sh 60k-keepalive`.
+          + `scripts/run-benchmarks.sh 60k-keepalive` (viz. `wrk2  -t 16 -c <10000, 20000, 40000, 60000> -R 400000  -d 60s`)
+     + keepAlive off 
+          + `scripts/run-servers 60k-nonkeepalive`.
+          + `scripts/run-benchmarks.sh 60k-nonkeepalive` (viz. `wrk2  -t 16 -c <10000, 20000, 40000, 60000> -R 30000  -d 60s`)
   * Leiningen `trampoline`, `:jvm-opts ["-server"]`.
-  * See `scripts/tune_linux.sh` , `scripts/tune_macosx.sh`  for details about OS tuning. Please run the related tune_xxx.sh before starting servers or ab/wrk/wrk2.
+  * See `scripts/tune_os.sh` for details about OS tuning. Please run tune_os.sh before starting servers or ab/wrk/wrk2.
   * See `scripts/bench*.sh` for full details.
   * See `scripts/strip-results.sh` for full details about  generating stripped results
   * See `utils/results-parser/src/wrk2_result_parser.clj` for full details about generating text table and charts from stripped results.
      + we can use `lein run path-to-stripped-result 'some info, e.g. date, hardware, connections, etc.'` to generate text table and charts.
-  * **Detailed benchmark results** available in `/results/`.
+  * **Detailed benchmark results** available in `/results/${profile-name}` or old results directly under `/results/`.
   * **Clojure Google Group discussion**: http://goo.gl/xe46R.
 
 ## Servers

@@ -3,7 +3,7 @@
 source scripts/utils/common-utils.sh
 
 case $1 in
-    1k-keepalive|1k-nonkeepalive|60k-keepalive|60k-nonkeepalive)
+    1k-keepalive|1k-non-keepalive|60k-keepalive|60k-non-keepalive)
         echo "Starting benchmarks with profile: $1..."
 
         mkdir -p logs/$1

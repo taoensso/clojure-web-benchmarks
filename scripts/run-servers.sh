@@ -38,7 +38,7 @@ start_immutant() {
 }
 
 case $1 in
-    ## 1k-keepalive|1k-nonkeepalive|60k-keepalive|60k-nonkeepalive)
+    ## 1k-keepalive|1k-non-keepalive|60k-keepalive|60k-non-keepalive)
     ## echo "Starting servers with profile: $1..."
     ## ;;
     1k-keepalive)
@@ -46,7 +46,7 @@ case $1 in
         NGINX_MB_CONNS=1400
         ## TODO Any optimizations for other servers?
         ;;
-    1k-nonkeepalive)
+    1k-non-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=65000
         ## TODO Any optimizations for other servers?
@@ -56,7 +56,7 @@ case $1 in
         NGINX_MB_CONNS=65000
         ## TODO Any optimizations for other servers?
         ;;
-    60k-nonkeepalive)
+    60k-non-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=65000
         ## TODO Any optimizations for other servers?

@@ -36,7 +36,7 @@ case $1 in
         ADD_HEADER="Connection: keep-alive"
         IGNORED_PORTS="NONE"
         ;;
-    1k-nonkeepalive)
+    1k-non-keepalive)
         CONN_SET="32 64 128 256 512 1024"
         ## Use fewer connections for non-keepalive benchmark:
         REQS=30000
@@ -51,7 +51,7 @@ case $1 in
         ## Skip Immutant v1:
         IGNORED_PORTS="8095"
         ;;
-    60k-nonkeepalive)
+    60k-non-keepalive)
         CONN_SET="10000 20000 30000 40000 60000"
         ## Use fewer connections for non-keepalive benchmark:
         REQS=30000

@@ -12,12 +12,12 @@
 
 Detail                  | Value
 ----------------------- | -----
-Submitter               | [@xfeep]
-Processor               | 2x 2.10GHz Xeon [E5-2620 v2] (total **24** hardware threads)
+Submitter               | [@xfeep][]
+Processor               | 2x 2.10GHz Xeon [E5-2620 v2][] (total **24** hardware threads)
 Memory                  | 128GB
 OS                      | CentOS 7
 Clojure                 | 1.7.0-alpha2 on Oracle JDK7
-Tool                    | [wrk2] with [patch]
+Tool                    | [wrk2][] with [patch][]
 **Text results (raw)**  | [here](20150217-16-34)
 Text results (table)    | [here](20150217-16-34-table.txt)
 

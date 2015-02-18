@@ -14,13 +14,13 @@ The particular **server hardware**, **wrk2 config**, and **server versions** wil
 
 Results are organised into **named benchmarking profiles** that determine **wrk2 config**:
 
-Profile             | Description
-------------------- | -----------
-[1k-keepalive]      | 32→1024 conns (keepalive)
-[1k-non-keepalive]  | 32→1024 conns (non-keepalive)
-[60k-keepalive]     | 10k→60k conns (keep-alive)
-[60k-non-keepalive] | 10k→60k conns (non-keepalive)
-[Legacy results]    | Everything before benchmarking profiles were introduced.
+Profile               | Description
+--------------------- | -----------
+[1k-keepalive][]      | 32→1024 conns (keepalive)
+[1k-non-keepalive][]  | 32→1024 conns (non-keepalive)
+[60k-keepalive][]     | 10k→60k conns (keep-alive)
+[60k-non-keepalive][] | 10k→60k conns (non-keepalive)
+[Legacy results][]    | Everything before benchmarking profiles were introduced.
 
 ## Running benchmarks yourself
 
@@ -28,14 +28,14 @@ Clone this repo locally, then run `start-here.sh` in the repo root.
 
 ## Server links (alphabetically)
 
-  * [Aleph]
-  * [http-kit]
-  * [Immutant v1]
-  * [Immutant v2 "thedeuce"]
-  * [Jetty Ring adapter]
-  * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet]
-  * [nginx-clojure] compiled into [nginx]
-  * [Undertow Ring adapter]
+  * [Aleph][]
+  * [http-kit][]
+  * [Immutant v1][]
+  * [Immutant v2 "thedeuce"][]
+  * [Jetty Ring adapter][]
+  * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet][]
+  * [nginx-clojure] compiled into [nginx][]
+  * [Undertow Ring adapter][]
 
 ## Contact & contribution
 
@@ -53,7 +53,7 @@ Clone this repo locally, then run `start-here.sh` in the repo root.
 
 If you have any questions, you can reach me at [taoensso.com](https://www.taoensso.com), or the other contributors through the [issues page](https://github.com/ptaoussanis/clojure-web-server-benchmarks/issues?state=open).
 
-/ Peter Taoussanis ([@ptaoussanis])
+/ Peter Taoussanis ([@ptaoussanis][])
 
 [@ptaoussanis]: https://github.com/ptaoussanis
 

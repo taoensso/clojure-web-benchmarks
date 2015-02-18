@@ -41,7 +41,7 @@ case $1 in
         ## Use fewer connections for non-keepalive benchmark:
         REQS=30000
         ADD_HEADER="Connection: close"
-        ## Skip http-kit (Ref. http://goo.gl/2XlGKm):
+        ## Skip http-kit (Ref. http://goo.gl/MDJAaZ):
         IGNORED_PORTS="8087"
         ;;
     60k-keepalive)

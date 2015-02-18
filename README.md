@@ -57,11 +57,11 @@ If you have any questions, you can reach me at [taoensso.com](https://www.taoens
 
 [@ptaoussanis]: https://github.com/ptaoussanis
 
-[1k-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/1k-keepalive
-[1k-non-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/1k-non-keepalive
-[60k-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/60k-keepalive
-[60k-non-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/60k-non-keepalive
-[Legacy results]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/legacy
+[1k-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/1k-keepalive#1k-keepalive
+[1k-non-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/1k-non-keepalive#1k-non-keepalive
+[60k-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/60k-keepalive#60k-keepalive
+[60k-non-keepalive]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/60k-non-keepalive#60k-non-keepalive
+[Legacy results]: https://github.com/ptaoussanis/clojure-web-server-benchmarks/tree/master/results/legacy#legacy-results
 
 [Aleph]: https://github.com/ztellman/aleph
 [http-kit]: https://github.com/shenfeng/http-kit

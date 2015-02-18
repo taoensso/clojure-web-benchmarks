@@ -22,6 +22,10 @@ Profile             | Description
 [60k-non-keepalive] | 10k→60k conns (non-keepalive)
 [Legacy results]    | Everything before benchmarking profiles were introduced.
 
+## Running benchmarks yourself
+
+Clone this repo locally, then run `start-here.sh` in the repo root.
+
 ## Server links (alphabetically)
 
   * [Aleph]

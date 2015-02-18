@@ -17,5 +17,9 @@ echo "Outputs:"
 echo "  Logs    - Will go to logs/"
 echo "  Results - Will go to results/"
 echo
+echo "If you're interested in generating result tables & charts, see:"
+echo "  scripts/utils/strip-results.sh, and"
+echo "  utils/results-parser/src/wrk2_result_parser.clj"
+echo
 echo "Happy benching! :-)"
 echo

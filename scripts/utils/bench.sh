@@ -67,7 +67,7 @@ case $1 in
 esac
 
 mkdir -p results/$1
-OUT="results/$1/$(date +%Y%m%d"-"%H-%M)"
+OUT="results/$1/$(date +%Y-%m-%d_%H-%M.txt)"
 echo "Logging bench results to $OUT..."
 echo
 

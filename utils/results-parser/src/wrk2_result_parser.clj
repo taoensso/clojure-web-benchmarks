@@ -1,3 +1,11 @@
+;;; EXAMPLES OF USE
+
+;; lein run ../../results/20150129-01-40-small.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32 ~ 1024 Connections'
+
+;; lein run  ../../results/20150129-06-24-large.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 10000~60000 Connections'
+
+;; lein run ../../results/20150129-03-55-nonkeepalive.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32~1024 Connections'
+
 (ns wrk2-result-parser
   (:require
    [clojure.string    :as str]
@@ -175,9 +183,3 @@
         (save-table! r pf title keep-alive?)
         (save-pngs!  r pf title keep-alive?))
       (println "wrong args\n" args-example-str)))))
-
-;; lein run ../../results/20150129-01-40-small.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32 ~ 1024 Connections'
-
-;; lein run  ../../results/20150129-06-24-large.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 10000~60000 Connections'
-
-;; lein run ../../results/20150129-03-55-nonkeepalive.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32~1024 Connections'

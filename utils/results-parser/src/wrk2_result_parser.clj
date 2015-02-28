@@ -59,7 +59,7 @@
     [s (merge r
          {(tb-headers :port)    port
           (tb-headers :threads) threads
-          (tb-headers :conns)   conns})]))
+          (tb-headers :conns)   (Integer/parseInt conns)})]))
 
 (defn format-time [t]
   (if (nil? t)
@@ -125,49 +125,39 @@
           (println title (if keep-alive? "(wrk2 Keep-Alive:On)" "(wrk2 Keep-Alive:Off)"))
           (println (ic/sel (ic/to-dataset r) :cols ordered-headers)))))
 
-(defn save-pngs! [r f title keep-alive?]
+(defn sort-by-highest-conns [r vcol]
+  (let [conns-col  (tb-headers :conns)
+        server-col (tb-headers :server)
+        vcol (tb-headers vcol vcol)
+        desc? (= vcol (tb-headers :qps))
+        max-conns (apply max (map #(% conns-col) r))
+        sorted-results (->> r
+                         (filter #(= (% conns-col) max-conns))
+                         (sort-by #(% vcol) (if desc? > <))
+                         (map #(% server-col))
+                         (map (fn [server] (filter #(= server (% server-col)) r)))
+                         (apply concat))]
+    sorted-results))
+
+(defn save-png! [r f title keep-alive? vcol]
   (let [y-label (if keep-alive? "(wrk2 Keep-Alive:On)" "(wrk2 Keep-Alive:Off)")
         server  (tb-headers :server)]
     (ic/with-data
       (ic/to-dataset r)
       (ic/save
         (ics/bar-chart server
-          (tb-headers :qps)
-          :group-by "Conns"
+          (tb-headers vcol)
+          :group-by (tb-headers :conns)
           :legend true
           :vertical false
           :title title
-          :y-label (str (tb-headers :qps) y-label))
-        (str f "-qps.png") :width 800 :height 600)
+          :y-label (str (tb-headers vcol) y-label))
+        (str f "-" (if (= vcol :err-rate) "errs" (name vcol)) ".png")
+        :width 800 :height 600))))
 
-      (ic/save
-        (ics/bar-chart server
-          (tb-headers :mlat)
-          :group-by "Conns"
-          :legend true
-          :vertical false
-          :title title
-          :y-label (str (tb-headers :mlat) y-label))
-        (str f "-mlat.png") :width 800 :height 600)
-
-      (ic/save
-        (ics/bar-chart server
-          (tb-headers :n4lat)
-          :group-by "Conns"
-          :legend true
-          :vertical false
-          :title title
-          :y-label (str (tb-headers :n4lat) y-label))
-        (str f "-n4lat.png") :width 800 :height 600)
-
-      (ic/save
-        (ics/bar-chart server (tb-headers :err-rate)
-          :group-by "Conns"
-          :legend true
-          :vertical false
-          :title title
-          :y-label (str (tb-headers :err-rate) y-label))
-        (str f "-errs.png") :width 800 :height 600))))
+(defn save-pngs! [r f title keep-alive?]
+  (doseq [vcol [:qps :mlat :n4lat :err-rate]]
+    (save-png! (sort-by-highest-conns r vcol) f title keep-alive? vcol)))
 
 (def args-example-str "args: stripped-result-file title-string, e.g. 20150129-06-24-large.stripped  '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32 ~ 1024 Connections'")
 
@@ -177,7 +167,7 @@
     (let [[f title] args
         stripped? (.endsWith f ".stripped")
         pf (subs f 0 (- (.length f) (.length ".stripped")))
-        keep-alive? (> 0 (.indexOf f "-nonkeepalive"))]
+        keep-alive? (> 0 (.indexOf f "-non-keepalive"))]
     (if stripped?
       (let [r (parse-file f)]
         (save-table! r pf title keep-alive?)

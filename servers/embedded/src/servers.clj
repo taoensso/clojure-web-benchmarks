@@ -76,14 +76,13 @@
   ;; :jetty-8-servlet 8092
   ;; :jetty-9-servlet 8093
   ;; :nginx-clojure   8094
-  ;; :immutant        8095
 
   (start-server! :ring-undertow 8096
     (fn [port]
       ;; TODO Any special config necessary for manycore systems?
       (undertow/run-undertow handler
         {:port port
-         :dispatch? false})))
+         :dispatch? (read-string (get (System/getenv) "UNDERTOW_DISPATCH" "false"))})))
 
   (start-server! :vertx 8097
     (fn [port]
@@ -95,11 +94,11 @@
 
   ;; :tomcat8-servlet 8098
 
-  (start-server! :immutant2 8099
+  (start-server! :immutant 8099
     (fn [port]
       (let [num-threads (.availableProcessors (Runtime/getRuntime))]
         (immutant/run handler
-          :dispatch? false
           :port port
+          :dispatch? (read-string (get (System/getenv) "UNDERTOW_DISPATCH" "false"))
           :io-threads num-threads
           :worker-threads num-threads)))))

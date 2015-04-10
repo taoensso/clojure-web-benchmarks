@@ -48,16 +48,15 @@ case $1 in
         CONN_SET="10000 20000 30000 40000 60000"
         REQS=400000
         ADD_HEADER="Connection: keep-alive"
-        ## Skip Immutant v1:
-        IGNORED_PORTS="8095"
+        IGNORED_PORTS="NONE"
         ;;
     60k-non-keepalive)
         CONN_SET="10000 20000 30000 40000 60000"
         ## Use fewer connections for non-keepalive benchmark:
         REQS=30000
         ADD_HEADER="Connection: close"
-        ## Skip http-kit, Immutant v1
-        IGNORED_PORTS="8087|8095"
+        ## Skip http-kit
+        IGNORED_PORTS="8087"
         ;;
     *)
         echo "Usage: $0 <benching-profile> [single-port]"

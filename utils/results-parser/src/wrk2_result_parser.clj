@@ -25,7 +25,6 @@
    "8092" "jetty 8 servlet"
    "8093" "jetty 9 servlet"
    "8094" "nginx-clojure"
-   "8095" "immutant 1"
    "8096" "ring-undertow"
    "8097" "vertx"
    "8098" "tomcat 8"
@@ -165,7 +164,7 @@
   (if (< (count args) 2)
     (println "wrong args\n" args-example-str)
     (let [[f title] args
-        stripped? (.endsWith f ".stripped")
+        stripped? (.endsWith f "stripped")
         pf (subs f 0 (- (.length f) (.length ".stripped")))
         keep-alive? (> 0 (.indexOf f "-non-keepalive"))]
     (if stripped?

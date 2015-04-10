@@ -25,18 +25,6 @@ start_nginx_clojure() {
     cd ../..
 }
 
-start_immutant() {
-    cd servers/immutant
-    export LEIN_IMMUTANT_BASE_DIR=.install
-    echo "Starting Immutant in $(pwd)..."
-    if [[ "$IMMUTANT" == "servlet" ]]; then
-        (nohup lein with-profiles benchmark,servlet do compile, immutant server 8095 1>>../../logs/$1/run-servers 2>&1 &)
-    else
-        (nohup lein with-profile benchmark immutant server 8095 1>>../../logs/$1/run-servers 2>&1 &)
-    fi
-    cd ../..
-}
-
 case $1 in
     ## 1k-keepalive|1k-non-keepalive|60k-keepalive|60k-non-keepalive)
     ## echo "Starting servers with profile: $1..."
@@ -49,6 +37,7 @@ case $1 in
     1k-non-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=65000
+        export UNDERTOW_DISPATCH=true
         ## TODO Any optimizations for other servers?
         ;;
     60k-keepalive)
@@ -59,6 +48,7 @@ case $1 in
     60k-non-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=65000
+        export UNDERTOW_DISPATCH=true
         ## TODO Any optimizations for other servers?
         ;;
     *)
@@ -80,8 +70,6 @@ start_servlet "jetty9"   $1
 
 start_nginx_clojure $NGINX_MB_CONNS $1
 echo "If you cannot start nginx-clojure, please check jvm configuration in the file ../servers/nginx-clojure/conf/nginx.conf"
-
-start_immutant $1
 
 tail -fn 0 logs/$1/run-servers
 

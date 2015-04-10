@@ -30,7 +30,6 @@ Clone this repo locally, then run `start-here.sh` in the repo root.
 
   * [Aleph][]
   * [http-kit][]
-  * [Immutant v1][]
   * [Immutant v2 "thedeuce"][]
   * [Jetty Ring adapter][]
   * Jetty 7/8/9, Tomcat 7/8 servlets via [lein-servlet][]
@@ -65,7 +64,6 @@ If you have any questions, you can reach me at [taoensso.com](https://www.taoens
 
 [Aleph]: https://github.com/ztellman/aleph
 [http-kit]: https://github.com/shenfeng/http-kit
-[Immutant v1]: http://immutant.org/
 [Immutant v2 "thedeuce"]: https://github.com/immutant/immutant
 [Jetty Ring adapter]: https://github.com/ring-clojure/ring
 [lein-servlet]: https://github.com/kumarshantanu/lein-servlet

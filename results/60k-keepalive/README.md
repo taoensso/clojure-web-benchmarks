@@ -24,12 +24,6 @@ Text results (table)    | [here](20150217-13-18-table.txt)
 ###### xfeep.2015.02.17 - Throughput
 ![Throughput chart](20150217-13-18-qps.png)
 
-###### xfeep.2015.02.17 - Mean latency
-![Mean latency chart](20150217-13-18-mlat.png)
-
-###### xfeep.2015.02.17 - 99.99% latency
-![99.99% latency chart](20150217-13-18-n4lat.png)
-
 ###### xfeep.2015.02.17 - Errors
 ![Errors chart](20150217-13-18-errs.png)
 

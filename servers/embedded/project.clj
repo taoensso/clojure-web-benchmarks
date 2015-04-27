@@ -18,7 +18,7 @@
    [com.taoensso/timbre    "3.3.1"]
    [aleph                  "0.4.0-alpha9"]
    [http-kit               "2.1.19"]
-   [org.immutant/web       "2.x.incremental.557"]
+   [org.immutant/web       "2.0.0"]
    [ring-undertow-adapter  "0.2.1" :exclusions [io.undertow/undertow-core]]
    [io.vertx/clojure-api   "1.0.4"]]
   :exclusions [org.clojure/clojure]
@@ -27,8 +27,7 @@
                                     [lein-ancient      "0.5.5"]]}}
   :jvm-opts ^:replace ["-server" "-Xmx2g"]
   :repositories
-  {"sonatype-oss-public"             "https://oss.sonatype.org/content/groups/public/"
-   "Immutant 2.x incremental builds" "http://downloads.immutant.org/incremental/"}
+  {"sonatype-oss-public"             "https://oss.sonatype.org/content/groups/public/"}
 
   :aliases
   {"start-dev" ["repl" ":headless"]})

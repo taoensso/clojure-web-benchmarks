@@ -1,24 +1,28 @@
-(ns servers "Clojure web server benchmarks"
-  {:author "Various contributors"}
+(ns servers
+  "Embedded servers (run via Clojure)"
+  {:author "Peter Taoussanis and contributors"}
   (:require
    [clojure.string         :as str]
    [compojure.core         :as compojure]
-   [taoensso.timbre        :as timbre]
+   [taoensso.encore        :as enc]
    ;;
    [ring.adapter.jetty     :as jetty]
    [ring.adapter.undertow  :as undertow]
    [immutant.web           :as immutant]
    [vertx.http             :as vhttp]
    [vertx.embed            :as vembed]
-   [aleph.http             :as aleph]
+   ;; [aleph.http          :as aleph] ; Failing?
    [org.httpkit.server     :as http-kit]))
 
-(timbre/refer-timbre)
+;;;;
 
 (def properties (into {} (System/getProperties)))
-(defn system [& keys] (str/join " " (map properties keys)))
+(def env        (into {} (System/getenv)))
 
-(comment (system "os.name" "os.version"))
+(defn props [& keys] (str/join " " (map properties keys)))
+(comment (props "os.name" "os.version"))
+
+(def num-cores (.availableProcessors (Runtime/getRuntime)))
 
 ;;;; Handler
 
@@ -27,7 +31,9 @@
    :headers {"content-type" "text/html"}
    :body    (slurp "../index.html")})
 
-(defn handler [request] response)
+(defn handler [request]
+  (Thread/sleep (+ 10 (long (* (Math/random) 100)))) ; Mean 60 msecs work
+  response)
 
 ;;;; Servers
 
@@ -36,41 +42,45 @@
   (or (get @servers server-id)
     (let [server (constructor-fn port)]
       (swap! servers assoc server-id server)
-      (infof "%s is running on port %s" server-id port)
+      (println (format "%s is running on port %s" server-id port))
       server)))
 
 (defn -main [& args]
-  (info "Starting up servers..."
-    {:clojure (clojure-version)
-     :os      (system "os.name" "os.version")
-     :java    (system "java.version")
-     :vm      (system "java.vm.name" "java.vm.version")})
 
-  ;; :nginx-php 8081 (removed, not necessary to benchmark)
+  (println "Starting embedded servers...")
+  (println (str "     Instant: " (enc/now-inst)))
+  (println (str "     Clojure: " (clojure-version)))
+  (println (str "          OS: " (props "os.name" "os.version")))
+  (println (str "        Java: " (props "java.version")))
+  (println (str "          VM: " (props "java.vm.name" "java.vm.version")))
+  (println (str "  Max memory: " (.maxMemory (Runtime/getRuntime))))
+  (println (str "   Num cores: " num-cores))
+  (println)
 
   (start-server! :ring-jetty 8082
     (fn [port]
-      ;; No special config necessary for many-core systems?
-      (jetty/run-jetty handler {:port port :join? false :max-threads 100})))
+      ;; Any special config necessary for many-core systems?
+      (jetty/run-jetty handler
+        {:port port :join? false :max-threads (* num-cores 16)})))
 
-  ;; :ring-simple 8083 (server removed, no longer maintained)
-
+  #_ ; Failing?
   (start-server! :aleph 8084
     (fn [port]
       ;; No special config necessary for many-core systems
       (aleph.netty/leak-detector-level! :disabled)
       (aleph/start-server handler {:port port :executor :none})))
 
-  ;; :aloha 8085 (server removed, no longer maintained)
-
   (start-server! :http-kit 8087
     (fn [port]
-      ;; :queue-size - default 20k; should be at least as large as the number of clients
-      ;; :thread     - default 4; used for application logic, network IO is
-      ;;               always single-threaded
-      (http-kit/run-server handler {:port port :queue-size 204800 :thread 4})))
+      (let [worker
+            (http-kit/new-worker
+              {:n-threads (* num-cores 16)
+               :queue-size 204800
+               :allow-virtual? true})]
 
-  ;; :ring-netty      8089 (server removed, no longer maintained)
+        (http-kit/run-server handler
+          {:port port :worker-pool (:pool worker)}))))
+
   ;; :tomcat7-servlet 8090
   ;; :jetty-7-servlet 8091
   ;; :jetty-8-servlet 8092
@@ -79,10 +89,10 @@
 
   (start-server! :ring-undertow 8096
     (fn [port]
-      ;; TODO Any special config necessary for manycore systems?
-      (undertow/run-undertow handler
-        {:port port
-         :dispatch? (read-string (get (System/getenv) "UNDERTOW_DISPATCH" "false"))})))
+      ;; Any special config necessary for many-core systems?
+      (let [dispatch? (read-string (get env "UNDERTOW_DISPATCH" "false"))]
+        (undertow/run-undertow handler
+          {:port port :dispatch? dispatch?}))))
 
   (start-server! :vertx 8097
     (fn [port]
@@ -96,9 +106,9 @@
 
   (start-server! :immutant 8099
     (fn [port]
-      (let [num-threads (.availableProcessors (Runtime/getRuntime))]
+      (let [dispatch? (read-string (get env "UNDERTOW_DISPATCH" "false"))]
         (immutant/run handler
-          :port port
-          :dispatch? (read-string (get (System/getenv) "UNDERTOW_DISPATCH" "false"))
-          :io-threads num-threads
-          :worker-threads num-threads)))))
+          :port      port
+          :dispatch? dispatch?
+          :io-threads        num-cores
+          :worker-threads (* num-cores 16))))))

@@ -16,10 +16,9 @@ bench_port() {
 
         for CONN_NUM in $CONN_SET
         do
-            wrk2 -t16 -c${CONN_NUM} -R$REQS -d30s -H "$ADD_HEADER" "http://127.0.0.1:$1/" # warmup
+            wrk -t16 -c${CONN_NUM} -d30s -H "$ADD_HEADER" "http://127.0.0.1:$1/" # warmup
             sleep_for 10
-            wrk2 -t16 -c${CONN_NUM} -R$REQS -d60s -H "$ADD_HEADER" \
-                 --latency "http://127.0.0.1:$1/" | tee -a $OUT
+            wrk -t16 -c${CONN_NUM} -d60s -H "$ADD_HEADER" --latency "http://127.0.0.1:$1/" | tee -a $OUT
             echo "-----${CONN_NUM}--DONE-----" | tee -a $OUT
         done
 
@@ -32,31 +31,29 @@ bench_port() {
 case $1 in
     1k-keepalive)
         CONN_SET="32 64 128 256 512 1024"
-        REQS=400000
+        # REQS=400000 # Needs wrk2
         ADD_HEADER="Connection: keep-alive"
         IGNORED_PORTS="NONE"
         ;;
     1k-non-keepalive)
         CONN_SET="32 64 128 256 512 1024"
         ## Use fewer connections for non-keepalive benchmark:
-        REQS=30000
+        # REQS=30000 # Needs wrk2
         ADD_HEADER="Connection: close"
-        ## Skip http-kit (Ref. http://goo.gl/MDJAaZ):
-        IGNORED_PORTS="8087"
+        IGNORED_PORTS="8087" # http-kit, Ref. http://goo.gl/MDJAaZ
         ;;
     60k-keepalive)
         CONN_SET="10000 20000 30000 40000 60000"
-        REQS=400000
+        # REQS=400000 # Needs wrk2
         ADD_HEADER="Connection: keep-alive"
         IGNORED_PORTS="NONE"
         ;;
     60k-non-keepalive)
         CONN_SET="10000 20000 30000 40000 60000"
         ## Use fewer connections for non-keepalive benchmark:
-        REQS=30000
+        # REQS=30000 # Needs wrk2
         ADD_HEADER="Connection: close"
-        ## Skip http-kit
-        IGNORED_PORTS="8087"
+        IGNORED_PORTS="8087" # http-kit, Ref. http://goo.gl/MDJAaZ
         ;;
     *)
         echo "Usage: $0 <benching-profile> [single-port]"

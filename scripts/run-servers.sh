@@ -5,21 +5,22 @@ source scripts/utils/common-utils.sh
 start_server() {
     cd servers/$1
     echo "Starting server in $(pwd)..."
-    (nohup lein with-profile default trampoline run 1>>../../logs/$2/run-servers 2>&1 &)
+    (nohup lein trampoline run 1>>../../logs/$2/run-servers 2>&1 &)
     cd ../../
 }
 
 start_servlet() {
     cd servers/$1
     echo "Starting servlet in $(pwd)..."
-    (nohup lein with-profile default trampoline servlet  run 1>>../../logs/$2/run-servers 2>&1 &)
+    # Failing?
+    # (nohup lein trampoline servlet  run 1>>../../logs/$2/run-servers 2>&1 &)
     cd ../../
 }
 
 start_nginx_clojure() {
     cd servers/nginx-clojure
     echo "Prepare nginx-clojure in $(pwd)..."
-    (nohup lein with-profile default trampoline  run $1 1>>../../logs/$2/run-servers 2>&1)
+    (nohup lein trampoline  run $1 1>>../../logs/$2/run-servers 2>&1)
     echo "Starting nginx-clojure in $(pwd)..."
     ./nginx
     cd ../..
@@ -32,24 +33,24 @@ case $1 in
     1k-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=1400
-        ## TODO Any optimizations for other servers?
+        ## Optimizations for any other servers?
         ;;
     1k-non-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=65000
         export UNDERTOW_DISPATCH=true
-        ## TODO Any optimizations for other servers?
+        ## Optimizations for any other servers?
         ;;
     60k-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=65000
-        ## TODO Any optimizations for other servers?
+        ## Optimizations for any other servers?
         ;;
     60k-non-keepalive)
         echo "Starting servers with profile: $1..."
         NGINX_MB_CONNS=65000
         export UNDERTOW_DISPATCH=true
-        ## TODO Any optimizations for other servers?
+        ## Optimizations for any other servers?
         ;;
     *)
         echo "Usage: $0 <benching-profile>"
@@ -60,7 +61,6 @@ esac
 
 mkdir -p logs/$1
 
-## TODO Any optimizations for these servers?
 start_server  "embedded" $1
 start_servlet "tomcat7"  $1
 start_servlet "tomcat8"  $1

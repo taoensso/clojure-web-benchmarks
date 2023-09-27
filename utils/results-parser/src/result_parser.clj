@@ -6,7 +6,7 @@
 
 ;; lein run ../../results/20150129-03-55-nonkeepalive.stripped '2015-1-30 CentOS 7,2*Xeon E5-2620 v2@2.10GHz(24 hardware threads), Oracle JDK1.7.0_72,Clojure 1.7.0-alpha3 32~1024 Connections'
 
-(ns wrk2-result-parser
+(ns result-parser
   (:require
    [clojure.string    :as str]
    [clojure.java.io   :as io]
@@ -109,7 +109,8 @@
       (second)
       (#(merge % {(tb-headers :server) (port-servers (% (tb-headers :port)))}))))
 
-(defn parse-file "Parses a stripped wrk2 results file"
+(defn parse-file
+  "Parses a stripped (wrk) results file"
   [f]
   ;; (println "file " f)
   (with-open [rdr (io/reader f)]
@@ -121,7 +122,7 @@
 (defn save-table! [r f title keep-alive?]
   (spit (str f "-table.txt")
         (with-out-str
-          (println title (if keep-alive? "(wrk2 Keep-Alive:On)" "(wrk2 Keep-Alive:Off)"))
+          (println title (if keep-alive? "(wrk keepalive)" "(wrk non-keepalive)"))
           (println (ic/sel (ic/to-dataset r) :cols ordered-headers)))))
 
 (defn sort-by-highest-conns [r vcol]
@@ -139,7 +140,7 @@
     sorted-results))
 
 (defn save-png! [r f title keep-alive? vcol]
-  (let [y-label (if keep-alive? "(wrk2 Keep-Alive:On)" "(wrk2 Keep-Alive:Off)")
+  (let [y-label (if keep-alive? "(wrk keepalive)" "(wrk non-keep-alive)")
         server  (tb-headers :server)]
     (ic/with-data
       (ic/to-dataset r)
@@ -152,7 +153,7 @@
           :title title
           :y-label (str (tb-headers vcol) y-label))
         (str f "-" (if (= vcol :err-rate) "errs" (name vcol)) ".png")
-        :width 800 :height 600))))
+        :width 1024 :height 768))))
 
 (defn save-pngs! [r f title keep-alive?]
   (doseq [vcol [:qps :mlat :n4lat :err-rate]]
